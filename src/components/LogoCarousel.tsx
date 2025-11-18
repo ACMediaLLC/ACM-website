@@ -56,7 +56,7 @@ export function LogoCarousel() {
 
         @media (max-width: 767px) {
           .animate-scroll {
-            animation: scroll 8s linear infinite;
+            animation: scroll 30s linear infinite;
           }
         }
       `}</style>
