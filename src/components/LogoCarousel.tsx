@@ -10,7 +10,7 @@ export function LogoCarousel() {
     { name: 'Villanova Business', url: '/image8.png' },
   ];
 
-  const duplicatedLogos = [...logos, ...logos];
+  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
 
   return (
     <section className="py-16 px-4 bg-white border-y border-gray-200 overflow-hidden">
@@ -56,7 +56,7 @@ export function LogoCarousel() {
 
         @media (max-width: 767px) {
           .animate-scroll {
-            animation: scroll 20s linear infinite;
+            animation: scroll 8s linear infinite;
           }
         }
       `}</style>
