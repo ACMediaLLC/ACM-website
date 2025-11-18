@@ -46,17 +46,18 @@ export function LogoCarousel() {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-100%);
           }
         }
 
         .animate-scroll {
           animation: scroll 40s linear infinite;
+          will-change: transform;
         }
 
         @media (max-width: 767px) {
           .animate-scroll {
-            animation: scroll 30s linear infinite;
+            animation-duration: 24s;
           }
         }
       `}</style>
