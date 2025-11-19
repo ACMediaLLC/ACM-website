@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
-import { submitContactForm } from '../lib/supabase';
 
 export function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    organization: '',
+    companyName: '',
+    companyWebsite: '',
+    howDidYouHear: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -19,9 +20,20 @@ export function Contact() {
     setError('');
 
     try {
-      await submitContactForm(formData);
+      const response = await fetch('https://hook.us2.make.com/xlhutus72uabwj9qptiivm8r5e3li7fj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
       setIsSuccess(true);
-      setFormData({ name: '', email: '', organization: '', message: '' });
+      setFormData({ name: '', email: '', companyName: '', companyWebsite: '', howDidYouHear: '', message: '' });
       setTimeout(() => setIsSuccess(false), 5000);
     } catch (err) {
       setError('Failed to send message. Please try again or email directly.');
@@ -94,18 +106,51 @@ export function Contact() {
             </div>
           </div>
 
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label htmlFor="companyName" className="block font-roboto-condensed font-semibold text-text-primary mb-2">
+                Company Name
+              </label>
+              <input
+                type="text"
+                id="companyName"
+                name="companyName"
+                value={formData.companyName}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border-2 border-onyx/20 rounded-lg focus:border-brick-red focus:outline-none bg-seashell font-roboto"
+                placeholder="Your company name (optional)"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="companyWebsite" className="block font-roboto-condensed font-semibold text-text-primary mb-2">
+                Company Website
+              </label>
+              <input
+                type="url"
+                id="companyWebsite"
+                name="companyWebsite"
+                value={formData.companyWebsite}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border-2 border-onyx/20 rounded-lg focus:border-brick-red focus:outline-none bg-seashell font-roboto"
+                placeholder="https://example.com (optional)"
+              />
+            </div>
+          </div>
+
           <div className="mb-6">
-            <label htmlFor="organization" className="block font-roboto-condensed font-semibold text-text-primary mb-2">
-              Organization
+            <label htmlFor="howDidYouHear" className="block font-roboto-condensed font-semibold text-text-primary mb-2">
+              How did you hear about AC Media? *
             </label>
             <input
               type="text"
-              id="organization"
-              name="organization"
-              value={formData.organization}
+              id="howDidYouHear"
+              name="howDidYouHear"
+              required
+              value={formData.howDidYouHear}
               onChange={handleChange}
               className="w-full px-4 py-3 border-2 border-onyx/20 rounded-lg focus:border-brick-red focus:outline-none bg-seashell font-roboto"
-              placeholder="Your organization (optional)"
+              placeholder="How did you hear about us?"
             />
           </div>
 
