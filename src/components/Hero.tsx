@@ -11,7 +11,8 @@ export function Hero() {
   return (
     <section id="hero" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-seashell">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
           <h1 className="font-roboto-condensed font-bold text-5xl md:text-6xl lg:text-7xl text-text-primary mb-6 leading-tight">
             Get a Chief Communications Officer—
             <span className="text-brick-red"> Without the $200K Price Tag</span>
@@ -60,6 +61,15 @@ export function Hero() {
             Skip the overhead. Keep the excellence.
           </p>
         </div>
+
+        <div className="hidden lg:block">
+          <img
+            src="/Favorite 1.jpg"
+            alt="AC Media Communications Strategy"
+            className="rounded-lg shadow-2xl w-full h-auto object-cover"
+          />
+        </div>
+      </div>
       </div>
     </section>
   );
