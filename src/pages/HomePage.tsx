@@ -196,11 +196,11 @@ export function HomePage() {
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="bg-[#f9f6ee] p-8 rounded-3xl shadow-lg">
+              <div className="bg-white p-2 rounded-lg shadow-md">
                 <img
                   src="/Favorite 1.jpg"
                   alt="AC Media Communications Strategy"
-                  className="w-full max-w-md lg:max-w-lg object-cover rounded-2xl drop-shadow-2xl"
+                  className="w-full max-w-md lg:max-w-lg object-cover rounded-md"
                 />
               </div>
             </div>
