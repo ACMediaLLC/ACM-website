@@ -190,7 +190,7 @@ export function HomePage() {
                   Perfect for:
                 </p>
                 <p className="font-roboto text-text-primary">
-                  CEOs and Executive Directors ready to move faster, scale smarter, and look like the pros—without hiring a full-time executive
+                  Perfect for small, midsize, and growing organizations ready to move faster, scale smarter, and look like the pros.
                 </p>
               </div>
             </div>
