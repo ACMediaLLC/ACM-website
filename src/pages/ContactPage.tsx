@@ -153,11 +153,11 @@ export function ContactPage() {
                   <div className="relative">
                     <Globe className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral" size={20} />
                     <input
-                      type="url"
+                      type="text"
                       name="companyWebsite"
                       value={formData.companyWebsite}
                       onChange={handleChange}
-                      placeholder="https://example.com (optional)"
+                      placeholder="example.com (optional)"
                       className="w-full pl-10 pr-4 py-3 border-2 border-neutral/20 rounded-lg focus:border-brick-red focus:outline-none font-roboto"
                     />
                   </div>

@@ -127,13 +127,13 @@ export function Contact() {
                 Company Website
               </label>
               <input
-                type="url"
+                type="text"
                 id="companyWebsite"
                 name="companyWebsite"
                 value={formData.companyWebsite}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border-2 border-onyx/20 rounded-lg focus:border-brick-red focus:outline-none bg-seashell font-roboto"
-                placeholder="https://example.com (optional)"
+                placeholder="example.com (optional)"
               />
             </div>
           </div>
