@@ -198,9 +198,9 @@ export function HomePage() {
             <div className="flex justify-center lg:justify-end">
               <div className="bg-[#f9f6ee] p-8 rounded-3xl shadow-lg">
                 <img
-                  src="/ChatGPT Image Nov 17, 2025, 08_20_45 PM.png"
-                  alt="Megaphone representing communication and outreach"
-                  className="w-full max-w-md lg:max-w-lg object-contain drop-shadow-2xl"
+                  src="/Favorite 1.jpg"
+                  alt="AC Media Communications Strategy"
+                  className="w-full max-w-md lg:max-w-lg object-cover rounded-2xl drop-shadow-2xl"
                 />
               </div>
             </div>
