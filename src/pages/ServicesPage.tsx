@@ -12,7 +12,7 @@ const services = [
   {
     icon: Lightbulb,
     title: 'Strategy Development',
-    description: 'Brand positioning, campaign blueprints, content frameworks, and more. I help you build a plan that works for your goals and your budget.',
+    description: 'Custom marketing, communications, messaging, and thought leadership strategies built for impact and easy implementation.',
     tagline: 'For teams ready to move with clarity and confidence.'
   },
   {
