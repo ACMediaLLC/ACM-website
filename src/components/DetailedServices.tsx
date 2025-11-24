@@ -14,9 +14,10 @@ const detailedServices = [
     recommended: true,
     forWhen: 'when you need an embedded communications leader on your team',
     deliverables: [
-      'Strategic planning and leadership',
+      'Executive-level strategy and leadership',
       'Team management and coaching',
-      'Campaign development and oversight',
+      'Ongoing content, messaging, and campaign execution',
+      'Consistency, continuity, and measurable results'
       'Executive counsel and advisory support'
     ],
     bestFor: 'Organizations who need ongoing, high-touch support and executive-level thinking'
@@ -24,12 +25,14 @@ const detailedServices = [
   {
     title: 'Strategy Development',
     recommended: false,
-    forWhen: 'when you have a clear project or campaign that needs a plan',
+    forWhen: 'when you need expert guidance to develop a clear, actionable roadmap',
     deliverables: [
-      'Brand positioning and messaging frameworks',
-      'Campaign blueprints and content strategies',
-      'Audience research and segmentation',
-      'Strategic roadmaps and action plans'
+      'Marketing & Communications Strategy',
+      'Messaging & Positioning Strategy',
+      'Thought Leadership Strategy',
+      'Media Relations & Press Strategy'
+      'Internal Communications Strategy'
+      'Change Management Communications Plan'
     ],
     bestFor: 'Teams ready to move forward with clarity and direction'
   },
