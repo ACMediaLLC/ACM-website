@@ -22,7 +22,7 @@ const services = [
   {
     icon: Zap,
     title: 'VIP Strategy Days',
-    description: 'One intensive day together to solve a challenge, map a campaign, or workshop a big idea. You walk away with clarity and a plan.',
+    description: 'A full or half day of deep-dive consulting to solve a Marketing & Communications challenge, map a campaign, workshop a big idea, or engage in messaging training. You walk away with confidence, clarity, and an actionable roadmap.',
     tagline: 'For leaders who need to move quickly and strategically.'
   },
   {
