@@ -191,13 +191,11 @@ export function HomePage() {
 
             <div className="flex justify-center">
               <div className="bg-white p-2 rounded-lg shadow-md">
-                <div className="relative w-full max-w-md lg:max-w-lg aspect-[4/3] overflow-hidden rounded-md">
-                  <img
-                    src="/Favorite 1.jpg"
-                    alt="AC Media Communications Strategy"
-                    className="absolute inset-0 h-full w-full object-cover object-[55%_center]"
-                  />
-                </div>
+                <img
+                  src="/Favorite 1.jpg"
+                  alt="AC Media Communications Strategy"
+                  className="w-full max-w-md lg:max-w-lg object-cover rounded-md object-[55%_center]"
+                />
               </div>
             </div>
           </div>
