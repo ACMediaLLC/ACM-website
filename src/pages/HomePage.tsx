@@ -192,7 +192,7 @@ export function HomePage() {
             <div className="flex justify-center">
               <div className="bg-white p-2 rounded-lg shadow-md">
                 <img
-                  src="/Favorite 1.jpg"
+                  src="/Favorite 1.webp"
                   alt="AC Media Communications Strategy"
                   className="w-full max-w-md lg:max-w-lg object-cover rounded-md object-[55%_center]"
                 />
