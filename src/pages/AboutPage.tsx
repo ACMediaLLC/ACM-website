@@ -58,7 +58,7 @@ export function AboutPage() {
             <div className="flex items-center justify-center">
               <div className="relative w-full max-w-md mx-auto">
                 <picture className="block">
-                  <source srcSet="/Favorite1.webp" type="image/webp" />
+                  <source srcSet="Favorite1.webp" type="image/webp" />
                   <img
                     src="/Favorite 1.jpg"
                     alt="Andrea Carter, Fractional Chief Communications Officer"
