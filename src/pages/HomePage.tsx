@@ -13,7 +13,7 @@ const featuredServices = [
   {
     icon: Lightbulb,
     title: 'Strategy Development',
-    description: 'Brand positioning, campaign blueprints, and content frameworks',
+    description: 'Custom communications, messaging, and thought leadership strategies',
     link: '/services'
   },
   {
