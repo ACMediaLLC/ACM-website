@@ -56,21 +56,21 @@ export function AboutPage() {
 
           <div className="grid md:grid-cols-2 gap-12 mb-12 items-center">
             <div className="flex items-center justify-center">
-              <div className="relative mx-auto">
-                <picture>
+              <div className="relative w-full max-w-md mx-auto">
+                <picture className="block">
                   <source srcSet="/Favorite-1.webp" type="image/webp" />
                   <img
                     src="/Favorite 1.jpg"
                     alt="Andrea Carter, Fractional Chief Communications Officer"
-                    className="rounded-2xl shadow-2xl border-4 border-brick-red w-full max-w-md object-cover aspect-square hover:shadow-brick-red/30 transition-all duration-300"
+                    className="rounded-2xl shadow-2xl border-4 border-brick-red w-full object-cover aspect-square hover:shadow-brick-red/30 transition-all duration-300 mx-auto"
                     width="448"
                     height="448"
                     loading="eager"
                     fetchPriority="high"
                   />
                 </picture>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-brick-red/10 rounded-full -z-10"></div>
-                <div className="absolute -top-4 -left-4 w-32 h-32 bg-seashell rounded-full -z-10"></div>
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 translate-x-12 w-24 h-24 bg-brick-red/10 rounded-full -z-10"></div>
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 -translate-x-12 w-32 h-32 bg-seashell rounded-full -z-10"></div>
               </div>
             </div>
 
@@ -159,20 +159,20 @@ export function AboutPage() {
                 </p>
               </div>
               <div className="order-1 md:order-2 flex items-center justify-center">
-                <div className="relative mx-auto">
-                  <picture>
+                <div className="relative w-full max-w-sm mx-auto">
+                  <picture className="block">
                     <source srcSet="/Favorite-2.webp" type="image/webp" />
                     <img
                       src="/Favorite 2.jpg"
                       alt="Andrea Carter, Strategic Communications Expert"
-                      className="rounded-lg shadow-xl border-2 border-brick-red/30 w-full max-w-sm object-cover hover:scale-105 transition-transform duration-300"
+                      className="rounded-lg shadow-xl border-2 border-brick-red/30 w-full object-cover hover:scale-105 transition-transform duration-300 mx-auto"
                       width="384"
                       height="512"
                       loading="eager"
                       fetchPriority="high"
                     />
                   </picture>
-                  <div className="absolute -bottom-3 -left-3 w-20 h-20 bg-brick-red/20 rounded-lg -z-10"></div>
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 -translate-x-8 w-20 h-20 bg-brick-red/20 rounded-lg -z-10"></div>
                 </div>
               </div>
             </div>

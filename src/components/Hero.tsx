@@ -62,12 +62,14 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="hidden lg:block">
-          <img
-            src="/Favorite 1.jpg"
-            alt="AC Media Communications Strategy"
-            className="rounded-lg shadow-2xl w-full h-auto object-cover"
-          />
+        <div className="hidden lg:flex lg:items-center lg:justify-center">
+          <div className="w-full max-w-lg mx-auto">
+            <img
+              src="/Favorite 1.jpg"
+              alt="AC Media Communications Strategy"
+              className="rounded-lg shadow-2xl w-full h-auto object-cover"
+            />
+          </div>
         </div>
       </div>
       </div>
