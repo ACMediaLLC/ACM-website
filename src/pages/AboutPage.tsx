@@ -54,16 +54,16 @@ export function AboutPage() {
             </p>
           </div>
 
-        <div className="flex justify-center">
-  <div className="bg-white p-2 rounded-lg shadow-md">
-    <img
-      src="/Favorite 1.webp"
-      alt="AC Media Communications Strategy"
-      className="w-full max-w-md lg:max-w-lg object-cover rounded-md object-[55%_center]"
-    />
-  </div>
-</div>
-
+          <div className="grid md:grid-cols-2 gap-12 mb-12 items-center">
+            <div className="flex justify-center">
+              <div className="bg-white p-2 rounded-lg shadow-md">
+                <img
+                  src="/Favorite 1.webp"
+                  alt="AC Media Communications Strategy"
+                  className="w-full max-w-md lg:max-w-lg object-cover rounded-md object-[55%_center]"
+                />
+              </div>
+            </div>
 
             <div className="bg-seashell p-8 rounded-lg border-2 border-brick-red">
               <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-6 text-center">
