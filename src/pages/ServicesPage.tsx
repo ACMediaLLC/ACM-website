@@ -54,11 +54,11 @@ const detailedServices = [
     recommended: true,
     forWhen: 'when you need an embedded communications leader on your team',
     deliverables: [
-      'Executive-level strategy and leadership'
-'Team management and coaching'
-'Ongoing content, messaging, and campaign execution'
-'Consistency, continuity, and measurable results'
-'Executive counsel and advisory support'
+      'Executive-level strategy and leadership',
+      'Team management and coaching',
+      'Ongoing content, messaging, and campaign execution',
+      'Consistency, continuity, and measurable results',
+      'Executive counsel and advisory support'
     ],
     bestFor: 'Organizations who need ongoing, high-touch support and executive-level thinking'
   },
