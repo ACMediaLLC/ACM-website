@@ -170,7 +170,7 @@ export function HomePage() {
     <div>
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-brick-red">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-center justify-items-center mb-12">
             <div className="text-center">
               <h1 className="font-roboto-condensed font-bold text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
                 Get a Chief Communications Officer—
