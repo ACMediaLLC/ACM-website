@@ -178,7 +178,7 @@ export function HomePage() {
             <div className="text-center">
               <h1 className="font-roboto-condensed font-bold text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
                 Get a Chief Communications Officer—
-                <span className="text-seashell"> Without the $200K Price Tag</span>
+                <span className="text-seashell">Without the $200K Price Tag</span>
               </h1>
 
               <p className="font-roboto text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
