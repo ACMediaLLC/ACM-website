@@ -194,7 +194,7 @@ export function HomePage() {
                 <img
                   src="/Favorite 1.jpg"
                   alt="AC Media Communications Strategy"
-                  className="w-full max-w-md lg:max-w-lg object-cover rounded-md object-[55%_center]"
+                  className="w-full max-w-md lg:max-w-lg object-cover rounded-md object-[90%_center]"
                 />
               </div>
             </div>
