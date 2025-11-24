@@ -35,7 +35,6 @@ const featuredTestimonials = [
   },
   {
     quote: "I knew we would be in great hands—and she exceeded even those high expectations.",
-    author: "National Nonprofit",
     role: "Nonprofit CEO"
   },
   {
