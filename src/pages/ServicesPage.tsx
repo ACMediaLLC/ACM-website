@@ -18,7 +18,7 @@ const services = [
   {
     icon: CheckSquare,
     title: 'Project-Based Support',
-    description: 'Website copy, launch campaigns, rebrand rollouts, content libraries—I jump in for high-impact projects that need expert execution.',
+    description: 'From annual reports to press pitches and so much more, get execution done quickly.',
     tagline: 'For teams that need to get something done, fast.'
   },
   {
