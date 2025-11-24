@@ -70,8 +70,8 @@ const detailedServices = [
       'Marketing & Communications Strategy',
       'Messaging & Positioning Strategy',
       'Thought Leadership Strategy',
-      'Media Relations & Press Strategy'
-      'Internal Communications Strategy'
+      'Media Relations & Press Strategy',
+      'Internal Communications Strategy',
       'Change Management Communications Plan'
     ],
     bestFor: 'Teams ready to move forward with clarity and direction'
@@ -84,8 +84,8 @@ const detailedServices = [
       'Annual Report Writing & Design',
       'Batch Content Writing (Blogs, Newsletters, OpEds, etc.)',
       'Press Release Writing & Distribution',
-      'Media Pitching'
-      'Sales/Fundraising Enablement Materials (One-Pagers, Pitch Decks, etc.)'
+      'Media Pitching',
+      'Sales/Fundraising Enablement Materials (One-Pagers, Pitch Decks, etc.)',
       'Conference Speaker Opportunities & Proposal Submissions'
     ],
     bestFor: 'Organizations with a defined project that needs high-quality execution'
@@ -101,6 +101,29 @@ const detailedServices = [
       'Actionable roadmap and next steps'
     ],
     bestFor: 'Organizations that need strategic clarity or traning–fast'
+  },
+  {
+    title: 'Advisory & Coaching for MarCom Staff',
+    recommended: false,
+    forWhen: 'when your team needs a compass — not a boss',
+    deliverables: [
+      'Leadership coaching focused on strategy and execution',
+      'Monthly advisory calls + email support'
+    ],
+    bestFor: 'Organizations investing in their MarCom team\'s development and needing senior-level guidance'
+  },
+  {
+    title: 'DIY Strategies & Resources',
+    recommended: false,
+    forWhen: 'when you\'d rather just steal my playbook and run with it',
+    deliverables: [
+      '5 Power Moves to Make Your Brand Unforgettable (Free)',
+      'Why FAQs are Your Secret Weapon for Internal Change Management Communications (Free)',
+      'The CEO\'s MarCom Playbook: A Quick-and-Dirty Guide for Marketing & Communications as a Strategic Powerhouse for Growth',
+      'Overloaded Messaging: The Clarity to Impact Framework',
+      'Internal Change Management Communication Toolkit'
+    ],
+    bestFor: 'Founders, CEOs, Executive Directors, or MarCom pros who want to implement proven MarCom frameworks at their own pace'
   }
 ];
 
