@@ -54,26 +54,16 @@ export function AboutPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-12 items-center">
-            <div className="flex items-center justify-center">
-              <div className="relative w-full max-w-md mx-auto">
-                <picture className="block">
-                  <source srcSet="Favorite 1.webp" type="image/webp" />
-                  <img
-  src="/Favorite 1.webp"
-  alt="Andrea Carter, Fractional Chief Communications Officer"
-  className="rounded-2xl shadow-2xl border-4 border-brick-red w-full object-cover object-[55%_center] aspect-square hover:shadow-brick-red/30 transition-all duration-300 mx-auto"
-  width="448"
-  height="448"
-  loading="eager"
-  fetchPriority="high"
-/>
+        <div className="flex justify-center">
+  <div className="bg-white p-2 rounded-lg shadow-md">
+    <img
+      src="/Favorite 1.webp"
+      alt="AC Media Communications Strategy"
+      className="w-full max-w-md lg:max-w-lg object-cover rounded-md object-[55%_center]"
+    />
+  </div>
+</div>
 
-                </picture>
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 translate-x-12 w-24 h-24 bg-brick-red/10 rounded-full -z-10"></div>
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 -translate-x-12 w-32 h-32 bg-seashell rounded-full -z-10"></div>
-              </div>
-            </div>
 
             <div className="bg-seashell p-8 rounded-lg border-2 border-brick-red">
               <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-6 text-center">
