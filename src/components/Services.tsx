@@ -23,13 +23,13 @@ const services = [
     icon: Zap,
     title: 'VIP Strategy Days',
     description: 'A full or half day of deep-dive consulting to solve a Marketing & Communications challenge, map a campaign, workshop a big idea, or engage in messaging training. You walk away with confidence, clarity, and an actionable roadmap.',
-    tagline: 'For leaders who need to move quickly and strategically.'
+    tagline: 'For organizations that need to move quickly and strategically.'
   },
   {
     icon: Users,
     title: 'Advisory & Coaching',
     description: 'I coach communications professionals, advise executive teams, and serve as a strategic thought partner for leaders navigating growth.',
-    tagline: 'For professionals who want a trusted expert in their corner.'
+    tagline: 'For organizations that want a trusted expert in their corner.'
   },
   {
     icon: Download,
