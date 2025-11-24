@@ -186,9 +186,7 @@ export function HomePage() {
               </p>
 
               <div className="bg-white border-2 border-white rounded-lg p-6 shadow-lg">
-                <p className="font-roboto-condensed font-semibold text-lg text-brick-red mb-2">
-                  Perfect for:
-                </p>
+                
                 <p className="font-roboto text-text-primary">
                   Perfect for small, midsize, and growing organizations ready to move faster, scale smarter, and look like the pros.
                 </p>
