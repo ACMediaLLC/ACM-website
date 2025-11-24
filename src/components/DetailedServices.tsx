@@ -41,10 +41,12 @@ const detailedServices = [
     recommended: false,
     forWhen: 'when you need expert execution on a specific initiative',
     deliverables: [
-      'Website copy and content development',
-      'Campaign launches and rollouts',
-      'Rebrand and positioning projects',
-      'Content libraries and resource creation'
+      'Annual Report Writing & Design',
+      'Batch Content Writing (Blogs, Newsletters, OpEds, etc.)',
+      'Press Release Writing & Distribution',
+      'Media Pitching'
+      'Sales/Fundraising Enablement Materials (One-Pagers, Pitch Decks, etc.)'
+      'Conference Speaker Opportunities & Proposal Submissions'
     ],
     bestFor: 'Organizations with a defined project that needs high-quality execution'
   },
@@ -53,12 +55,12 @@ const detailedServices = [
     recommended: false,
     forWhen: 'when you need intensive focus to solve a specific challenge',
     deliverables: [
-      'Full-day strategic workshop',
-      'Campaign mapping and planning',
+      'Full or half-day strategic planning',
       'Challenge-solving sessions',
+      'Messaging training for staff and Boards',
       'Actionable roadmap and next steps'
     ],
-    bestFor: 'Leaders who need quick wins and strategic clarity'
+    bestFor:'Organizations that need strategic clarity or training–<em>fast</em>'
   }
 ];
 
