@@ -55,8 +55,8 @@ export function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 mb-12 items-center">
-            <div className="flex justify-center">
-              <div className="relative">
+            <div className="flex items-center justify-center">
+              <div className="relative mx-auto">
                 <picture>
                   <source srcSet="/Favorite-1.webp" type="image/webp" />
                   <img
@@ -158,8 +158,8 @@ export function AboutPage() {
                   Whether you need interim leadership during a transition, fractional support to scale your team, or strategic guidance on a specific initiative, I'm here to help you move forward with confidence.
                 </p>
               </div>
-              <div className="order-1 md:order-2 flex justify-center">
-                <div className="relative">
+              <div className="order-1 md:order-2 flex items-center justify-center">
+                <div className="relative mx-auto">
                   <picture>
                     <source srcSet="/Favorite-2.webp" type="image/webp" />
                     <img
