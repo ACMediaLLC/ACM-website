@@ -118,7 +118,7 @@ export function ServicesPage() {
               Tailored to Your Needs and Budget
             </h2>
             <p className="font-roboto text-xl text-neutral max-w-3xl mx-auto">
-              Whether you need ongoing leadership or project-based support, I offer flexible solutions that deliver executive-level results
+              Whether you need a seasoned communications executive embedded into your organization, a short-term strategic boost, or a do-it-yourself framework you can steal from my arsenal, AC Media has you covered.
             </p>
           </div>
 
