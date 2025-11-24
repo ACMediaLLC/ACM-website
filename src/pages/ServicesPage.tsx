@@ -24,14 +24,14 @@ const services = [
   {
     icon: Zap,
     title: 'VIP Strategy Days',
-    description: 'One intensive day together to solve a challenge, map a campaign, or workshop a big idea. You walk away with clarity and a plan.',
-    tagline: 'For leaders who need to move quickly and strategically.'
+    description: 'A full or half day of deep-dive consulting to solve a Marketing & Communications challenge, map a campaign, workshop a big idea, or engage in messaging training. You walk away with confidence, clarity, and an actionable roadmap.',
+    tagline: 'For organizations that need to move quickly and strategically.'
   },
   {
     icon: Users,
     title: 'Advisory & Coaching',
     description: 'I coach communications professionals, advise executive teams, and serve as a strategic thought partner for leaders navigating growth.',
-    tagline: 'For professionals who want a trusted expert in their corner.'
+    tagline: 'For organizations that want a trusted expert in their corner.'
   },
   {
     icon: Download,
@@ -54,10 +54,11 @@ const detailedServices = [
     recommended: true,
     forWhen: 'when you need an embedded communications leader on your team',
     deliverables: [
-      'Strategic planning and leadership',
-      'Team management and coaching',
-      'Campaign development and oversight',
-      'Executive counsel and advisory support'
+      'Executive-level strategy and leadership
+'Team management and coaching'
+'Ongoing content, messaging, and campaign execution'
+'Consistency, continuity, and measurable results'
+'Executive counsel and advisory support'
     ],
     bestFor: 'Organizations who need ongoing, high-touch support and executive-level thinking'
   },
