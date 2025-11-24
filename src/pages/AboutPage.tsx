@@ -60,14 +60,15 @@ export function AboutPage() {
                 <picture className="block">
                   <source srcSet="Favorite1.webp" type="image/webp" />
                   <img
-                    src="/Favorite 1.webp"
-                    alt="Andrea Carter, Fractional Chief Communications Officer"
-                    className="rounded-2xl shadow-2xl border-4 border-brick-red w-full object-cover aspect-square hover:shadow-brick-red/30 transition-all duration-300 mx-auto"
-                    width="448"
-                    height="448"
-                    loading="eager"
-                    fetchPriority="high"
-                  />
+  src="/Favorite 1.webp"
+  alt="Andrea Carter, Fractional Chief Communications Officer"
+  className="rounded-2xl shadow-2xl border-4 border-brick-red w-full object-cover object-[55%_center] aspect-square hover:shadow-brick-red/30 transition-all duration-300 mx-auto"
+  width="448"
+  height="448"
+  loading="eager"
+  fetchPriority="high"
+/>
+
                 </picture>
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 translate-x-12 w-24 h-24 bg-brick-red/10 rounded-full -z-10"></div>
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 -translate-x-12 w-32 h-32 bg-seashell rounded-full -z-10"></div>
