@@ -17,13 +17,13 @@ const services = [
     icon: CheckSquare,
     title: 'Project-Based Support',
     description: 'Website copy, launch campaigns, rebrand rollouts, content libraries—I jump in for high-impact projects that need expert execution.',
-    tagline: 'For teams that need to get something done, fast.'
+    tagline: 'For teams that need to get something done, <em>fast</em>.'
   },
   {
     icon: Zap,
     title: 'VIP Strategy Days',
     description: 'A full or half day of deep-dive consulting to solve a Marketing & Communications challenge, map a campaign, workshop a big idea, or engage in messaging training. You walk away with confidence, clarity, and an actionable roadmap.',
-    tagline: 'For organizations that need to move quickly and strategically.'
+    tagline: 'For organizations that need to move <em>quickly</em> and strategically.'
   },
   {
     icon: Users,
@@ -71,9 +71,7 @@ export function Services() {
               <p className="font-roboto text-neutral mb-4 leading-relaxed">
                 {service.description}
               </p>
-              <p className="font-roboto italic text-onyx text-sm">
-                {service.tagline}
-              </p>
+              <p className="font-roboto italic text-onyx text-sm" dangerouslySetInnerHTML={{ __html: service.tagline }} />
             </div>
           ))}
         </div>
