@@ -26,24 +26,21 @@ const featuredServices = [
 
 const featuredTestimonials = [
   {
-    quote: "Andrea brought executive-level thinking to our communications strategy without the full-time price tag.",
-    author: "Client Partner",
-    role: "Executive Director"
+    quote: "Andrea has been an incredible partner in helping us bring our story to life. She guided the creation of our first-ever Annual Report with such creativity, clarity, and care, capturing the heart of our mission while elevating the way we communicate our impact.",
+    role: "Nonprofit CEO"
   },
   {
-    quote: "Finally, someone who understands both strategy and execution. AC Media has been a game-changer for our organization.",
-    author: "Nonprofit Leader",
-    role: "CEO"
+    quote: "Andrea developed a thoughtful suite of marketing and communications resources that have strengthened our brand and built internal confidence in how we share our work.",
+    role: "Non profit CEO"
   },
   {
-    quote: "Andrea is a true strategic partner who brings both creative thinking and operational excellence to every project.",
+    quote: "I knew we would be in great hands—and she exceeded even those high expectations.",
     author: "National Nonprofit",
-    role: "CEO"
+    role: "Nonprofit CEO"
   },
   {
-    quote: "She didn't just execute—she led, advised, and elevated our entire approach to communications.",
-    author: "Education Nonprofit",
-    role: "Executive Director"
+    quote: "If anyone needs any guidance in the world of marketing and communication strategy, definitely check out AC Media. She is SO incredibly talented and an absolute pleasure to work with.",
+    role: "Designer & Art Director"
   }
 ];
 
