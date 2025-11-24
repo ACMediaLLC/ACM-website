@@ -182,24 +182,25 @@ export function HomePage() {
               </p>
 
               <div className="bg-white border-2 border-white rounded-lg p-6 shadow-lg">
-                
+
                 <p className="font-roboto text-text-primary">
                   Perfect for small, midsize, and growing organizations ready to move faster, scale smarter, and look like the pros.
                 </p>
               </div>
             </div>
 
-           <div className="flex justify-center">
-  <div className="bg-white p-2 rounded-lg shadow-md">
-    <img
-      src="/Favorite 1.jpg"
-      alt="AC Media Communications Strategy"
-      className="w-full max-w-md lg:max-w-lg object-cover rounded-md"
-    />
-  </div>
-</div>
-
-
+            <div className="flex justify-center">
+              <div className="bg-white p-2 rounded-lg shadow-md">
+                <div className="relative w-full max-w-md lg:max-w-lg aspect-[4/3] overflow-hidden rounded-md">
+                  <img
+                    src="/Favorite 1.jpg"
+                    alt="AC Media Communications Strategy"
+                    className="absolute inset-0 h-full w-full object-cover object-[55%_center]"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="text-center">
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
