@@ -195,7 +195,7 @@ export function HomePage() {
               </div>
             </div>
 
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center">
               <div className="bg-white p-2 rounded-lg shadow-md">
                 <img
                   src="/Favorite 1.jpg"
