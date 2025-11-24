@@ -17,7 +17,7 @@ export function LogoCarousel() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <p className="font-roboto text-sm uppercase tracking-wider text-neutral font-semibold mb-2">
-            Trusted By
+            Previous Leadership & Consulting Roles
           </p>
         
         </div>
