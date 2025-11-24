@@ -181,7 +181,7 @@ export function HomePage() {
                 <span className="text-seashell">Without the $200K Price Tag</span>
               </h1>
 
-              <p className="font-roboto text-base md:text-lg text-white/90 mb-8 leading-normal">
+              <p className="font-roboto text-sm md:text-base text-white/90 mb-8 leading-relaxed">
                 AC Media helps organizations communicate with clarity, confidence, and consistency without the full-time overhead of an in-house communications executive.
               </p>
 
