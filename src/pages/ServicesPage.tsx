@@ -65,12 +65,14 @@ const detailedServices = [
   {
     title: 'Strategy Development',
     recommended: false,
-    forWhen: 'when you have a clear project or campaign that needs a plan',
+    forWhen: 'when you need expert guidance to develop a clear, actionable roadmap',
     deliverables: [
-      'Brand positioning and messaging frameworks',
-      'Campaign blueprints and content strategies',
-      'Audience research and segmentation',
-      'Strategic roadmaps and action plans'
+      'Marketing & Communications Strategy',
+      'Messaging & Positioning Strategy',
+      'Thought Leadership Strategy',
+      'Media Relations & Press Strategy'
+      'Internal Communications Strategy'
+      'Change Management Communications Plan'
     ],
     bestFor: 'Teams ready to move forward with clarity and direction'
   },
@@ -79,10 +81,12 @@ const detailedServices = [
     recommended: false,
     forWhen: 'when you need expert execution on a specific initiative',
     deliverables: [
-      'Website copy and content development',
-      'Campaign launches and rollouts',
-      'Rebrand and positioning projects',
-      'Content libraries and resource creation'
+      'Annual Report Writing & Design',
+      'Batch Content Writing (Blogs, Newsletters, OpEds, etc.)',
+      'Press Release Writing & Distribution',
+      'Media Pitching'
+      'Sales/Fundraising Enablement Materials (One-Pagers, Pitch Decks, etc.)'
+      'Conference Speaker Opportunities & Proposal Submissions'
     ],
     bestFor: 'Organizations with a defined project that needs high-quality execution'
   },
@@ -91,12 +95,12 @@ const detailedServices = [
     recommended: false,
     forWhen: 'when you need intensive focus to solve a specific challenge',
     deliverables: [
-      'Full-day strategic workshop',
-      'Campaign mapping and planning',
+      'Full or half-day strategic planning',
       'Challenge-solving sessions',
+      'Messaging training for staff and Boards',
       'Actionable roadmap and next steps'
     ],
-    bestFor: 'Leaders who need quick wins and strategic clarity'
+    bestFor: 'Organizations that need strategic clarity or traning–fast'
   }
 ];
 
