@@ -79,14 +79,7 @@ export function Footer() {
                   to="/about"
                   className="font-roboto text-seashell/80 hover:text-brick-red transition-colors"
                 >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/testimonials"
-                  className="font-roboto text-seashell/80 hover:text-brick-red transition-colors"
-                >
+                  
                   Testimonials
                 </Link>
               </li>
