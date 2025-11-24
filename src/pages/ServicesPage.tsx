@@ -6,7 +6,7 @@ const services = [
   {
     icon: Handshake,
     title: 'Retainer-Based Partnerships',
-    description: 'Ongoing access to executive-level strategy, leadership, and high-touch execution. Think of it as having a fractional CCO on your team.',
+    description: 'Ongoing access to executive-level strategy, leadership, and high-touch execution. Think of it as having a CCO on your team, but at a fraction of the cost.',
     tagline: 'For organizations who need consistent, embedded support.'
   },
   {
