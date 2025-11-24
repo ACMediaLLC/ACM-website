@@ -43,7 +43,7 @@ export function Footer() {
               Fractional Chief Communications Officer services for organizations that need executive-level strategy and execution—without the full-time overhead.
             </p>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/carterandrea/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-brick-red hover:text-seashell transition-colors"
