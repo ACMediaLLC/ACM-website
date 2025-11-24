@@ -111,10 +111,10 @@ export function Footer() {
 
           <div className="text-center md:text-left">
             <h3 className="font-roboto-condensed font-bold text-xl text-white mb-6">
-              Stay Connected
+              Subscribe
             </h3>
             <p className="font-roboto text-seashell/80 mb-4">
-              Get insights, resources, and updates on strategic communications delivered to your inbox.
+              Get free resources and insights on strategic communications delivered to your inbox every Wednesday.
             </p>
 
             {isSuccess && (
