@@ -71,7 +71,7 @@ export function Footer() {
                   to="/partner"
                   className="font-roboto text-seashell/80 hover:text-brick-red transition-colors"
                 >
-                  Partner With Us
+                  Work
                 </Link>
               </li>
               <li>
