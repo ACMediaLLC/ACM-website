@@ -18,7 +18,7 @@ const services = [
   {
     icon: CheckSquare,
     title: 'Project-Based Support',
-    description: 'From annual reports to press pitches and so much more, get execution done quickly.',
+    description: 'From annual reports to press pitches and so much more, get execution done <em>quickly</em>.',
     tagline: 'For teams that need to get something done, fast.'
   },
   {
@@ -100,7 +100,7 @@ const detailedServices = [
       'Messaging training for staff and Boards',
       'Actionable roadmap and next steps'
     ],
-    bestFor: 'Organizations that need strategic clarity or traning–fast'
+    bestFor: 'Organizations that need strategic clarity or traning–<em>fast</em>'
   },
   {
     title: 'Advisory & Coaching for MarCom Staff',
@@ -172,9 +172,7 @@ export function ServicesPage() {
                 <h4 className="font-roboto-condensed font-bold text-xl text-brick-red mb-3">
                   {service.title}
                 </h4>
-                <p className="font-roboto text-neutral mb-4 leading-relaxed">
-                  {service.description}
-                </p>
+                <p className="font-roboto text-neutral mb-4 leading-relaxed" dangerouslySetInnerHTML={{ __html: service.description }} />
                 <p className="font-roboto italic text-onyx text-sm">
                   {service.tagline}
                 </p>
@@ -253,9 +251,7 @@ export function ServicesPage() {
                   <p className="font-roboto-condensed font-semibold text-text-primary mb-2">
                     Best for:
                   </p>
-                  <p className="font-roboto text-neutral">
-                    {service.bestFor}
-                  </p>
+                  <p className="font-roboto text-neutral" dangerouslySetInnerHTML={{ __html: service.bestFor }} />
                 </div>
               </div>
             ))}
