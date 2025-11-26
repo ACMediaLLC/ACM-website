@@ -99,9 +99,6 @@ function TestimonialsCarousel() {
                       "{testimonial.quote}"
                     </p>
                     <div className="text-center">
-                      <p className="font-roboto-condensed font-bold text-text-primary">
-                        {testimonial.author}
-                      </p>
                       <p className="font-roboto text-sm text-neutral">
                         {testimonial.role}
                       </p>
