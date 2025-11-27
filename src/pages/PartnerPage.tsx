@@ -57,23 +57,23 @@ export function PartnerPage() {
           <div className="text-center mb-16">
             <div className="text-center max-w-3xl mx-auto">
   
-  {/* Top red subheading */}
-  <p className="font-roboto-condensed text-2xl text-brick-red mb-4">
-    Whether
-  </p>
+ <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-6">
+  How We Can Work Together
+</h1>
 
-  {/* Bullet list */}
-  <ul className="space-y-2 text-lg text-onyx mb-6">
-    <li>Your marketing & communications team is stretched too thin</li>
-    <li>You need strategic thinking, not just task execution</li>
-    <li>Your growth demands communications leadership, but not a full-time hire</li>
-    <li>You want someone who can lead, not just follow directions</li>
-  </ul>
+<p className="font-roboto text-xl text-primary max-w-3xl mx-auto">
+  Whether
+</p>
 
-  {/* Bottom red subheading */}
-  <p className="font-roboto-condensed text-2xl text-brick-red">
-    AC Media partners with organizations to help them level up
-  </p>
+<p>• Your marketing & communications team is stretched too thin</p>
+<p>• You need strategic thinking, not just task execution</p>
+<p>• Your growth demands communications leadership, but not a full-time hire</p>
+<p>• You want someone who can lead, not just follow directions</p>
+
+<p className="font-roboto text-xl text-primary max-w-3xl mx-auto">
+  AC Media partners with organizations to help them level up
+</p>
+
 
 </div>
 
