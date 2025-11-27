@@ -97,7 +97,7 @@ export function AboutPage() {
             <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-6 text-center">
               My Philosophy
             </h3>
-            <p className="font-roboto-condensed font-semibold text-2xl text-primary">
+            <p className="font-roboto-condensed font-semibold text-2xl mb-4 text-primary">
               Strong communications aren’t built on chance; they’re built on leadership.
             </p>
             <p className="font-roboto text-lg text-neutral leading-relaxed mb-4">
