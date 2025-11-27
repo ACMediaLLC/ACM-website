@@ -50,7 +50,7 @@ export function About() {
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div className="text-center">
             <p className="font-roboto text-lg text-neutral leading-relaxed mb-6">
-              I've spent two decades helping organizations clarify their message, strengthen their brand, and execute communications strategies that actually move the needle.
+              Award-winning marketing and communications executive with 20 years of experience boosting revenue, recognition, and relationships for organizations. Proven success building and leading thriving Marketing & Communications departments while advising CEOs and Boards on executive communications.
             </p>
             <p className="font-roboto text-lg text-neutral leading-relaxed mb-6">
               From national nonprofits to emerging social ventures, I've been the strategic partner leaders turn to when they need someone who can think like a CCO and execute like a pro—without the full-time price tag.
