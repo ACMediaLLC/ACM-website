@@ -5,19 +5,23 @@ import { Award, TrendingUp, Users, Heart, Calendar, ArrowRight } from 'lucide-re
 const highlights = [
   {
     icon: Award,
-    text: '<strong>Built and led high-performing marketing and communications teams</strong> that drove engagement, strengthened stakeholder confidence, and broadened organizational influence.'
+    boldText: 'Built and led high-performing marketing and communications teams',
+    regularText: ' that drove engagement, strengthened stakeholder confidence, and broadened organizational influence.'
   },
   {
     icon: TrendingUp,
-    text: '<strong>Spearheaded a full-scale national rebrand</strong> as Chief External Affairs Officer at Bottom Line, leading a new brand identity, new website, and unified messaging across multiple regions while expanding the organization’s thought leadership footprint through national media and national conference stages. '
+    boldText: 'Spearheaded a full-scale national rebrand',
+    regularText: ' as Chief External Affairs Officer at Bottom Line, leading a new brand identity, new website, and unified messaging across multiple regions while expanding the organization\'s thought leadership footprint through national media and national conference stages.'
   },
   {
     icon: Users,
-    text: '<strong>Oversaw messaging, media relations, and crisis response</strong> for 29 sites nationwide at City Year, advising C-suite leaders on reputation, internal communications, and complex organizational change.'
+    boldText: 'Oversaw messaging, media relations, and crisis response',
+    regularText: ' for 29 sites nationwide at City Year, advising C-suite leaders on reputation, internal communications, and complex organizational change.'
   },
   {
     icon: Heart,
-    text: '<strong>Designed and executed strategic advocacy campaigns</strong> that independently secured over $1M in government funding in a single year.'
+    boldText: 'Designed and executed strategic advocacy campaigns',
+    regularText: ' that independently secured over $1M in government funding in a single year.'
   }
 ];
 
@@ -74,7 +78,7 @@ export function AboutPage() {
                   <div key={index} className="flex flex-col items-center text-center gap-4">
                     <highlight.icon className="text-brick-red flex-shrink-0" size={24} />
                     <p className="font-roboto text-neutral leading-relaxed">
-                      {highlight.text}
+                      <strong>{highlight.boldText}</strong>{highlight.regularText}
                     </p>
                   </div>
                 ))}
