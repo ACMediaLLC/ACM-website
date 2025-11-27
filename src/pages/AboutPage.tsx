@@ -28,15 +28,15 @@ const highlights = [
 const outcomes = [
   {
     title: 'Revenue',
-    description: 'Strategic campaigns and positioning that drive fundraising, sales, and growth'
+    description: 'Strategic campaigns and positioning that help drive fundraising, sales, and growth'
   },
   {
     title: 'Recognition',
-    description: 'Thought leadership, media placement, and brand visibility that elevate your organization'
+    description: 'Brand visibility and thought leadership that elevate your organization’s identity and authority'
   },
   {
     title: 'Relationships',
-    description: 'Messaging and engagement strategies that build trust, loyalty, and lasting connections'
+    description: 'Messaging and engagement strategies that build trust, credibility, and lasting connections'
   }
 ];
 
