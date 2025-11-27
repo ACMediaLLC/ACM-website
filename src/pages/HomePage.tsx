@@ -239,7 +239,7 @@ export function HomePage() {
             <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-4">
               Flexible Services for Every Need
             </h2>
-            <p className="font-roboto text-xl text-primary max-w-3xl mx-auto">
+            <p className="font-roboto-condensed font-semibold text-center text-2xl mb-4 text-primary">
               From ongoing partnerships to one-time projects, get the support you need
             </p>
           </div>
