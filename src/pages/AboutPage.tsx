@@ -97,12 +97,14 @@ export function AboutPage() {
             <h3 className="font-roboto-condensed font-bold text-2xl text-primary mb-4">
               My Philosophy
             </h3>
-            <p className="font-roboto text-lg text-neutral leading-relaxed italic">
+            <p className="font-roboto text-lg text-neutral leading-relaxed mb-4">
               Strong communications aren’t built on chance; they’re built on leadership.
             </p>
-            <p>I’m a fierce advocate for marketing and communications as vital organizational functions that drive growth, alignment, and credibility. I help CEOs, Executive Directors, and leadership teams transform their MarCom departments into strategic engines that drive revenue, recognition, and relationships.
+            <p className="font-roboto text-lg text-neutral leading-relaxed mb-4">
+              I’m a fierce advocate for marketing and communications as vital organizational functions that drive growth, alignment, and credibility. I help CEOs, Executive Directors, and leadership teams transform their MarCom departments into strategic engines that drive revenue, recognition, and relationships.
             </p>
-            <p>My approach combines disciplined strategy with fearless creativity—and the results speak for themselves.      
+            <p className="font-roboto text-lg text-neutral leading-relaxed mb-4">
+              My approach combines disciplined strategy with fearless creativity—and the results speak for themselves.      
           </p>
           </div>
         </div>
