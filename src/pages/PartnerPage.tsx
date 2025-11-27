@@ -94,11 +94,6 @@ export function PartnerPage() {
 
               </div>
 
-
-
-            
-          </div>
-
          {/* Scroll-snap carousel */}
 <div className="-mx-4 md:mx-0 overflow-x-auto pb-6">
   <div className="flex gap-6 snap-x snap-mandatory">
