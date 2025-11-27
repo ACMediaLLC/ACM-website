@@ -64,7 +64,8 @@ Whether</p>
 <p>• You need strategic thinking, not just task execution</p>
 <p>•Your growth demands communications leadership, but not a full-time hire</p>
 <p>•You want someone who can lead, not just follow directions</p>
-<p>AC Media partners with organizations to help them level up</p>
+<p className="font-roboto text-xl text-primary max-w-3xl mx-auto">
+AC Media partners with organizations to help them level up</p> 
 
             
           </div>
