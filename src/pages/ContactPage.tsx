@@ -68,9 +68,7 @@ export function ContactPage() {
           </div>
 
           <div className="max-w-2xl mx-auto">
-            <h2 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-6 text-center">
-              Get in Touch
-            </h2>
+        
 
             {isSuccess && (
               <div className="bg-green-500/10 border-2 border-green-500 rounded-lg p-4 mb-6 flex items-center gap-3">
