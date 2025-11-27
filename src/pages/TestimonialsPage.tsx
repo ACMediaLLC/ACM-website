@@ -41,10 +41,10 @@ export function TestimonialsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-6">
-              What Clients Are Saying
+              Praise for Andrea & AC Media
             </h1>
             <p className="font-roboto text-xl text-neutral max-w-3xl mx-auto">
-              Real feedback from organizations that have partnered with AC Media
+              Endorsements from clients, colleagues, and collaborators who’ve experienced my communications leadership firsthand across organizations, campaigns, and causes.
             </p>
           </div>
 
