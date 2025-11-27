@@ -58,14 +58,21 @@ export function AboutPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-12 items-center">
-            <div className="flex justify-center">
-              <div className="bg-white p-2 rounded-lg shadow-md">
-                <img
-                  src="/Favorite 1.webp"
-                  alt="AC Media Communications Strategy"
-                  className="w-full max-w-md lg:max-w-lg object-cover rounded-md object-[55%_center]"
-                />
+          <div className="grid md:grid-cols-2 gap-12 mb-12 items-start">
+            <div className="flex flex-col gap-8">
+              <div className="flex justify-center">
+                <div className="bg-white p-2 rounded-lg shadow-md">
+                  <img
+                    src="/Favorite 1.webp"
+                    alt="AC Media Communications Strategy"
+                    className="w-full max-w-md lg:max-w-lg object-cover rounded-md object-[55%_center]"
+                  />
+                </div>
+              </div>
+              <div>
+                <p className="font-roboto text-lg text-neutral leading-relaxed">
+                  Award-winning marketing and communications executive with 20 years of experience boosting revenue, recognition, and relationships for organizations. Proven success building and leading thriving Marketing & Communications departments while advising CEOs and Boards on executive communications.
+                </p>
               </div>
             </div>
 
@@ -84,13 +91,6 @@ export function AboutPage() {
                 ))}
               </div>
             </div>
-          </div>
-
-          <div className="max-w-4xl mx-auto mb-16">
-            <p className="font-roboto text-lg text-neutral leading-relaxed mb-6">
-              Award-winning marketing and communications executive with 20 years of experience boosting revenue, recognition, and relationships for organizations. Proven success building and leading thriving Marketing & Communications departments while advising CEOs and Boards on executive communications.
-            </p>
-           
           </div>
 
           <div className="bg-brick-red/5 border-l-4 border-brick-red p-8 mb-16 text-center">
