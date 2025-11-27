@@ -90,12 +90,7 @@ export function AboutPage() {
             <p className="font-roboto text-lg text-neutral leading-relaxed mb-6">
               Award-winning marketing and communications executive with 20 years of experience boosting revenue, recognition, and relationships for organizations. Proven success building and leading thriving Marketing & Communications departments while advising CEOs and Boards on executive communications.
             </p>
-            <p className="font-roboto text-lg text-neutral leading-relaxed mb-6">
-              From national nonprofits to emerging social ventures, I've been the strategic partner leaders turn to when they need someone who can think like a CCO and execute like a pro—without the full-time price tag.
-            </p>
-            <p className="font-roboto text-lg text-neutral leading-relaxed">
-              I built AC Media to give growing organizations access to executive-level communications leadership—on their terms, within their budget.
-            </p>
+           
           </div>
 
           <div className="bg-brick-red/5 border-l-4 border-brick-red p-8 mb-16 text-center">
