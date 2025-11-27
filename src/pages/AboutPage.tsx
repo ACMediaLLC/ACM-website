@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Award, TrendingUp, Users, Heart, Calendar, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const highlights = [
   {
@@ -124,8 +125,16 @@ export function AboutPage() {
 
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               {outcomes.map((outcome, index) => (
-                <div
+                <motion.div
                   key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.2,
+                    ease: [0.25, 0.4, 0.25, 1]
+                  }}
                   className="text-center p-8 bg-white rounded-xl transition-all duration-300 ease-out transform hover:-translate-y-1.5 hover:scale-[1.01] shadow-md hover:shadow-2xl"
                   style={{
                     backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, rgba(232, 93, 111, 0.3), rgba(244, 152, 165, 0.15))',
@@ -140,7 +149,7 @@ export function AboutPage() {
                   <p className="font-roboto text-neutral leading-relaxed">
                     {outcome.description}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
 

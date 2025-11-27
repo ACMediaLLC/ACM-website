@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Handshake, Lightbulb, CheckSquare, Zap, Users, Download, ChevronDown, ChevronUp, Star, Calendar } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -158,8 +159,16 @@ export function ServicesPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.2,
+                  ease: [0.25, 0.4, 0.25, 1]
+                }}
                 className="group bg-seashell p-8 rounded-xl transition-all duration-300 ease-out transform hover:-translate-y-1.5 hover:scale-[1.01] text-center shadow-md hover:shadow-2xl"
                 style={{
                   backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, rgba(232, 93, 111, 0.3), rgba(244, 152, 165, 0.15))',
@@ -176,7 +185,7 @@ export function ServicesPage() {
                 <p className="font-roboto italic text-onyx text-sm">
                   {service.tagline}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

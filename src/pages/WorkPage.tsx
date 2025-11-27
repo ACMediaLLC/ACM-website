@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { LogoCarousel } from '../components/LogoCarousel';
 
 const caseStudies = [
@@ -172,8 +173,16 @@ export function PartnerPage() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-20">
             {caseStudies.map((study, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.2,
+                  ease: [0.25, 0.4, 0.25, 1]
+                }}
                 className="bg-seashell p-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red text-center"
               >
                 <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-3">
@@ -190,7 +199,7 @@ export function PartnerPage() {
                     {study.services}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
