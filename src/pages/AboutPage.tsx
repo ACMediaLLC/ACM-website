@@ -9,15 +9,15 @@ const highlights = [
   },
   {
     icon: TrendingUp,
-    text: 'Spearheaded a full-scale national rebrand as Chief External Affairs Officer at Bottom Line, leading a new brand identity, new website, and unified messaging across multiple regions while expanding the organization’s thought leadership footprint through national media and national conference stages. '
+    text: '<strong>Spearheaded a full-scale national rebrand</strong> as Chief External Affairs Officer at Bottom Line, leading a new brand identity, new website, and unified messaging across multiple regions while expanding the organization’s thought leadership footprint through national media and national conference stages. '
   },
   {
     icon: Users,
-    text: 'Oversaw messaging, media relations, and crisis response for 29 sites nationwide at City Year, advising C-suite leaders on reputation, internal communications, and complex organizational change.'
+    text: '<strong>Oversaw messaging, media relations, and crisis response</strong> for 29 sites nationwide at City Year, advising C-suite leaders on reputation, internal communications, and complex organizational change.'
   },
   {
     icon: Heart,
-    text: 'Designed and executed strategic advocacy campaigns that independently secured over $1M in government funding in a single year.'
+    text: '<strong>Designed and executed strategic advocacy campaigns</strong> that independently secured over $1M in government funding in a single year.'
   }
 ];
 
