@@ -99,28 +99,32 @@ export function PartnerPage() {
             
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-            {partnershipBenefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-xl transition-all duration-300 ease-out transform hover:-translate-y-1.5 hover:scale-[1.01] text-center shadow-md hover:shadow-2xl"
-                style={{
-                  backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, rgba(232, 93, 111, 0.3), rgba(244, 152, 165, 0.15))',
-                  backgroundOrigin: 'padding-box, border-box',
-                  backgroundClip: 'padding-box, border-box',
-                  border: '2px solid transparent'
-                }}
-              >
-                <h3 className="font-roboto-condensed font-bold text-xl text-brick-red mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="font-roboto text-neutral leading-relaxed">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+         {/* Scroll-snap carousel */}
+<div className="-mx-4 md:mx-0 overflow-x-auto pb-6">
+  <div className="flex gap-6 snap-x snap-mandatory">
+    {partnershipBenefits.map((benefit, index) => (
+      <div
+        key={index}
+        className="snap-start bg-white p-6 rounded-xl transition-all duration-300 ease-out transform hover:-translate-y-1.5 hover:scale-[1.01] text-center shadow-md hover:shadow-2xl min-w-[260px] md:min-w-[300px] lg:min-w-[320px]"
+        style={{
+          backgroundImage:
+            'linear-gradient(white, white), linear-gradient(135deg, rgba(232, 93, 111, 0.3), rgba(244, 152, 165, 0.15))',
+          backgroundOrigin: 'padding-box, border-box',
+          backgroundClip: 'padding-box, border-box',
+          border: '2px solid transparent',
+        }}
+      >
+        <h3 className="font-roboto-condensed font-bold text-xl text-brick-red mb-3">
+          {benefit.title}
+        </h3>
+        <p className="font-roboto text-neutral leading-relaxed">
+          {benefit.description}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
       </section>
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
