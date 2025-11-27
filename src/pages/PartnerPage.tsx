@@ -28,20 +28,24 @@ const caseStudies = [
 
 const partnershipBenefits = [
   {
-    title: 'Strategic Thinking + Tactical Execution',
-    description: 'Get both the high-level strategy and the hands-on execution in one partnership'
+    title: 'Improved Brand & Reputation',
+    description: 'Positioning that is compelling, commands attention, and sets you apart'
   },
   {
-    title: 'Flexible and Scalable',
-    description: 'Scale support up or down based on your needs and budget'
+    title: 'Aligned Marketing & Communications',
+    description: 'Integrated strategies that create a surround sound effect for your work and brand'
   },
   {
-    title: 'No Hiring Overhead',
-    description: 'Skip the recruitment, onboarding, and benefits costs of a full-time hire'
+    title: 'Industry Authority & Executive Visibility',
+    description: 'Thought leadership that elevates your credibility and influence'
   },
   {
-    title: 'Proven Track Record',
-    description: 'Benefit from years of experience across multiple organizations and sectors'
+    title: 'Internal & Change Management Communications',
+    description: 'Communications that keep teams informed, on-track, and bought in'
+  }
+  {
+    title: 'Content Creation & Media Success',
+    description: 'Expertly crafted storytelling, reports, press releases, and media placements'
   }
 ];
 
