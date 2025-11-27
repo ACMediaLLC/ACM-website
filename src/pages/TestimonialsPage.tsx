@@ -5,28 +5,28 @@ import { LogoCarousel } from '../components/LogoCarousel';
 
 const testimonials = [
   {
-    quote: "Andrea is a true strategic partner who brings both creative thinking and operational excellence to every project. Her ability to translate complex ideas into compelling narratives is unmatched.",
-    author: "CEO, National Nonprofit Organization"
-  },
-  {
-    quote: "Working with Andrea transformed how we think about communications. She didn't just execute—she led, advised, and elevated our entire approach.",
+    quote: "You have built a Communications team that has done amazing work and set the bar high for others to follow and build upon it.",
     author: "Executive Director, Education Nonprofit"
   },
   {
-    quote: "Andrea brings the strategic mindset of a CCO with the hands-on execution of a doer. That combination is rare and invaluable.",
-    author: "Founder, Social Impact Startup"
+    quote: "The wild publicity stunt you did for us shows the joy, fun, strength, and genuineness you approach everything with. Thank you for all of the ways you challenged us and made us better.",
+    author: "Managing Director of Development, Education Nonprofit"
   },
   {
-    quote: "She helped us clarify our message, strengthen our brand, and create campaigns that actually drove results. Best investment we made all year.",
-    author: "Marketing Director, Growing Organization"
+    quote: "You ask all the right questions, lead with your head and heart, and get to the best answers for the whole org.",
+    author: "Former Colleague"
   },
   {
-    quote: "Andrea doesn't just check boxes—she transforms how organizations think about and execute their communications strategy.",
-    author: "Board Chair, Philadelphia-based Nonprofit"
+    quote: "Thank you for all that you have done to innovate, build, and grow, all that is communications and marketing at our organization.",
+    author: "Former Colleague"
   },
   {
-    quote: "We needed someone who could both think strategically and roll up their sleeves. Andrea was exactly what we were looking for.",
-    author: "COO, Mission-Driven Organization"
+    quote: "Seriously, thank you for bringing new ideas to the table, breaking up the monotony, and taking this work seriously.",
+    author: "Former Colleague"
+  },
+  {
+    quote: "You've done such amazing work with our organization and seriously have changed EVERYTHING when it comes to comms and external relations at our site.",
+    author: "Former Colleague"
   }
 ];
 
