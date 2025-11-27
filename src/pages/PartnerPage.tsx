@@ -33,7 +33,8 @@ const partnershipBenefits = [
   },
   {
     title: 'Aligned Marketing & Communications',
-    description: 'Integrated strategies that create a surround sound effect for your work and brand',
+    description:
+      'Integrated strategies that create a surround sound effect for your work and brand',
   },
   {
     title: 'Industry Authority & Executive Visibility',
@@ -42,12 +43,14 @@ const partnershipBenefits = [
   {
     title: 'Internal & Change Management Communications',
     description: 'Communications that keep teams informed, on-track, and bought in',
-  }
+  }, // 👈 this comma was missing
   {
-  title: 'Content Creation & Media Success',
-  description: 'Expertly crafted storytelling, reports, press releases, and media placements',
-},
+    title: 'Content Creation & Media Success',
+    description:
+      'Expertly crafted storytelling, reports, press releases, and media placements',
+  },
 ];
+
 
 export function PartnerPage() {
   useEffect(() => {
