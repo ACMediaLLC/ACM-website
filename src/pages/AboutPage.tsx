@@ -58,7 +58,7 @@ export function AboutPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-12 items-start">
+          <div className="grid md:grid-cols-2 gap-12 mb-12 items-center">
             <div className="flex flex-col gap-8">
               <div className="flex justify-center">
                 <div className="bg-white p-2 rounded-lg shadow-md">
