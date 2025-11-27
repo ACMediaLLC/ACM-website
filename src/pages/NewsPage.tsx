@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
-import { ExternalLink } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ExternalLink, Calendar, Mail } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 interface NewsArticle {
   logo: string;
@@ -24,9 +25,34 @@ const newsArticles: NewsArticle[] = [
 ];
 
 export function NewsPage() {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
   useEffect(() => {
     document.title = 'AC Media in the News | AC Media';
   }, []);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const { error } = await supabase
+        .from('newsletter_subscriptions')
+        .insert([{ email }]);
+
+      if (error) throw error;
+
+      setSubmitMessage('Thank you for subscribing!');
+      setEmail('');
+    } catch (error) {
+      setSubmitMessage('An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div>
@@ -85,6 +111,54 @@ export function NewsPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="max-w-5xl mx-auto mt-16 grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-brick-red to-rose-500 rounded-xl p-8 md:p-10 text-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="flex items-center gap-3 mb-4">
+                <Calendar size={32} className="flex-shrink-0" />
+                <h3 className="font-roboto-condensed font-bold text-3xl">Book a Consultation</h3>
+              </div>
+              <p className="font-roboto-condensed text-lg mb-6 leading-relaxed">
+                Ready to elevate your nonprofit's messaging? Schedule a consultation with our team to discuss your goals.
+              </p>
+              <a
+                href="/contact"
+                className="inline-block bg-white text-brick-red font-roboto-condensed font-bold py-3 px-8 rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-md"
+              >
+                Book Now
+              </a>
+            </div>
+
+            <div className="bg-gradient-to-br from-onyx to-gray-800 rounded-xl p-8 md:p-10 text-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="flex items-center gap-3 mb-4">
+                <Mail size={32} className="flex-shrink-0" />
+                <h3 className="font-roboto-condensed font-bold text-3xl">Stay Informed</h3>
+              </div>
+              <p className="font-roboto-condensed text-lg mb-6 leading-relaxed">
+                Get the latest insights and updates delivered straight to your inbox.
+              </p>
+              <form onSubmit={handleNewsletterSubmit} className="space-y-4">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  className="w-full px-4 py-3 rounded-lg text-gray-900 font-roboto-condensed focus:outline-none focus:ring-2 focus:ring-brick-red"
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-brick-red text-white font-roboto-condensed font-bold py-3 px-8 rounded-lg hover:bg-rose-600 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
+                >
+                  {isSubmitting ? 'Subscribing...' : 'Subscribe to Newsletter'}
+                </button>
+                {submitMessage && (
+                  <p className="text-center font-roboto-condensed text-sm">{submitMessage}</p>
+                )}
+              </form>
+            </div>
           </div>
         </div>
       </section>
