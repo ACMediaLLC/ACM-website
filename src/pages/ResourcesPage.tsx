@@ -74,7 +74,7 @@ export function ResourcesPage() {
               Free Resources
             </h1>
             
-            <p className="font-roboto-condensed font-semibold text-center text-lg text-primary mb-4">
+            <p className="font-roboto-condensed font-semibold text-center text-2xl text-primary mb-4">
               Steal my frameworks, templates, and toolkits to level up your communications strategies
             </p>
           </div>
