@@ -56,6 +56,22 @@ export function PartnerPage() {
   useEffect(() => {
     document.title = 'Partner With Us | AC Media';
   }, []);
+const carouselRef = useRef<HTMLDivElement | null>(null);
+
+const scrollCarousel = (direction: 'left' | 'right') => {
+  if (!carouselRef.current) return;
+
+  const card = carouselRef.current.firstElementChild as HTMLElement | null;
+  const cardWidth = card?.offsetWidth ?? 320;
+  const gap = 24; // Tailwind gap-6
+
+  const offset = direction === 'left' ? -(cardWidth + gap) : cardWidth + gap;
+
+  carouselRef.current.scrollBy({
+    left: offset,
+    behavior: 'smooth',
+  });
+};
 
   return (
     <div>
