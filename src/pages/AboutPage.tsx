@@ -50,7 +50,7 @@ export function AboutPage() {
               Meet Andrea Carter
             </h1>
             <p className="font-roboto-condensed font-semibold text-2xl text-primary">
-              Fractional Chief Communications Officer | Strategic Communications Leader
+              Strategic Communications Leader | Storyteller | Advocate for MarCom Excellence
             </p>
           </div>
 
