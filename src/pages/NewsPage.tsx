@@ -41,11 +41,11 @@ export function NewsPage() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-5xl mx-auto space-y-8">
             {newsArticles.map((article, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 ease-out transform hover:-translate-y-1"
+                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-out transform hover:-translate-y-1 overflow-hidden"
                 style={{
                   backgroundImage:
                     'linear-gradient(white, white), linear-gradient(135deg, rgba(232, 93, 111, 0.3), rgba(244, 152, 165, 0.15))',
@@ -54,30 +54,32 @@ export function NewsPage() {
                   border: '2px solid transparent',
                 }}
               >
-                <div className="flex flex-col md:flex-row items-center md:items-center gap-6">
-                  <div className="flex items-center justify-center w-32 h-16 mx-auto md:mx-0 md:mr-6 flex-shrink-0">
-                    <img
-                      src={article.logo}
-                      alt={article.outlet}
-                      className="max-w-full max-h-full object-contain"
-                    />
+                <div className="flex flex-col md:flex-row items-stretch">
+                  <div className="flex items-center justify-center bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 border-b md:border-b-0 md:border-r-2 border-gray-100 min-w-[280px]">
+                    <div className="w-full max-w-[240px] flex items-center justify-center">
+                      <img
+                        src={article.logo}
+                        alt={article.outlet}
+                        className="w-full h-auto object-contain transition-transform duration-300 hover:scale-105"
+                      />
+                    </div>
                   </div>
 
-                  <div className="flex-1 text-center md:text-left">
-                    <p className="font-roboto-condensed font-semibold text-sm uppercase tracking-wide text-neutral mb-2">
+                  <div className="flex-1 p-8 md:p-10 flex flex-col justify-center">
+                    <p className="font-roboto-condensed font-bold text-xs uppercase tracking-widest text-neutral mb-3">
                       {article.outlet}
                     </p>
-                    <h3 className="font-roboto-condensed font-bold text-xl text-brick-red mb-3">
+                    <h3 className="font-roboto-condensed font-bold text-2xl md:text-3xl text-brick-red mb-4 leading-tight">
                       {article.title}
                     </h3>
                     <a
                       href={article.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 font-roboto-condensed font-semibold text-brick-red hover:text-onyx transition-colors"
+                      className="inline-flex items-center gap-2 font-roboto-condensed font-semibold text-base text-brick-red hover:text-onyx transition-colors group"
                     >
                       Read article
-                      <ExternalLink size={16} />
+                      <ExternalLink size={18} className="group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>
                 </div>
