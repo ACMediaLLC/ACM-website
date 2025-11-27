@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Calendar } from 'lucide-react';
+import { ExternalLink, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
 import { LogoCarousel } from '../components/LogoCarousel';
 
 const caseStudies = [
@@ -56,22 +56,23 @@ export function PartnerPage() {
   useEffect(() => {
     document.title = 'Partner With Us | AC Media';
   }, []);
-const carouselRef = useRef<HTMLDivElement | null>(null);
 
-const scrollCarousel = (direction: 'left' | 'right') => {
-  if (!carouselRef.current) return;
+  const carouselRef = useRef<HTMLDivElement | null>(null);
 
-  const card = carouselRef.current.firstElementChild as HTMLElement | null;
-  const cardWidth = card?.offsetWidth ?? 320;
-  const gap = 24; // Tailwind gap-6
+  const scrollCarousel = (direction: 'left' | 'right') => {
+    if (!carouselRef.current) return;
 
-  const offset = direction === 'left' ? -(cardWidth + gap) : cardWidth + gap;
+    const card = carouselRef.current.firstElementChild as HTMLElement | null;
+    const cardWidth = card?.offsetWidth ?? 320;
+    const gap = 24;
 
-  carouselRef.current.scrollBy({
-    left: offset,
-    behavior: 'smooth',
-  });
-};
+    const offset = direction === 'left' ? -(cardWidth + gap) : cardWidth + gap;
+
+    carouselRef.current.scrollBy({
+      left: offset,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <div>
@@ -110,8 +111,26 @@ const scrollCarousel = (direction: 'left' | 'right') => {
 
               </div>
 
+         {/* Navigation buttons */}
+         <div className="flex justify-end gap-2 mb-4 pr-4">
+           <button
+             onClick={() => scrollCarousel('left')}
+             className="p-2 rounded-full bg-white shadow hover:bg-gray-50 transition-colors"
+             aria-label="Scroll left"
+           >
+             <ChevronLeft className="w-5 h-5 text-brick-red" />
+           </button>
+           <button
+             onClick={() => scrollCarousel('right')}
+             className="p-2 rounded-full bg-white shadow hover:bg-gray-50 transition-colors"
+             aria-label="Scroll right"
+           >
+             <ChevronRight className="w-5 h-5 text-brick-red" />
+           </button>
+         </div>
+
          {/* Scroll-snap carousel */}
-<div className="-mx-4 md:mx-0 overflow-x-auto pb-6">
+<div ref={carouselRef} className="-mx-4 md:mx-0 overflow-x-auto pb-6">
   <div className="flex gap-6 snap-x snap-mandatory">
     {partnershipBenefits.map((benefit, index) => (
       <div
