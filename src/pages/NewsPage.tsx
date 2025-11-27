@@ -113,51 +113,54 @@ export function NewsPage() {
             ))}
           </div>
 
-          <div className="max-w-5xl mx-auto mt-16 grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-brick-red to-rose-500 rounded-xl p-8 md:p-10 text-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex items-center gap-3 mb-4">
-                <Calendar size={32} className="flex-shrink-0" />
-                <h3 className="font-roboto-condensed font-bold text-3xl">Book a Consultation</h3>
+          <div className="max-w-5xl mx-auto mt-16 space-y-4">
+            <div className="bg-white border-2 border-brick-red rounded-lg p-5 hover:border-rose-500 transition-colors">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <Calendar size={24} className="text-brick-red flex-shrink-0" />
+                  <div>
+                    <h3 className="font-roboto-condensed font-bold text-xl text-brick-red">Book a Consultation</h3>
+                    <p className="font-roboto-condensed text-sm text-gray-600">Ready to elevate your nonprofit's messaging?</p>
+                  </div>
+                </div>
+                <a
+                  href="/contact"
+                  className="inline-block bg-brick-red text-white font-roboto-condensed font-bold py-2 px-6 rounded-lg hover:bg-rose-600 transition-colors whitespace-nowrap"
+                >
+                  Book Now
+                </a>
               </div>
-              <p className="font-roboto-condensed text-lg mb-6 leading-relaxed">
-                Ready to elevate your nonprofit's messaging? Schedule a consultation with our team to discuss your goals.
-              </p>
-              <a
-                href="/contact"
-                className="inline-block bg-white text-brick-red font-roboto-condensed font-bold py-3 px-8 rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-md"
-              >
-                Book Now
-              </a>
             </div>
 
-            <div className="bg-gradient-to-br from-onyx to-gray-800 rounded-xl p-8 md:p-10 text-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex items-center gap-3 mb-4">
-                <Mail size={32} className="flex-shrink-0" />
-                <h3 className="font-roboto-condensed font-bold text-3xl">Stay Informed</h3>
+            <div className="bg-white border-2 border-onyx rounded-lg p-5 hover:border-gray-700 transition-colors">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div className="flex items-center gap-3 flex-1">
+                  <Mail size={24} className="text-onyx flex-shrink-0" />
+                  <div className="flex-1">
+                    <h3 className="font-roboto-condensed font-bold text-xl text-onyx mb-2">Stay Informed</h3>
+                    <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Enter your email"
+                        required
+                        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-gray-900 font-roboto-condensed focus:outline-none focus:ring-2 focus:ring-brick-red text-sm"
+                      />
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="bg-brick-red text-white font-roboto-condensed font-bold py-2 px-6 rounded-lg hover:bg-rose-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                      >
+                        {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+                      </button>
+                    </form>
+                    {submitMessage && (
+                      <p className="font-roboto-condensed text-sm text-gray-600 mt-2">{submitMessage}</p>
+                    )}
+                  </div>
+                </div>
               </div>
-              <p className="font-roboto-condensed text-lg mb-6 leading-relaxed">
-                Get the latest insights and updates delivered straight to your inbox.
-              </p>
-              <form onSubmit={handleNewsletterSubmit} className="space-y-4">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  required
-                  className="w-full px-4 py-3 rounded-lg text-gray-900 font-roboto-condensed focus:outline-none focus:ring-2 focus:ring-brick-red"
-                />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-brick-red text-white font-roboto-condensed font-bold py-3 px-8 rounded-lg hover:bg-rose-600 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
-                >
-                  {isSubmitting ? 'Subscribing...' : 'Subscribe to Newsletter'}
-                </button>
-                {submitMessage && (
-                  <p className="text-center font-roboto-condensed text-sm">{submitMessage}</p>
-                )}
-              </form>
             </div>
           </div>
         </div>
