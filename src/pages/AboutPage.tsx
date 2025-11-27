@@ -119,6 +119,8 @@ export function AboutPage() {
            <p className="font-roboto-condensed font-semibold text-center text-2xl mb-4 text-primary">
               AC Media exists to help organizations communicate with clarity, confidence, and consistency, without the full-time overhead of an in-house communications executive.
             </p>
+            <p className="font-roboto text-lg text-neutral leading-relaxed mb-4">
+              We bring the strategy, leadership, and execution of a Chief Communications Officer to small, midsize, and growing organizations that are ready to think bigger and we pride ourselves in helping them achieve three outcomes:</p>
 
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               {outcomes.map((outcome, index) => (
