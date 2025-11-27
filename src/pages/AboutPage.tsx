@@ -150,7 +150,7 @@ export function AboutPage() {
                   Partner with Proven Leadership
                 </h3>
                 <p className="font-roboto text-lg text-neutral leading-relaxed mb-4">
-                  With 20 years of experience leading communications for mission-driven organizations, I bring strategic thinking, hands-on execution, and a deep understanding of what it takes to build brands and campaigns that drive real results.
+                  With 20 years of experience leading communications for organizations, I bring strategic thinking, hands-on execution, and a deep understanding of what it takes to build brands and campaigns that drive real results.
                 </p>
                 <p className="font-roboto text-lg text-neutral leading-relaxed">
                   Whether you need interim leadership during a transition, fractional support to scale your team, or strategic guidance on a specific initiative, I'm here to help you move forward with confidence.
