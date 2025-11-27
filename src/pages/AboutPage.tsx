@@ -116,7 +116,7 @@ export function AboutPage() {
             <h2 className="font-roboto-condensed font-bold text-3xl md:text-4xl text-brick-red text-center mb-4">
               The AC Media Approach
             </h2>
-            <p className="font-roboto text-xl text-primary text-center mb-12 italic">
+           <p className="font-roboto-condensed font-semibold text-2xl mb-4 text-primary">
               I help organizations achieve three outcomes:
             </p>
 
