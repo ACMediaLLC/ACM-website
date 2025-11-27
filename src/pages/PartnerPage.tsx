@@ -29,15 +29,15 @@ const caseStudies = [
 const partnershipBenefits = [
   {
     title: 'Improved Brand & Reputation',
-    description: 'Positioning that is compelling, commands attention, and sets you apart'
+    description: 'Positioning that is compelling, commands attention, and sets you apart',
   },
   {
     title: 'Aligned Marketing & Communications',
-    description: 'Integrated strategies that create a surround sound effect for your work and brand'
+    description: 'Integrated strategies that create a surround sound effect for your work and brand',
   },
   {
     title: 'Industry Authority & Executive Visibility',
-    description: 'Thought leadership that elevates your credibility and influence'
+    description: 'Thought leadership that elevates your credibility and influence',
   },
   {
     title: 'Internal & Change Management Communications',
