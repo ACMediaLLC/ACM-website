@@ -83,7 +83,7 @@ export function ResourcesPage() {
             <div className="bg-seashell rounded-lg p-12 text-center">
               <FileText className="text-brick-red mx-auto mb-4" size={64} />
               <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-4">
-                Resources Coming Soon
+                Coming Soon
               </h3>
               <p className="font-roboto text-lg text-neutral mb-6">
                 We're preparing valuable templates, guides, and frameworks for you. Sign up for updates to be notified when they're available.
