@@ -93,7 +93,7 @@ export function ResourcesPage() {
 </ul>
               <p className="font-roboto italic text-2xl">
               Subscribe to the AC Media newsletter for your weekly dose of free MarCom strategies and best practices
-            </p></p>
+            </p>
 
       <Link
                 to="/contact"
