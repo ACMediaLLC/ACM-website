@@ -201,8 +201,16 @@ export function ServicesPage() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {detailedServices.map((service, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.2,
+                  ease: [0.25, 0.4, 0.25, 1]
+                }}
                 className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow relative border-2 border-transparent hover:border-brick-red text-center"
               >
                 {service.recommended && (
@@ -239,7 +247,7 @@ export function ServicesPage() {
                   </p>
                   <p className="font-roboto text-neutral" dangerouslySetInnerHTML={{ __html: service.bestFor }} />
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 

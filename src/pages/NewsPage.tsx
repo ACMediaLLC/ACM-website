@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Calendar, BookOpen } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
 
 interface NewsArticle {
@@ -70,8 +71,16 @@ export function NewsPage() {
 
           <div className="max-w-5xl mx-auto space-y-8">
             {newsArticles.map((article, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.2,
+                  ease: [0.25, 0.4, 0.25, 1]
+                }}
                 className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-out transform hover:-translate-y-1 overflow-hidden"
                 style={{
                   backgroundImage:
@@ -110,7 +119,7 @@ export function NewsPage() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
