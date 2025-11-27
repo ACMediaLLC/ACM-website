@@ -85,8 +85,8 @@ export function ResourcesPage() {
               <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-4">
                 Coming Soon
               </h3>
-              <ul className="space-y-2 list-disc text-lg text-onyx mb-6  marker:text-brick-red ml-6">
-  <li>The CEO’s MarCom Playbook: A Quick-and-Dirty Guide to Ensuring Marketing & Communications Operate as a Strategic Powerhouse for Growth</li>
+              <ul className="space-y-2 list-disc text-lg text-onyx mb-6 marker:text-brick-red ml-6 text-left">
+  <li>The CEO's MarCom Playbook: A Quick-and-Dirty Guide to Ensuring Marketing & Communications Operate as a Strategic Powerhouse for Growth</li>
   <li>Overloaded Messaging: The Clarity to Impact Framework</li>
   <li>Why FAQs are Your Secret Weapon for Internal Change Management Communications</li>
   <li>Toolkit: Internal Change Management Communications</li>
