@@ -98,8 +98,12 @@ export function AboutPage() {
               My Philosophy
             </h3>
             <p className="font-roboto text-lg text-neutral leading-relaxed italic">
-              "Good communications strategy isn't about doing more—it's about doing the right things, consistently, with intention. Most organizations don't need another vendor. They need a strategic partner who understands their goals, challenges, and capacity—and can help them move forward with clarity and confidence."
+              Strong communications aren’t built on chance; they’re built on leadership.
             </p>
+            <p>I’m a fierce advocate for marketing and communications as vital organizational functions that drive growth, alignment, and credibility. I help CEOs, Executive Directors, and leadership teams transform their MarCom departments into strategic engines that drive revenue, recognition, and relationships.
+            </p>
+            <p>My approach combines disciplined strategy with fearless creativity—and the results speak for themselves.      
+          </p>
           </div>
         </div>
       </section>
