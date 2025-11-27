@@ -73,7 +73,8 @@ export function ResourcesPage() {
             <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-6">
               Free Resources
             </h1>
-            <p className="font-roboto text-lg text-primary max-w-3xl mx-auto mb-8">
+            
+            <p className="font-roboto-condensed font-semibold text-center text-lg text-primary mb-4">
               Steal my frameworks, templates, and toolkits to level up your communications strategies
             </p>
           </div>
