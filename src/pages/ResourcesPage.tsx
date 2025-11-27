@@ -91,7 +91,11 @@ export function ResourcesPage() {
   <li>Why FAQs are Your Secret Weapon for Internal Change Management Communications</li>
   <li>Toolkit: Internal Change Management Communications</li>
 </ul>
-              <Link
+              <p className="font-roboto italic text-2xl">
+              Subscribe to the AC Media newsletter for your weekly dose of free MarCom strategies and best practices
+            </p></p>
+
+      <Link
                 to="/contact"
                 className="inline-flex bg-brick-red text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:bg-onyx transition-all"
               >
