@@ -102,7 +102,7 @@ export function PartnerPage() {
 </ul>
 
   {/* Bottom red subheading */}
-  <p className="font-roboto-condensed text-2xl text-brick-red">
+  <p className="font-roboto-condensed font-semibold text-2xl text-brick-red">
     AC Media partners with organizations to help them level up
   </p>
 
