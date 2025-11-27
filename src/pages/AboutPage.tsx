@@ -82,7 +82,7 @@ export function AboutPage() {
               </h3>
               <div className="space-y-6">
                 {highlights.map((highlight, index) => (
-                  <div key={index} className="flex flex-col items-center text-center gap-4">
+                  <div key={index} className="flex items-start gap-4">
                     <highlight.icon className="text-brick-red flex-shrink-0" size={24} />
                     <p className="font-roboto text-neutral leading-relaxed">
                       <strong>{highlight.boldText}</strong>{highlight.regularText}
