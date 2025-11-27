@@ -5,7 +5,7 @@ import { Award, TrendingUp, Users, Heart, Calendar, ArrowRight } from 'lucide-re
 const highlights = [
   {
     icon: Award,
-    text: '20 years leading marketing and communications for mission-driven organizations'
+    text: '<strong>Built and led high-performing marketing and communications teams</strong> that drove engagement, strengthened stakeholder confidence, and broadened organizational influence.'
   },
   {
     icon: TrendingUp,
