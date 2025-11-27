@@ -13,7 +13,7 @@ const highlights = [
   },
   {
     icon: Users,
-    text: 'Served as interim and fractional CCO for growing organizations and leadership transitions'
+    text: 'Oversaw messaging, media relations, and crisis response for 29 sites nationwide at City Year, advising C-suite leaders on reputation, internal communications, and complex organizational change.'
   },
   {
     icon: Heart,
