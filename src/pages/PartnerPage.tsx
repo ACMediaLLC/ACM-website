@@ -62,7 +62,7 @@ export function PartnerPage() {
 Whether</p> 
 <p>• Your marketing & communications team is stretched too thin</p>
 <p>• You need strategic thinking, not just task execution</p>
-•Your growth demands communications leadership, but not a full-time hire
+<p>•Your growth demands communications leadership, but not a full-time hire
 •You want someone who can lead, not just follow directions
 AC Media partners with organizations to help them level up
 
