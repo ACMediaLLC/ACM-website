@@ -69,12 +69,12 @@ export function PartnerPage() {
   </p>
 
   {/* Bullet list */}
-  <ul className="space-y-2 text-lg text-onyx mb-6 list-disc marker:text-brick-red ml-6">
-  <li>Your marketing & communications team is stretched too thin</li>
-  <li>You need strategic thinking, not just task execution</li>
-  <li>Your growth demands communications leadership, but not a full-time hire</li>
-  <li>You want someone who can lead, not just follow directions</li>
-</ul>
+ <ul className="list-disc list-inside space-y-2 text-lg text-primary">
+    <li>Your marketing &amp; communications team is stretched too thin</li>
+    <li>You need strategic thinking, not just task execution</li>
+    <li>Your growth demands communications leadership, but not a full-time hire</li>
+    <li>You want someone who can lead, not just follow directions</li>
+  </ul>
 
   {/* Bottom red subheading */}
   <p className="font-roboto-condensed text-2xl text-brick-red">
