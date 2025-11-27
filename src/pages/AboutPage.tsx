@@ -117,7 +117,7 @@ export function AboutPage() {
               The AC Media Approach
             </h2>
            <p className="font-roboto-condensed font-semibold text-center text-2xl mb-4 text-primary">
-              I help organizations achieve three outcomes:
+              AC Media exists to help organizations communicate with clarity, confidence, and consistency, without the full-time overhead of an in-house communications executive.
             </p>
 
             <div className="grid md:grid-cols-3 gap-8 mb-16">
