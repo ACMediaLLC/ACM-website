@@ -190,29 +190,6 @@ export function ServicesPage() {
             </h2>
           </div>
 
-          <div className="bg-white rounded-lg p-8 mb-12 border-2 border-brick-red">
-            <button
-              onClick={() => setExpandedPainPoints(!expandedPainPoints)}
-              className="w-full flex justify-between items-center"
-            >
-              <h3 className="font-roboto-condensed font-bold text-2xl text-primary">
-                Need This?
-              </h3>
-              {expandedPainPoints ? <ChevronUp className="text-brick-red" size={28} /> : <ChevronDown className="text-brick-red" size={28} />}
-            </button>
-
-            {expandedPainPoints && (
-              <ul className="mt-6 space-y-3">
-                {painPoints.map((point, index) => (
-                  <li key={index} className="flex items-start gap-3 font-roboto text-neutral">
-                    <span className="text-brick-red mt-1">•</span>
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {detailedServices.map((service, index) => (
               <div
