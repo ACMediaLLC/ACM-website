@@ -63,7 +63,7 @@ export function ContactPage() {
               Let's Work Together
             </h1>
             <p className="font-roboto text-xl text-primary max-w-3xl mx-auto">
-              Ready to elevate your communications strategy? Get in touch to discuss how AC Media can support your organization.
+              Get in touch to discuss how AC Media can support your organization.
             </p>
           </div>
 
