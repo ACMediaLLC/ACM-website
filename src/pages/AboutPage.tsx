@@ -9,7 +9,7 @@ const highlights = [
   },
   {
     icon: TrendingUp,
-    text: 'Built and scaled communications teams, campaigns, and brands from the ground up'
+    text: 'Spearheaded a full-scale national rebrand as Chief External Affairs Officer at Bottom Line, leading a new brand identity, new website, and unified messaging across multiple regions while expanding the organization’s thought leadership footprint through national media and national conference stages. '
   },
   {
     icon: Users,
