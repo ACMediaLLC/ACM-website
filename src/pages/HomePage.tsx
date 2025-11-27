@@ -180,7 +180,7 @@ export function HomePage() {
 
               <div className="bg-white border-2 border-white rounded-lg p-6 shadow-lg">
 
-                <p className="font-roboto md:text-2xl text-text-primary">
+                <p className="font-roboto md:text-xl text-text-primary">
                   Perfect for small, midsize, and growing organizations ready to move faster, scale smarter, and look like the pros.
                 </p>
               </div>
