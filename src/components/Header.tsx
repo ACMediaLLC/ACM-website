@@ -68,6 +68,14 @@ export function Header() {
               Resources
             </Link>
             <Link
+              to="/news"
+              className={`font-roboto-condensed font-semibold transition-colors ${
+                isActive('/news') ? 'text-white underline' : 'text-white/90 hover:text-white'
+              }`}
+            >
+              AC Media in the News
+            </Link>
+            <Link
               to="/contact"
               className="bg-onyx text-white px-6 py-2 rounded font-roboto-condensed font-semibold hover:bg-black transition-colors"
             >
@@ -140,6 +148,15 @@ export function Header() {
               }`}
             >
               Resources
+            </Link>
+            <Link
+              to="/news"
+              onClick={closeMenu}
+              className={`font-roboto-condensed font-semibold transition-colors text-left ${
+                isActive('/news') ? 'text-white underline' : 'text-white/90 hover:text-white'
+              }`}
+            >
+              AC Media in the News
             </Link>
             <Link
               to="/contact"
