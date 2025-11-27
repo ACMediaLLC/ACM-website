@@ -94,7 +94,7 @@ export function AboutPage() {
           </div>
 
           <div className="bg-brick-red/5 border-l-4 border-brick-red p-8 mb-16 text-center">
-            <h3 className="font-roboto-condensed font-bold text-2xl text-primary mb-4">
+            <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-6 text-center">
               My Philosophy
             </h3>
             <p className="font-roboto text-lg text-neutral leading-relaxed mb-4">
