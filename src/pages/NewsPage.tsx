@@ -112,8 +112,12 @@ export function NewsPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="max-w-5xl mx-auto mt-16 space-y-4">
+      <section className="pb-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="space-y-4">
             <div className="bg-white border-2 border-brick-red rounded-lg p-5 hover:border-rose-500 transition-colors">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="flex items-center gap-3">
