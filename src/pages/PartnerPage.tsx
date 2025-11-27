@@ -41,7 +41,7 @@ const partnershipBenefits = [
   },
   {
     title: 'Internal & Change Management Communications',
-    description: 'Communications that keep teams informed, on-track, and bought in'
+    description: 'Communications that keep teams informed, on-track, and bought in',
   }
   {
   title: 'Content Creation & Media Success',
