@@ -88,7 +88,7 @@ export function PartnerPage() {
 <div className="text-center max-w-3xl mx-auto">
   
   {/* Top red subheading */}
-  <p className="font-roboto-condensed text-2xl text-brick-red mb-4">
+  <p className="font-roboto-condensed font-semibold text-2xl text-brick-red mb-4">
     Whether
   </p>
 
