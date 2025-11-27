@@ -81,6 +81,8 @@ export function PartnerPage() {
   </p>
 </div>
 
+              </div>
+
 
 
             
