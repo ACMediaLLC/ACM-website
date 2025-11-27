@@ -62,7 +62,7 @@ export function ContactPage() {
             <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-6">
               Let's Work Together
             </h1>
-            <p className="font-roboto text-xl text-primary max-w-3xl mx-auto">
+            <p className="font-roboto-condensed font-semibold text-center text-2xl text-primary mb-4">
               Get in touch to discuss how AC Media can support your organization.
             </p>
           </div>
