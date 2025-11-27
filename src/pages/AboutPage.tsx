@@ -17,7 +17,7 @@ const highlights = [
   },
   {
     icon: Heart,
-    text: 'Led award-winning campaigns recognized by NonProfit PRO and other industry leaders'
+    text: 'Designed and executed strategic advocacy campaigns that independently secured over $1M in government funding in a single year.'
   }
 ];
 
