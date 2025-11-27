@@ -119,21 +119,23 @@ export function NewsPage() {
       <section className="pb-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center gap-4">
-            <Link
-              to="/contact"
-              className="bg-onyx text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:bg-black transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg"
-            >
-              <Calendar size={20} />
-              Book a No-Cost Intro Call
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                to="/contact"
+                className="bg-onyx text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:bg-black transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg"
+              >
+                <Calendar size={20} />
+                Book a No-Cost Intro Call
+              </Link>
 
-            <Link
-              to="/resources"
-              className="text-onyx bg-white px-6 py-3 rounded-lg font-roboto-condensed font-semibold text-lg hover:bg-seashell transition-colors flex items-center gap-2 shadow-md"
-            >
-              <BookOpen size={20} />
-              Explore My Free Resources
-            </Link>
+              <Link
+                to="/resources"
+                className="text-onyx bg-white px-6 py-3 rounded-lg font-roboto-condensed font-semibold text-lg hover:bg-seashell transition-colors flex items-center gap-2 shadow-md"
+              >
+                <BookOpen size={20} />
+                Explore My Free Resources
+              </Link>
+            </div>
 
             <div className="mt-8 w-full max-w-md">
               <h3 className="font-roboto-condensed font-bold text-xl text-onyx mb-4 text-center">Subscribe to Newsletter</h3>
