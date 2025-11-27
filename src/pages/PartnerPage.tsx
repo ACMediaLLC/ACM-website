@@ -120,6 +120,8 @@ export function PartnerPage() {
   </div>
 </div>
 
+          </div>
+        </div>
       </section>
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
