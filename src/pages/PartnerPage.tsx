@@ -59,7 +59,13 @@ export function PartnerPage() {
               How We Can Work Together
             </h1>
             <p className="font-roboto text-xl text-primary max-w-3xl mx-auto">
-              From startups to established nonprofits, I partner with organizations ready to elevate their communications strategy and execution
+Whether 
+• Your marketing & communications team is stretched too thin
+• You need strategic thinking, not just task execution
+•Your growth demands communications leadership, but not a full-time hire
+•You want someone who can lead, not just follow directions
+AC Media partners with organizations to help them level up
+
             </p>
           </div>
 
