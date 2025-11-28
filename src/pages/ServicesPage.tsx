@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Handshake, Lightbulb, CheckSquare, Zap, Users, Download, ChevronDown, ChevronUp, Star, Calendar } from 'lucide-react';
+import { Handshake, Lightbulb, CheckSquare, Zap, Users, Download, ChevronDown, ChevronUp, Star, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const services = [
@@ -130,10 +130,21 @@ const detailedServices = [
 
 export function ServicesPage() {
   const [expandedPainPoints, setExpandedPainPoints] = useState(false);
+  const servicesCarouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.title = 'Services | AC Media';
   }, []);
+
+  const scrollServicesCarousel = (direction: 'left' | 'right') => {
+    if (servicesCarouselRef.current) {
+      const scrollAmount = 300;
+      servicesCarouselRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <div>
@@ -267,21 +278,40 @@ export function ServicesPage() {
           </div>
 
           {/* Mobile: Snap scroll carousel */}
-          <div className="md:hidden -mx-4 overflow-x-auto pb-6 mb-12" style={{scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch'}}>
-            <div className="flex gap-6 snap-x snap-mandatory px-4">
-              {detailedServices.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.2,
-                    ease: [0.25, 0.4, 0.25, 1]
-                  }}
-                  className="snap-start bg-white rounded-lg p-8 shadow-lg transition-shadow relative border-2 border-transparent text-center min-w-[85vw] sm:min-w-[400px] flex-shrink-0"
-                >
+          <div className="md:hidden mb-12">
+            {/* Navigation buttons */}
+            <div className="flex justify-end gap-2 mb-4 pr-4">
+              <button
+                onClick={() => scrollServicesCarousel('left')}
+                className="p-2 rounded-full bg-white shadow hover:bg-gray-50 transition-colors"
+                aria-label="Scroll left"
+              >
+                <ChevronLeft className="w-5 h-5 text-brick-red" />
+              </button>
+              <button
+                onClick={() => scrollServicesCarousel('right')}
+                className="p-2 rounded-full bg-white shadow hover:bg-gray-50 transition-colors"
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="w-5 h-5 text-brick-red" />
+              </button>
+            </div>
+
+            <div ref={servicesCarouselRef} className="-mx-4 overflow-x-auto pb-6" style={{scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch'}}>
+              <div className="flex gap-6 snap-x snap-mandatory px-4">
+                {detailedServices.map((service, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.2,
+                      ease: [0.25, 0.4, 0.25, 1]
+                    }}
+                    className="snap-start bg-white rounded-lg p-8 shadow-lg transition-shadow relative border-2 border-transparent text-center min-w-[75vw] sm:min-w-[350px] flex-shrink-0"
+                  >
                   {service.recommended && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brick-red text-white px-6 py-2 rounded-full font-roboto-condensed font-bold text-sm flex items-center gap-2">
                       <Star size={16} fill="white" />
@@ -318,6 +348,7 @@ export function ServicesPage() {
                   </div>
                 </motion.div>
               ))}
+            </div>
             </div>
           </div>
 
