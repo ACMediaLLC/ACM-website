@@ -140,7 +140,8 @@ export function ServicesPage() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-4">
+            <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 
+             bg-clip-text text-transparent mb-6">
               Fractional Communications
             </h1>
             <h2 className="font-roboto-condensed font-bold text-3xl md:text-4xl text-primary mb-6">
@@ -194,7 +195,8 @@ export function ServicesPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-seashell">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-6">
+            <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 
+             bg-clip-text text-transparent mb-6">
               Something for Every Need, Every Budget
             </h2>
           </div>
