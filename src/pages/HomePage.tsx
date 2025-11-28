@@ -180,14 +180,18 @@ export function HomePage() {
               </p>
 
               <div className="bg-white border-2 border-brick-red rounded-lg p-6 mb-10 max-w-2xl mx-auto relative overflow-hidden shadow-[0_0_80px_rgba(220,38,38,0.3)]">
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="absolute w-full h-full bg-gradient-radial from-brick-red/30 via-brick-red/10 to-transparent"></div>
-              <div className="w-96 h-96 bg-brick-red rounded-full blur-3xl opacity-60 animate-pulse"></div>
-            </div>
-            <div className="relative z-10">
-              <p className="font-roboto-condensed font-semibold text-lg text-text-primary mb-2">
-                Perfect for:
-              </p>
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="absolute w-full h-full bg-gradient-radial from-brick-red/30 via-brick-red/10 to-transparent"></div>
+                  <div className="w-96 h-96 bg-brick-red rounded-full blur-3xl opacity-60 animate-pulse"></div>
+                </div>
+                <div className="relative z-10">
+                  <p className="font-roboto-condensed font-semibold text-lg text-text-primary mb-2">
+                    Perfect for:
+                  </p>
+                  <p className="font-roboto text-neutral">
+                    CEOs and Executive Directors ready to move faster, scale smarter, and look like the pros—without hiring a full-time executive
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -202,37 +206,37 @@ export function HomePage() {
             </div>
           </div>
 
-          <div className="text-center">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Link
-                to="/services"
-                className="bg-onyx text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:bg-black transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg"
-              >
-                See How It Works
-                <ArrowRight size={20} />
-              </Link>
-
-              <Link
-                to="/contact"
-                className="bg-onyx text-white border-2 border-onyx px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:bg-black transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg"
-              >
-                <Calendar size={20} />
-                Book a No-Cost Intro Call
-              </Link>
-            </div>
-
+        <div className="text-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <Link
-              to="/resources"
-              className="text-onyx bg-white px-6 py-3 rounded-lg font-roboto-condensed font-semibold text-lg hover:bg-seashell transition-colors flex items-center gap-2 mx-auto justify-center w-fit shadow-md mb-8"
+              to="/services"
+              className="bg-onyx text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:bg-black transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg"
             >
-              <BookOpen size={20} />
-              Explore My Free Resources
+              See How It Works
+              <ArrowRight size={20} />
             </Link>
 
-            <p className="font-roboto italic text-2xl text-white">
-              Skip the overhead. Keep the excellence.
-            </p>
+            <Link
+              to="/contact"
+              className="bg-onyx text-white border-2 border-onyx px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:bg-black transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg"
+            >
+              <Calendar size={20} />
+              Book a No-Cost Intro Call
+            </Link>
           </div>
+
+          <Link
+            to="/resources"
+            className="text-onyx bg-white px-6 py-3 rounded-lg font-roboto-condensed font-semibold text-lg hover:bg-seashell transition-colors flex items-center gap-2 mx-auto justify-center w-fit shadow-md mb-8"
+          >
+            <BookOpen size={20} />
+            Explore My Free Resources
+          </Link>
+
+          <p className="font-roboto italic text-2xl text-white">
+            Skip the overhead. Keep the excellence.
+          </p>
+        </div>
         </div>
       </section>
 
