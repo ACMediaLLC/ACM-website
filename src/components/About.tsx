@@ -39,10 +39,10 @@ export function About() {
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-4">
+          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
             Meet Andrea Carter
           </h2>
-          <p className="font-roboto-condensed font-semibold text-2xl text-brick-red">
+          <p className="font-roboto-condensed font-semibold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent">
             Fractional Chief Communications Officer | Strategic Communications Leader
           </p>
         </div>
@@ -61,7 +61,7 @@ export function About() {
           </div>
 
           <div className="bg-seashell p-8 rounded-lg border-2 border-brick-red">
-            <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-6 text-center">
+            <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6 text-center">
               Career Highlights
             </h3>
             <div className="space-y-6">
@@ -78,7 +78,7 @@ export function About() {
         </div>
 
         <div className="bg-brick-red/5 border-l-4 border-brick-red p-8 mb-16 text-center">
-          <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-4">
+          <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
             My Philosophy
           </h3>
           <p className="font-roboto text-lg text-neutral leading-relaxed italic">
@@ -87,7 +87,7 @@ export function About() {
         </div>
 
         <div>
-          <h3 className="font-roboto-condensed font-bold text-3xl text-brick-red text-center mb-4">
+          <h3 className="font-roboto-condensed font-bold text-3xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent text-center mb-4">
             The AC Media Approach
           </h3>
           <p className="font-roboto text-xl text-neutral text-center mb-12 italic">
@@ -100,7 +100,7 @@ export function About() {
                 key={index}
                 className="text-center p-8 bg-seashell rounded-lg hover:shadow-lg transition-all border-2 border-transparent hover:border-brick-red"
               >
-                <h4 className="font-roboto-condensed font-bold text-3xl text-brick-red mb-4">
+                <h4 className="font-roboto-condensed font-bold text-3xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
                   {outcome.title}
                 </h4>
                 <p className="font-roboto text-neutral leading-relaxed">

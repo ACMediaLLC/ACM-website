@@ -46,9 +46,9 @@ export function Footer() {
               href="https://www.linkedin.com/in/carterandrea/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-brick-red hover:text-seashell transition-colors"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent hover:from-seashell hover:to-seashell transition-all"
             >
-              <Linkedin size={24} />
+              <Linkedin size={24} className="text-brick-red" />
               <span className="font-roboto-condensed font-semibold">Connect on LinkedIn</span>
             </a>
           </div>
@@ -61,7 +61,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/services"
-                  className="font-roboto text-seashell/80 hover:text-brick-red transition-colors"
+                  className="font-roboto text-seashell/80 hover:bg-gradient-to-r hover:from-brick-red hover:to-rose-500 hover:bg-clip-text hover:text-transparent transition-all"
                 >
                   Services
                 </Link>
@@ -69,7 +69,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/partner"
-                  className="font-roboto text-seashell/80 hover:text-brick-red transition-colors"
+                  className="font-roboto text-seashell/80 hover:bg-gradient-to-r hover:from-brick-red hover:to-rose-500 hover:bg-clip-text hover:text-transparent transition-all"
                 >
                   Work
                 </Link>
@@ -77,16 +77,16 @@ export function Footer() {
               <li>
                 <Link
                   to="/about"
-                  className="font-roboto text-seashell/80 hover:text-brick-red transition-colors"
+                  className="font-roboto text-seashell/80 hover:bg-gradient-to-r hover:from-brick-red hover:to-rose-500 hover:bg-clip-text hover:text-transparent transition-all"
                 >
-                  
+
                   Testimonials
                 </Link>
               </li>
               <li>
                 <Link
                   to="/resources"
-                  className="font-roboto text-seashell/80 hover:text-brick-red transition-colors"
+                  className="font-roboto text-seashell/80 hover:bg-gradient-to-r hover:from-brick-red hover:to-rose-500 hover:bg-clip-text hover:text-transparent transition-all"
                 >
                   Resources
                 </Link>
@@ -94,7 +94,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/contact"
-                  className="font-roboto text-seashell/80 hover:text-brick-red transition-colors"
+                  className="font-roboto text-seashell/80 hover:bg-gradient-to-r hover:from-brick-red hover:to-rose-500 hover:bg-clip-text hover:text-transparent transition-all"
                 >
                   Contact
                 </Link>
@@ -131,7 +131,7 @@ export function Footer() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-brick-red text-white px-4 py-2 rounded-lg hover:bg-white hover:text-brick-red transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-gradient-to-r from-brick-red to-rose-500 text-white px-4 py-2 rounded-lg hover:from-onyx hover:to-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send size={20} />
               </button>

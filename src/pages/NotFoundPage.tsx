@@ -10,10 +10,10 @@ export function NotFoundPage() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-seashell">
       <div className="max-w-2xl mx-auto text-center">
-        <h1 className="font-roboto-condensed font-bold text-9xl text-brick-red mb-6">
+        <h1 className="font-roboto-condensed font-bold text-9xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6">
           404
         </h1>
-        <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-6">
+        <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6">
           Page Not Found
         </h2>
         <p className="font-roboto text-xl text-neutral mb-10 leading-relaxed">
@@ -30,7 +30,7 @@ export function NotFoundPage() {
           </Link>
           <button
             onClick={() => window.history.back()}
-            className="text-brick-red font-roboto-condensed font-semibold text-lg hover:text-onyx transition-colors flex items-center gap-2"
+            className="bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent font-roboto-condensed font-semibold text-lg hover:from-onyx hover:to-black transition-all flex items-center gap-2"
           >
             <ArrowLeft size={20} />
             Go Back
@@ -38,43 +38,43 @@ export function NotFoundPage() {
         </div>
 
         <div className="mt-16 bg-white rounded-lg p-8 border-2 border-brick-red/20">
-          <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-4">
+          <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
             Quick Links
           </h3>
           <div className="grid sm:grid-cols-3 gap-4">
             <Link
               to="/services"
-              className="text-brick-red font-roboto-condensed font-semibold hover:text-onyx transition-colors"
+              className="bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent font-roboto-condensed font-semibold hover:from-onyx hover:to-black transition-all"
             >
               Services
             </Link>
             <Link
               to="/about"
-              className="text-brick-red font-roboto-condensed font-semibold hover:text-onyx transition-colors"
+              className="bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent font-roboto-condensed font-semibold hover:from-onyx hover:to-black transition-all"
             >
               About
             </Link>
             <Link
               to="/contact"
-              className="text-brick-red font-roboto-condensed font-semibold hover:text-onyx transition-colors"
+              className="bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent font-roboto-condensed font-semibold hover:from-onyx hover:to-black transition-all"
             >
               Contact
             </Link>
             <Link
               to="/partner"
-              className="text-brick-red font-roboto-condensed font-semibold hover:text-onyx transition-colors"
+              className="bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent font-roboto-condensed font-semibold hover:from-onyx hover:to-black transition-all"
             >
               Partner With Us
             </Link>
             <Link
               to="/testimonials"
-              className="text-brick-red font-roboto-condensed font-semibold hover:text-onyx transition-colors"
+              className="bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent font-roboto-condensed font-semibold hover:from-onyx hover:to-black transition-all"
             >
               Testimonials
             </Link>
             <Link
               to="/resources"
-              className="text-brick-red font-roboto-condensed font-semibold hover:text-onyx transition-colors"
+              className="bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent font-roboto-condensed font-semibold hover:from-onyx hover:to-black transition-all"
             >
               Resources
             </Link>

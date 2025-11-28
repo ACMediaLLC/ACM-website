@@ -61,7 +61,7 @@ export function NewsPage() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-6">
+            <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6">
               AC Media in the News
             </h1>
             <p className="font-roboto-condensed font-semibold text-2xl text-primary">
@@ -105,14 +105,14 @@ export function NewsPage() {
                     <p className="font-roboto-condensed font-bold text-xs uppercase tracking-widest text-neutral mb-3">
                       {article.outlet}
                     </p>
-                    <h3 className="font-roboto-condensed font-bold text-2xl md:text-3xl text-brick-red mb-4 leading-tight">
+                    <h3 className="font-roboto-condensed font-bold text-2xl md:text-3xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4 leading-tight">
                       {article.title}
                     </h3>
                     <a
                       href={article.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 font-roboto-condensed font-semibold text-base text-brick-red hover:text-onyx transition-colors group"
+                      className="inline-flex items-center gap-2 font-roboto-condensed font-semibold text-base bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent hover:from-onyx hover:to-black transition-all group"
                     >
                       Read article
                       <ExternalLink size={18} className="group-hover:translate-x-1 transition-transform" />

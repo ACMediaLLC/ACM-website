@@ -25,7 +25,7 @@ export function Breadcrumb() {
           <li>
             <Link
               to="/"
-              className="text-neutral hover:text-brick-red transition-colors font-roboto"
+              className="text-neutral hover:bg-gradient-to-r hover:from-brick-red hover:to-rose-500 hover:bg-clip-text hover:text-transparent transition-all font-roboto"
             >
               Home
             </Link>
@@ -45,7 +45,7 @@ export function Breadcrumb() {
                 ) : (
                   <Link
                     to={routeTo}
-                    className="text-neutral hover:text-brick-red transition-colors font-roboto"
+                    className="text-neutral hover:bg-gradient-to-r hover:from-brick-red hover:to-rose-500 hover:bg-clip-text hover:text-transparent transition-all font-roboto"
                   >
                     {displayName}
                   </Link>

@@ -90,7 +90,7 @@ export function PartnerPage() {
 <div className="text-center max-w-3xl mx-auto">
   
   {/* Top red subheading */}
-  <p className="font-roboto-condensed font-semibold text-2xl text-brick-red mb-4">
+  <p className="font-roboto-condensed font-semibold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
     Whether
   </p>
 
@@ -104,7 +104,7 @@ export function PartnerPage() {
 </ul>
 
   {/* Bottom red subheading */}
-  <p className="font-roboto-condensed font-semibold text-2xl text-brick-red">
+  <p className="font-roboto-condensed font-semibold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent">
     AC Media partners with organizations to help them level up
   </p>
 
@@ -146,7 +146,7 @@ export function PartnerPage() {
           border: '2px solid transparent',
         }}
       >
-        <h3 className="font-roboto-condensed font-bold text-xl text-brick-red mb-3">
+        <h3 className="font-roboto-condensed font-bold text-xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-3">
           {benefit.title}
         </h3>
         <p className="font-roboto text-neutral leading-relaxed">
@@ -164,7 +164,7 @@ export function PartnerPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-4">
+            <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
               Recent Work
             </h2>
             <p className="font-roboto text-xl text-primary max-w-3xl mx-auto">
@@ -186,7 +186,7 @@ export function PartnerPage() {
                 }}
                 className="bg-seashell p-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red text-center"
               >
-                <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-3">
+                <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-3">
                   {study.title}
                 </h3>
                 <p className="font-roboto text-lg text-text-primary mb-4 leading-relaxed">
@@ -210,7 +210,7 @@ export function PartnerPage() {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-6">
+          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6">
             Want to See How We Could Work Together?
           </h2>
           <p className="font-roboto text-xl text-primary italic mb-10">
@@ -226,7 +226,7 @@ export function PartnerPage() {
             </Link>
             <Link
               to="/services"
-              className="text-primary font-roboto-condensed font-semibold text-lg hover:text-brick-red transition-colors flex items-center gap-2"
+              className="text-primary font-roboto-condensed font-semibold text-lg hover:bg-gradient-to-r hover:from-brick-red hover:to-rose-500 hover:bg-clip-text hover:text-transparent transition-all flex items-center gap-2"
             >
               View All Services
             </Link>

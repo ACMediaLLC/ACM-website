@@ -54,7 +54,7 @@ export function Contact() {
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-seashell">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-4">
+          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
             Let's Start a Conversation
           </h2>
           <p className="font-roboto text-xl text-neutral">
@@ -198,7 +198,7 @@ export function Contact() {
           </p>
           <a
             href="mailto:andrea@acmedia.com"
-            className="font-roboto-condensed font-semibold text-xl text-brick-red hover:text-onyx transition-colors"
+            className="font-roboto-condensed font-semibold text-xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent hover:from-onyx hover:to-black transition-all"
           >
             andrea@acmedia.com
           </a>

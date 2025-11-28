@@ -55,7 +55,7 @@ export function Testimonials() {
     <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-4">
+          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
             What Clients Are Saying
           </h2>
         </div>
@@ -126,7 +126,7 @@ export function Testimonials() {
           <p className="font-roboto text-xl text-text-primary mb-4">
             "Andrea doesn't just check boxes—she transforms how organizations think about and execute their communications strategy."
           </p>
-          <p className="font-roboto-condensed font-semibold text-brick-red">
+          <p className="font-roboto-condensed font-semibold bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent">
             — Board Chair, Philadelphia-based Nonprofit
           </p>
         </div>

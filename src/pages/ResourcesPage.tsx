@@ -70,7 +70,7 @@ export function ResourcesPage() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-6">
+            <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6">
               Free Resources
             </h1>
             
@@ -82,7 +82,7 @@ export function ResourcesPage() {
           {resources.length === 0 && !loading && (
             <div className="bg-seashell rounded-lg p-12 text-center">
               <FileText className="text-brick-red mx-auto mb-4" size={64} />
-              <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-4">
+              <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
                 Coming Soon
               </h3>
               <ul className="space-y-2 list-disc text-lg text-onyx mb-6 marker:text-brick-red ml-6 text-left">
@@ -135,7 +135,7 @@ export function ResourcesPage() {
                       </span>
                     </div>
 
-                    <h3 className="font-roboto-condensed font-bold text-xl text-brick-red mb-3">
+                    <h3 className="font-roboto-condensed font-bold text-xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-3">
                       {resource.title}
                     </h3>
 
@@ -168,7 +168,7 @@ export function ResourcesPage() {
             {isSuccess ? (
               <div className="text-center">
                 <CheckCircle className="text-green-500 mx-auto mb-4" size={48} />
-                <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-2">
+                <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-2">
                   Success!
                 </h3>
                 <p className="font-roboto text-neutral">
@@ -177,7 +177,7 @@ export function ResourcesPage() {
               </div>
             ) : (
               <>
-                <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-4">
+                <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
                   Get Your Free Resource
                 </h3>
                 <p className="font-roboto text-neutral mb-6">
@@ -232,7 +232,7 @@ export function ResourcesPage() {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-seashell">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-6">
+          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6">
             Need More Than Templates?
           </h2>
           <p className="font-roboto text-xl text-primary mb-10 leading-relaxed">
@@ -248,7 +248,7 @@ export function ResourcesPage() {
             </Link>
             <Link
               to="/services"
-              className="text-primary font-roboto-condensed font-semibold text-lg hover:text-brick-red transition-colors"
+              className="text-primary font-roboto-condensed font-semibold text-lg hover:bg-gradient-to-r hover:from-brick-red hover:to-rose-500 hover:bg-clip-text hover:text-transparent transition-all"
             >
               View Services
             </Link>

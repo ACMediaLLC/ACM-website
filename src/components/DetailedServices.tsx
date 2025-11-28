@@ -71,7 +71,7 @@ export function DetailedServices() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-seashell">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-6">
+          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6">
             Something for Every Need, Every Budget
           </h2>
         </div>
@@ -81,7 +81,7 @@ export function DetailedServices() {
             onClick={() => setExpandedPainPoints(!expandedPainPoints)}
             className="w-full flex justify-between items-center"
           >
-            <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red">
+            <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent">
               Need This?
             </h3>
             {expandedPainPoints ? <ChevronUp className="text-brick-red" size={28} /> : <ChevronDown className="text-brick-red" size={28} />}
@@ -112,7 +112,7 @@ export function DetailedServices() {
                 </div>
               )}
 
-              <h4 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-4 mt-4">
+              <h4 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4 mt-4">
                 {service.title}
               </h4>
 

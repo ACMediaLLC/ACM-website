@@ -15,7 +15,7 @@ export function Hero() {
           <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
           <h1 className="font-roboto-condensed font-bold text-5xl md:text-6xl lg:text-7xl text-text-primary mb-6 leading-tight">
             Get a Chief Communications Officer—
-            <span className="text-brick-red"> Without the $200K Price Tag</span>
+            <span className="bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent"> Without the $200K Price Tag</span>
           </h1>
 
           <p className="font-roboto text-xl md:text-2xl text-neutral mb-8 leading-relaxed">
@@ -57,7 +57,7 @@ export function Hero() {
             Explore My Free Resources
           </button>
 
-          <p className="font-roboto italic text-2xl text-brick-red mt-12">
+          <p className="font-roboto italic text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mt-12">
             Skip the overhead. Keep the excellence.
           </p>
         </div>

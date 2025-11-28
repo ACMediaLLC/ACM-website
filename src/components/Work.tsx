@@ -39,7 +39,7 @@ export function Work() {
     <section id="work" className="py-20 px-4 sm:px-6 lg:px-8 bg-seashell">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-4">
+          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
             WORK
           </h2>
           <p className="font-roboto text-xl text-neutral max-w-3xl mx-auto">
@@ -59,7 +59,7 @@ export function Work() {
                 border: '2px solid transparent'
               }}
             >
-              <h3 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-3">
+              <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-3">
                 {study.title}
               </h3>
               <p className="font-roboto text-lg text-text-primary mb-4 leading-relaxed">
@@ -78,7 +78,7 @@ export function Work() {
         </div>
 
         <div className="border-t-2 border-brick-red/20 pt-16">
-          <h3 className="font-roboto-condensed font-bold text-3xl text-brick-red text-center mb-12">
+          <h3 className="font-roboto-condensed font-bold text-3xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent text-center mb-12">
             Clients and Organizations I've Worked With/For
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -93,7 +93,7 @@ export function Work() {
                   border: '2px solid transparent'
                 }}
               >
-                <p className="font-roboto-condensed font-semibold text-text-primary group-hover:text-brick-red transition-colors duration-300">
+                <p className="font-roboto-condensed font-semibold text-text-primary group-hover:bg-gradient-to-r group-hover:from-brick-red group-hover:to-rose-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                   {client}
                 </p>
               </div>
