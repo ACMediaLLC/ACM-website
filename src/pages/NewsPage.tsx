@@ -155,7 +155,7 @@ export function NewsPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  className="inline-flex bg-gradient-to-r from-brick-red to-rose-500 text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:from-onyx hover:to-black transition-all transform hover:scale-105 shadow-lg"
+                  className="font-roboto-condensed font-bold text-xl text-onyx bg-white mb-4 text-center"
                 />
                 <button
                   type="submit"
