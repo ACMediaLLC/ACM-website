@@ -147,7 +147,7 @@ export function NewsPage() {
             </div>
 
             <div className="mt-8 w-full max-w-md">
-              <h3 className="font-roboto-condensed font-bold text-xl text-onyx bg-white mb-4 text-center">Subscribe to Newsletter</h3>
+              <h3 className="font-roboto-condensed font-bold text-xl text-black mb-4 text-center">Subscribe to Newsletter</h3>
               <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
@@ -155,18 +155,18 @@ export function NewsPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  className="font-roboto-condensed font-bold text-xl text-onyx bg-white mb-4 text-center"
+                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg font-roboto text-black placeholder-gray-400 focus:outline-none focus:border-brick-red transition-colors"
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="text-onyx bg-white px-6 py-3 rounded-lg font-roboto-condensed font-semibold text-lg hover:bg-seashell transition-colors flex items-center gap-2 shadow-md"
+                  className="bg-gradient-to-r from-brick-red to-rose-500 text-white px-6 py-3 rounded-lg font-roboto-condensed font-semibold text-lg hover:from-onyx hover:to-black transition-all transform hover:scale-105 shadow-lg whitespace-nowrap"
                 >
                   {isSubmitting ? 'Subscribing...' : 'Subscribe'}
                 </button>
               </form>
               {submitMessage && (
-                <p className="font-roboto-condensed text-sm text-gray-600 mt-2 text-center">{submitMessage}</p>
+                <p className="font-roboto-condensed text-sm text-black mt-2 text-center">{submitMessage}</p>
               )}
             </div>
           </div>
