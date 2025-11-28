@@ -22,13 +22,18 @@ export function Hero() {
             Stop piecing together your marketing and communications strategy. Get executive-level leadership, clarity, and execution—without the overhead.
           </p>
 
-          <div className="bg-white border-2 border-brick-red rounded-lg p-6 mb-10 max-w-2xl mx-auto">
-            <p className="font-roboto-condensed font-semibold text-lg text-text-primary mb-2">
-              Perfect for:
-            </p>
-            <p className="font-roboto text-neutral">
-              CEOs and Executive Directors ready to move faster, scale smarter, and look like the pros—without hiring a full-time executive
-            </p>
+          <div className="bg-white border-2 border-brick-red rounded-lg p-6 mb-10 max-w-2xl mx-auto relative overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-64 h-64 bg-brick-red rounded-full blur-3xl opacity-20"></div>
+            </div>
+            <div className="relative z-10">
+              <p className="font-roboto-condensed font-semibold text-lg text-text-primary mb-2">
+                Perfect for:
+              </p>
+              <p className="font-roboto text-neutral">
+                CEOs and Executive Directors ready to move faster, scale smarter, and look like the pros—without hiring a full-time executive
+              </p>
+            </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
