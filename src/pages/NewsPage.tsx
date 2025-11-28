@@ -160,7 +160,7 @@ export function NewsPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-brick-red text-white font-roboto-condensed font-bold py-3 px-6 rounded-lg hover:bg-rose-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap shadow-md"
+                  className="text-onyx bg-white px-6 py-3 rounded-lg font-roboto-condensed font-semibold text-lg hover:bg-seashell transition-colors flex items-center gap-2 shadow-md"
                 >
                   {isSubmitting ? 'Subscribing...' : 'Subscribe'}
                 </button>
