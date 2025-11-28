@@ -17,6 +17,7 @@ export interface ContactSubmission {
 }
 
 export interface NewsletterSubscriber {
+  first_name: string;
   email: string;
 }
 

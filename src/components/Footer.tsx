@@ -4,6 +4,7 @@ import { Linkedin, Send, CheckCircle } from 'lucide-react';
 import { subscribeToNewsletter } from '../lib/supabase';
 
 export function Footer() {
+  const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -15,8 +16,9 @@ export function Footer() {
     setError('');
 
     try {
-      await subscribeToNewsletter({ email });
+      await subscribeToNewsletter({ first_name: firstName, email });
       setIsSuccess(true);
+      setFirstName('');
       setEmail('');
       setTimeout(() => setIsSuccess(false), 5000);
     } catch (err: any) {
@@ -119,22 +121,32 @@ export function Footer() {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="flex gap-2">
+            <form onSubmit={handleSubmit} className="space-y-2">
               <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="First Name"
                 required
-                className="flex-1 px-4 py-2 rounded-lg bg-seashell text-text-primary border-2 border-transparent focus:border-brick-red focus:outline-none font-roboto"
+                className="w-full px-4 py-2 rounded-lg bg-seashell text-text-primary border-2 border-transparent focus:border-brick-red focus:outline-none font-roboto"
               />
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="bg-gradient-to-r from-brick-red to-rose-500 text-white px-4 py-2 rounded-lg hover:from-onyx hover:to-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <Send size={20} />
-              </button>
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="your@email.com"
+                  required
+                  className="flex-1 px-4 py-2 rounded-lg bg-seashell text-text-primary border-2 border-transparent focus:border-brick-red focus:outline-none font-roboto"
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-gradient-to-r from-brick-red to-rose-500 text-white px-4 py-2 rounded-lg hover:from-onyx hover:to-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Send size={20} />
+                </button>
+              </div>
             </form>
 
             {error && (

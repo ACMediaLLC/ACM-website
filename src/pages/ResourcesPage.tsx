@@ -7,6 +7,7 @@ export function ResourcesPage() {
   const [resources, setResources] = useState<Resource[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showEmailModal, setShowEmailModal] = useState(false);
@@ -45,8 +46,9 @@ export function ResourcesPage() {
     setIsSubmitting(true);
 
     try {
-      await subscribeToNewsletter({ email });
+      await subscribeToNewsletter({ first_name: firstName, email });
       setIsSuccess(true);
+      setFirstName('');
       setEmail('');
 
       if (selectedResource) {
@@ -188,6 +190,20 @@ export function ResourcesPage() {
                 <form onSubmit={handleEmailSubmit}>
                   <div className="mb-4">
                     <label className="font-roboto-condensed font-semibold text-text-primary block mb-2">
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      placeholder="Your first name"
+                      required
+                      className="w-full px-4 py-3 border-2 border-neutral/20 rounded-lg focus:border-brick-red focus:outline-none font-roboto"
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="font-roboto-condensed font-semibold text-text-primary block mb-2">
                       Email Address
                     </label>
                     <div className="relative">
@@ -209,6 +225,7 @@ export function ResourcesPage() {
                       onClick={() => {
                         setShowEmailModal(false);
                         setSelectedResource(null);
+                        setFirstName('');
                         setEmail('');
                       }}
                       className="flex-1 bg-neutral/10 text-text-primary px-6 py-3 rounded-lg font-roboto-condensed font-semibold hover:bg-neutral/20 transition-all"

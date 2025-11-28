@@ -27,6 +27,7 @@ const newsArticles: NewsArticle[] = [
 ];
 
 export function NewsPage() {
+  const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
@@ -42,12 +43,13 @@ export function NewsPage() {
 
     try {
       const { error } = await supabase
-        .from('newsletter_subscriptions')
-        .insert([{ email }]);
+        .from('newsletter_subscribers')
+        .insert([{ first_name: firstName, email }]);
 
       if (error) throw error;
 
       setSubmitMessage('Thank you for subscribing!');
+      setFirstName('');
       setEmail('');
     } catch (error) {
       setSubmitMessage('An error occurred. Please try again.');
@@ -154,23 +156,33 @@ export function NewsPage() {
 
             <div className="mt-8 w-full max-w-md">
               <h3 className="font-roboto-condensed font-bold text-xl text-black mb-4 text-center">Subscribe to Newsletter</h3>
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2">
+              <form onSubmit={handleNewsletterSubmit} className="space-y-2">
                 <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  placeholder="First Name"
                   required
-                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg font-roboto text-black placeholder-gray-400 focus:outline-none focus:border-brick-red transition-colors"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-roboto text-black placeholder-gray-400 focus:outline-none focus:border-brick-red transition-colors"
                 />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-gradient-to-r from-brick-red to-rose-500 text-white px-6 py-3 rounded-lg font-roboto-condensed font-semibold text-lg hover:from-onyx hover:to-black transition-all transform hover:scale-105 whitespace-nowrap"
-                  style={{boxShadow: '0 10px 15px -3px rgba(232, 93, 111, 0.3), 0 4px 6px -2px rgba(232, 93, 111, 0.2), 0 0 20px rgba(232, 93, 111, 0.25)'}}
-                >
-                  {isSubmitting ? 'Subscribing...' : 'Subscribe'}
-                </button>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    required
+                    className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg font-roboto text-black placeholder-gray-400 focus:outline-none focus:border-brick-red transition-colors"
+                  />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-gradient-to-r from-brick-red to-rose-500 text-white px-6 py-3 rounded-lg font-roboto-condensed font-semibold text-lg hover:from-onyx hover:to-black transition-all transform hover:scale-105 whitespace-nowrap"
+                    style={{boxShadow: '0 10px 15px -3px rgba(232, 93, 111, 0.3), 0 4px 6px -2px rgba(232, 93, 111, 0.2), 0 0 20px rgba(232, 93, 111, 0.25)'}}
+                  >
+                    {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+                  </button>
+                </div>
               </form>
               {submitMessage && (
                 <p className="font-roboto-condensed text-sm text-black mt-2 text-center">{submitMessage}</p>
