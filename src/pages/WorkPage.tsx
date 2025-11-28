@@ -82,7 +82,8 @@ export function PartnerPage() {
           <div className="text-center mb-16">
             <div className="text-center max-w-3xl mx-auto">
   
- <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl text-brick-red mb-6">
+ <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 
+             bg-clip-text text-transparent mb-6">
   How We Can Work Together
 </h1>
 
