@@ -22,9 +22,10 @@ export function Hero() {
             Stop piecing together your marketing and communications strategy. Get executive-level leadership, clarity, and execution—without the overhead.
           </p>
 
-          <div className="bg-white border-2 border-brick-red rounded-lg p-6 mb-10 max-w-2xl mx-auto relative overflow-hidden">
+          <div className="bg-white border-2 border-brick-red rounded-lg p-6 mb-10 max-w-2xl mx-auto relative overflow-hidden shadow-[0_0_80px_rgba(220,38,38,0.3)]">
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-96 h-96 bg-brick-red rounded-full blur-3xl opacity-40"></div>
+              <div className="absolute w-full h-full bg-gradient-radial from-brick-red/30 via-brick-red/10 to-transparent"></div>
+              <div className="w-96 h-96 bg-brick-red rounded-full blur-3xl opacity-60 animate-pulse"></div>
             </div>
             <div className="relative z-10">
               <p className="font-roboto-condensed font-semibold text-lg text-text-primary mb-2">
