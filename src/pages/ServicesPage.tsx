@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Handshake, Lightbulb, CheckSquare, Zap, Users, Download, ChevronDown, ChevronUp, Star, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 
 const services = [
   {
@@ -131,6 +131,7 @@ const detailedServices = [
 export function ServicesPage() {
   const [expandedPainPoints, setExpandedPainPoints] = useState(false);
   const servicesCarouselRef = useRef<HTMLDivElement>(null);
+  const desktopControls = useAnimation();
 
   useEffect(() => {
     document.title = 'Services | AC Media';
@@ -219,17 +220,28 @@ export function ServicesPage() {
           </div>
 
           {/* Desktop: Grid layout */}
-          <div className="hidden md:grid md:grid-cols-2 gap-8 mb-12">
+          <motion.div
+            className="hidden md:grid md:grid-cols-2 gap-8 mb-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            onViewportEnter={() => desktopControls.start('visible')}
+          >
             {detailedServices.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.2,
-                  ease: [0.25, 0.4, 0.25, 1]
+                animate={desktopControls}
+                variants={{
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.6,
+                      delay: index * 0.2,
+                      ease: [0.25, 0.4, 0.25, 1]
+                    }
+                  }
                 }}
                 className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow relative border-2 border-transparent hover:border-brick-red text-center"
                 onMouseEnter={(e) => {
@@ -275,7 +287,7 @@ export function ServicesPage() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Mobile: Snap scroll carousel */}
           <div className="md:hidden mb-12">
@@ -297,19 +309,11 @@ export function ServicesPage() {
               </button>
             </div>
 
-            <div ref={servicesCarouselRef} className="-mx-4 overflow-x-auto pb-6" style={{scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch'}}>
+            <div ref={servicesCarouselRef} className="-mx-4 overflow-x-auto pb-6 pt-8" style={{scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch'}}>
               <div className="flex gap-6 snap-x snap-mandatory px-4">
                 {detailedServices.map((service, index) => (
-                  <motion.div
+                  <div
                     key={index}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{
-                      duration: 0.6,
-                      delay: index * 0.2,
-                      ease: [0.25, 0.4, 0.25, 1]
-                    }}
                     className="snap-start bg-white rounded-lg p-8 shadow-lg transition-shadow relative border-2 border-transparent text-center min-w-[75vw] sm:min-w-[350px] flex-shrink-0"
                   >
                   {service.recommended && (
@@ -346,7 +350,7 @@ export function ServicesPage() {
                     </p>
                     <p className="font-roboto text-neutral" dangerouslySetInnerHTML={{ __html: service.bestFor }} />
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
             </div>
