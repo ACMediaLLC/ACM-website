@@ -24,7 +24,7 @@ export function Hero() {
 
           <div className="bg-white border-2 border-brick-red rounded-lg p-6 mb-10 max-w-2xl mx-auto relative overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-64 h-64 bg-brick-red rounded-full blur-3xl opacity-20"></div>
+              <div className="w-96 h-96 bg-brick-red rounded-full blur-3xl opacity-40"></div>
             </div>
             <div className="relative z-10">
               <p className="font-roboto-condensed font-semibold text-lg text-text-primary mb-2">
