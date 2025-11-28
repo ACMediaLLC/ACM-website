@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Calendar, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { supabase } from '../lib/supabase';
+import { subscribeToNewsletter } from '../lib/supabase';
 
 interface NewsArticle {
   logo: string;
@@ -42,17 +42,17 @@ export function NewsPage() {
     setSubmitMessage('');
 
     try {
-      const { error } = await supabase
-        .from('newsletter_subscribers')
-        .insert([{ first_name: firstName, email }]);
-
-      if (error) throw error;
-
+      await subscribeToNewsletter({ first_name: firstName, email });
       setSubmitMessage('Thank you for subscribing!');
       setFirstName('');
       setEmail('');
-    } catch (error) {
-      setSubmitMessage('An error occurred. Please try again.');
+    } catch (error: any) {
+      if (error.code === '23505') {
+        setSubmitMessage('This email is already subscribed.');
+      } else {
+        setSubmitMessage('An error occurred. Please try again.');
+      }
+      console.error('Newsletter subscription error:', error);
     } finally {
       setIsSubmitting(false);
     }
