@@ -70,7 +70,7 @@ export function ResourcesPage() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6">
+            <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6" style={{filter: 'drop-shadow(0 0 20px rgba(232, 93, 111, 0.3))'}}>
               Free Resources
             </h1>
             
@@ -82,7 +82,7 @@ export function ResourcesPage() {
           {resources.length === 0 && !loading && (
             <div className="bg-seashell rounded-lg p-12 text-center">
               <FileText className="text-brick-red mx-auto mb-4" size={64} />
-              <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
+              <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
                 Coming Soon
               </h3>
               <ul className="space-y-2 list-disc text-lg text-onyx mb-6 marker:text-brick-red ml-6 text-left">
@@ -97,7 +97,8 @@ export function ResourcesPage() {
 
       <Link
                 to="/contact"
-                className="inline-flex bg-gradient-to-r from-brick-red to-rose-500 text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:from-onyx hover:to-black transition-all transform hover:scale-105 shadow-lg"
+                className="inline-flex bg-gradient-to-r from-brick-red to-rose-500 text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:from-onyx hover:to-black transition-all transform hover:scale-105"
+                style={{boxShadow: '0 10px 15px -3px rgba(232, 93, 111, 0.3), 0 4px 6px -2px rgba(232, 93, 111, 0.2), 0 0 20px rgba(232, 93, 111, 0.25)'}}
               >
                 Get Notified
               </Link>
@@ -135,7 +136,7 @@ export function ResourcesPage() {
                       </span>
                     </div>
 
-                    <h3 className="font-roboto-condensed font-bold text-xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-3">
+                    <h3 className="font-roboto-condensed font-bold text-xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-3" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
                       {resource.title}
                     </h3>
 
@@ -168,7 +169,7 @@ export function ResourcesPage() {
             {isSuccess ? (
               <div className="text-center">
                 <CheckCircle className="text-green-500 mx-auto mb-4" size={48} />
-                <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-2">
+                <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-2" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
                   Success!
                 </h3>
                 <p className="font-roboto text-neutral">
@@ -177,7 +178,7 @@ export function ResourcesPage() {
               </div>
             ) : (
               <>
-                <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
+                <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
                   Get Your Free Resource
                 </h3>
                 <p className="font-roboto text-neutral mb-6">
@@ -232,7 +233,7 @@ export function ResourcesPage() {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-seashell">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6">
+          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6" style={{filter: 'drop-shadow(0 0 25px rgba(232, 93, 111, 0.4))'}}>
             Need More Than Templates?
           </h2>
           <p className="font-roboto text-xl text-primary mb-10 leading-relaxed">
@@ -241,7 +242,8 @@ export function ResourcesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               to="/contact"
-              className="inline-flex bg-gradient-to-r from-brick-red to-rose-500 text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:from-onyx hover:to-black transition-all transform hover:scale-105 shadow-lg"
+              className="inline-flex bg-gradient-to-r from-brick-red to-rose-500 text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:from-onyx hover:to-black transition-all transform hover:scale-105"
+              style={{boxShadow: '0 10px 15px -3px rgba(232, 93, 111, 0.4), 0 4px 6px -2px rgba(232, 93, 111, 0.3), 0 0 30px rgba(232, 93, 111, 0.3)'}}
             >
               <Calendar size={20} />
               Schedule a Consultation

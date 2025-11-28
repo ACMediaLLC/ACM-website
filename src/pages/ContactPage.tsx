@@ -59,7 +59,7 @@ export function ContactPage() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6">
+            <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6" style={{filter: 'drop-shadow(0 0 20px rgba(232, 93, 111, 0.3))'}}>
               Let's Work Together
             </h1>
             <p className="font-roboto-condensed font-semibold text-center text-2xl text-primary mb-4">
@@ -215,7 +215,7 @@ export function ContactPage() {
 
             <div className="mt-12">
               <div className="bg-seashell p-8 rounded-lg border-2 border-brick-red">
-                <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4 text-center">
+                <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4 text-center" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
                   What to Expect
                 </h3>
                 <ul className="space-y-4">

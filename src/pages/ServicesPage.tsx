@@ -140,8 +140,8 @@ export function ServicesPage() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 
-             bg-clip-text text-transparent mb-6">
+            <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500
+             bg-clip-text text-transparent mb-6" style={{filter: 'drop-shadow(0 0 20px rgba(232, 93, 111, 0.3))'}}>
               Fractional Communications
             </h1>
             <h2 className="font-roboto-condensed font-bold text-3xl md:text-4xl text-primary mb-6">
@@ -171,6 +171,12 @@ export function ServicesPage() {
                   ease: [0.25, 0.4, 0.25, 1]
                 }}
                 className="group bg-seashell p-8 rounded-xl transition-all duration-300 ease-out transform hover:-translate-y-1.5 hover:scale-[1.01] text-center shadow-md hover:shadow-2xl"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+                }}
                 style={{
                   backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, rgba(232, 93, 111, 0.3), rgba(244, 152, 165, 0.15))',
                   backgroundOrigin: 'padding-box, border-box',
@@ -195,8 +201,8 @@ export function ServicesPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-seashell">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 
-             bg-clip-text text-transparent mb-6">
+            <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500
+             bg-clip-text text-transparent mb-6" style={{filter: 'drop-shadow(0 0 20px rgba(232, 93, 111, 0.3))'}}>
               Something for Every Need, Every Budget
             </h2>
           </div>
@@ -214,6 +220,12 @@ export function ServicesPage() {
                   ease: [0.25, 0.4, 0.25, 1]
                 }}
                 className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow relative border-2 border-transparent hover:border-brick-red text-center"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                }}
               >
                 {service.recommended && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brick-red text-white px-6 py-2 rounded-full font-roboto-condensed font-bold text-sm flex items-center gap-2">
@@ -263,8 +275,8 @@ export function ServicesPage() {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 
-             bg-clip-text text-transparent mb-6">
+          <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500
+             bg-clip-text text-transparent mb-6" style={{filter: 'drop-shadow(0 0 25px rgba(232, 93, 111, 0.4))'}}>
             Ready to Get Started?
           </h2>
           <p className="font-roboto text-xl text-primary mb-10 leading-relaxed">
@@ -272,7 +284,8 @@ export function ServicesPage() {
           </p>
           <Link
             to="/contact"
-            className="inline-flex bg-gradient-to-r from-brick-red to-rose-500 text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:from-onyx hover:to-black transition-all transform hover:scale-105 shadow-lg"
+            className="inline-flex bg-gradient-to-r from-brick-red to-rose-500 text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:from-onyx hover:to-black transition-all transform hover:scale-105"
+            style={{boxShadow: '0 10px 15px -3px rgba(232, 93, 111, 0.4), 0 4px 6px -2px rgba(232, 93, 111, 0.3), 0 0 30px rgba(232, 93, 111, 0.3)'}}
           >
             <Calendar size={20} />
             Schedule Your Free Consultation

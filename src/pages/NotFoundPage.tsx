@@ -10,10 +10,10 @@ export function NotFoundPage() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-seashell">
       <div className="max-w-2xl mx-auto text-center">
-        <h1 className="font-roboto-condensed font-bold text-9xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6">
+        <h1 className="font-roboto-condensed font-bold text-9xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6" style={{filter: 'drop-shadow(0 0 30px rgba(232, 93, 111, 0.5))'}}>
           404
         </h1>
-        <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6">
+        <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-6" style={{filter: 'drop-shadow(0 0 20px rgba(232, 93, 111, 0.3))'}}>
           Page Not Found
         </h2>
         <p className="font-roboto text-xl text-neutral mb-10 leading-relaxed">
@@ -38,7 +38,7 @@ export function NotFoundPage() {
         </div>
 
         <div className="mt-16 bg-white rounded-lg p-8 border-2 border-brick-red/20">
-          <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4">
+          <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
             Quick Links
           </h3>
           <div className="grid sm:grid-cols-3 gap-4">
