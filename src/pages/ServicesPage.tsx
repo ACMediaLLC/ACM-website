@@ -207,7 +207,8 @@ export function ServicesPage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {/* Desktop: Grid layout */}
+          <div className="hidden md:grid md:grid-cols-2 gap-8 mb-12">
             {detailedServices.map((service, index) => (
               <motion.div
                 key={index}
@@ -263,6 +264,61 @@ export function ServicesPage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Mobile: Snap scroll carousel */}
+          <div className="md:hidden -mx-4 overflow-x-auto pb-6 mb-12" style={{scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch'}}>
+            <div className="flex gap-6 snap-x snap-mandatory px-4">
+              {detailedServices.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.2,
+                    ease: [0.25, 0.4, 0.25, 1]
+                  }}
+                  className="snap-start bg-white rounded-lg p-8 shadow-lg transition-shadow relative border-2 border-transparent text-center min-w-[85vw] sm:min-w-[400px] flex-shrink-0"
+                >
+                  {service.recommended && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brick-red text-white px-6 py-2 rounded-full font-roboto-condensed font-bold text-sm flex items-center gap-2">
+                      <Star size={16} fill="white" />
+                      MOST RECOMMENDED
+                    </div>
+                  )}
+
+                  <h4 className="font-roboto-condensed font-bold text-2xl text-brick-red mb-4 mt-4">
+                    {service.title}
+                  </h4>
+
+                  <p className="font-roboto italic text-onyx mb-6">
+                    For {service.forWhen}
+                  </p>
+
+                  <div className="mb-6">
+                    <p className="font-roboto-condensed font-semibold text-text-primary mb-3">
+                      Deliverables:
+                    </p>
+                    <ul className="space-y-2">
+                      {service.deliverables.map((item, idx) => (
+                        <li key={idx} className="font-roboto text-neutral">
+                          • {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="border-t-2 border-seashell pt-4">
+                    <p className="font-roboto-condensed font-semibold text-text-primary mb-2">
+                      Best for:
+                    </p>
+                    <p className="font-roboto text-neutral" dangerouslySetInnerHTML={{ __html: service.bestFor }} />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
           <div className="text-center">

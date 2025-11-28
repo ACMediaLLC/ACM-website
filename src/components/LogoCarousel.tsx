@@ -19,11 +19,12 @@ export function LogoCarousel() {
           <p className="font-roboto text-sm uppercase tracking-wider text-neutral font-semibold mb-2">
             Previous Leadership & Consulting Roles
           </p>
-        
+
         </div>
 
         <div className="relative">
-          <div className="flex gap-12 animate-scroll">
+          {/* Desktop: Infinite scroll animation */}
+          <div className="hidden md:flex gap-12 animate-scroll">
             {duplicatedLogos.map((logo, index) => (
               <div
                 key={index}
@@ -36,6 +37,24 @@ export function LogoCarousel() {
                 />
               </div>
             ))}
+          </div>
+
+          {/* Mobile: Snap scroll carousel */}
+          <div className="md:hidden -mx-4 overflow-x-auto pb-6 snap-scroll-container">
+            <div className="flex gap-8 snap-x snap-mandatory px-4">
+              {logos.map((logo, index) => (
+                <div
+                  key={index}
+                  className="snap-start flex-shrink-0 flex items-center justify-center w-48 h-24"
+                >
+                  <img
+                    src={logo.url}
+                    alt={logo.name}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -55,10 +74,14 @@ export function LogoCarousel() {
           will-change: transform;
         }
 
-        @media (max-width: 767px) {
-          .animate-scroll {
-            animation-duration: 24s;
-          }
+        .snap-scroll-container {
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .snap-scroll-container::-webkit-scrollbar {
+          display: none;
         }
       `}</style>
     </section>
