@@ -292,7 +292,7 @@ export function HomePage() {
           <div className="text-center">
             <Link
               to="/services"
-              className="inline-flex bg-brick-red text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:bg-onyx transition-all transform hover:scale-105"
+              className="inline-flex bg-gradient-to-r from-brick-red to-rose-500 text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:from-onyx hover:to-black transition-all transform hover:scale-105 shadow-lg"
             >
               View All Services
             </Link>
