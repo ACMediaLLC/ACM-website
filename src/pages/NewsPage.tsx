@@ -147,7 +147,7 @@ export function NewsPage() {
             </div>
 
             <div className="mt-8 w-full max-w-md">
-              <h3 className="font-roboto-condensed font-bold text-xl text-onyx mb-4 text-center">Subscribe to Newsletter</h3>
+              <h3 className="font-roboto-condensed font-bold text-xl text-onyx bg-white mb-4 text-center">Subscribe to Newsletter</h3>
               <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
