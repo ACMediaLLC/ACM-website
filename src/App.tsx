@@ -9,6 +9,7 @@ import { TestimonialsPage } from './pages/TestimonialsPage';
 import { ResourcesPage } from './pages/ResourcesPage';
 import { NewsPage } from './pages/NewsPage';
 import { ContactPage } from './pages/ContactPage';
+import { KitSyncPage } from './pages/KitSyncPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/resources" element={<Layout><ResourcesPage /></Layout>} />
         <Route path="/news" element={<Layout><NewsPage /></Layout>} />
         <Route path="/contact" element={<Layout><ContactPage /></Layout>} />
+        <Route path="/admin/kit-sync" element={<Layout><KitSyncPage /></Layout>} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
