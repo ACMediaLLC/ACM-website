@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Download, FileText, Calendar, Mail, CheckCircle } from 'lucide-react';
-import { getResources, subscribeToNewsletter, Resource } from '../lib/supabase';
+import { getResources, Resource } from '../lib/supabase';
+import { subscribeToKitOnly } from '../lib/kit';
 
 export function ResourcesPage() {
   const [resources, setResources] = useState<Resource[]>([]);
@@ -46,20 +47,23 @@ export function ResourcesPage() {
     setIsSubmitting(true);
 
     try {
-      await subscribeToNewsletter({ first_name: firstName, email });
-      setIsSuccess(true);
-      setFirstName('');
-      setEmail('');
+      const result = await subscribeToKitOnly({ first_name: firstName, email });
 
-      if (selectedResource) {
-        window.open(selectedResource.file_url, '_blank');
+      if (result.success) {
+        setIsSuccess(true);
+        setFirstName('');
+        setEmail('');
+
+        if (selectedResource) {
+          window.open(selectedResource.file_url, '_blank');
+        }
+
+        setTimeout(() => {
+          setShowEmailModal(false);
+          setIsSuccess(false);
+          setSelectedResource(null);
+        }, 2000);
       }
-
-      setTimeout(() => {
-        setShowEmailModal(false);
-        setIsSuccess(false);
-        setSelectedResource(null);
-      }, 2000);
     } catch (error) {
       console.error('Error subscribing:', error);
     } finally {

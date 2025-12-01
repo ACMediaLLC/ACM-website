@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, Send, CheckCircle } from 'lucide-react';
-import { subscribeToNewsletter } from '../lib/supabase';
+import { subscribeToKitOnly } from '../lib/kit';
 
 export function Footer() {
   const [firstName, setFirstName] = useState('');
@@ -16,17 +16,18 @@ export function Footer() {
     setError('');
 
     try {
-      await subscribeToNewsletter({ first_name: firstName, email });
-      setIsSuccess(true);
-      setFirstName('');
-      setEmail('');
-      setTimeout(() => setIsSuccess(false), 5000);
-    } catch (err: any) {
-      if (err.code === '23505') {
-        setError('This email is already subscribed.');
+      const result = await subscribeToKitOnly({ first_name: firstName, email });
+
+      if (result.success) {
+        setIsSuccess(true);
+        setFirstName('');
+        setEmail('');
+        setTimeout(() => setIsSuccess(false), 5000);
       } else {
-        setError('Failed to subscribe. Please try again.');
+        setError(result.message);
       }
+    } catch (err: any) {
+      setError('An error occurred. Please try again.');
       console.error('Newsletter subscription error:', err);
     } finally {
       setIsSubmitting(false);

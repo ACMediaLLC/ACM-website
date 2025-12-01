@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Calendar, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { subscribeToNewsletter } from '../lib/supabase';
+import { subscribeToKitOnly } from '../lib/kit';
 
 interface NewsArticle {
   logo: string;
@@ -42,16 +42,15 @@ export function NewsPage() {
     setSubmitMessage('');
 
     try {
-      await subscribeToNewsletter({ first_name: firstName, email });
-      setSubmitMessage('Thank you for subscribing!');
-      setFirstName('');
-      setEmail('');
-    } catch (error: any) {
-      if (error.code === '23505') {
-        setSubmitMessage('This email is already subscribed.');
-      } else {
-        setSubmitMessage('An error occurred. Please try again.');
+      const result = await subscribeToKitOnly({ first_name: firstName, email });
+      setSubmitMessage(result.message);
+
+      if (result.success) {
+        setFirstName('');
+        setEmail('');
       }
+    } catch (error: any) {
+      setSubmitMessage('An error occurred. Please try again.');
       console.error('Newsletter subscription error:', error);
     } finally {
       setIsSubmitting(false);

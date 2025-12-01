@@ -1,5 +1,4 @@
 import { createClient } from '@supabase/supabase-js';
-import { subscribeToKit } from './kit';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -15,11 +14,6 @@ export interface ContactSubmission {
   email: string;
   organization?: string;
   message: string;
-}
-
-export interface NewsletterSubscriber {
-  first_name: string;
-  email: string;
 }
 
 export interface Resource {
@@ -39,46 +33,6 @@ export async function submitContactForm(data: ContactSubmission) {
     .insert([data]);
 
   if (error) throw error;
-}
-
-export async function subscribeToNewsletter(data: NewsletterSubscriber) {
-  const { data: insertedData, error } = await supabase
-    .from('newsletter_subscribers')
-    .insert([{
-      first_name: data.first_name,
-      email: data.email,
-      synced_to_kit: false,
-      kit_sync_attempts: 0,
-    }])
-    .select()
-    .single();
-
-  if (error) throw error;
-
-  if (insertedData) {
-    const synced = await subscribeToKit({
-      first_name: data.first_name,
-      email: data.email,
-    });
-
-    if (synced) {
-      await supabase
-        .from('newsletter_subscribers')
-        .update({
-          synced_to_kit: true,
-          last_kit_sync_attempt: new Date().toISOString(),
-        })
-        .eq('id', insertedData.id);
-    } else {
-      await supabase
-        .from('newsletter_subscribers')
-        .update({
-          kit_sync_attempts: 1,
-          last_kit_sync_attempt: new Date().toISOString(),
-        })
-        .eq('id', insertedData.id);
-    }
-  }
 }
 
 export async function getResources(): Promise<Resource[]> {
