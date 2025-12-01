@@ -17,7 +17,7 @@ const detailedServices = [
       'Executive-level strategy and leadership',
       'Team management and coaching',
       'Ongoing content, messaging, and campaign execution',
-      'Consistency, continuity, and measurable results'
+      'Consistency, continuity, and measurable results',
       'Executive counsel and advisory support'
     ],
     bestFor: 'Organizations who need ongoing, high-touch support and executive-level thinking'
@@ -30,8 +30,8 @@ const detailedServices = [
       'Marketing & Communications Strategy',
       'Messaging & Positioning Strategy',
       'Thought Leadership Strategy',
-      'Media Relations & Press Strategy'
-      'Internal Communications Strategy'
+      'Media Relations & Press Strategy',
+      'Internal Communications Strategy',
       'Change Management Communications Plan'
     ],
     bestFor: 'Teams ready to move forward with clarity and direction'
@@ -44,8 +44,8 @@ const detailedServices = [
       'Annual Report Writing & Design',
       'Batch Content Writing (Blogs, Newsletters, OpEds, etc.)',
       'Press Release Writing & Distribution',
-      'Media Pitching'
-      'Sales/Fundraising Enablement Materials (One-Pagers, Pitch Decks, etc.)'
+      'Media Pitching',
+      'Sales/Fundraising Enablement Materials (One-Pagers, Pitch Decks, etc.)',
       'Conference Speaker Opportunities & Proposal Submissions'
     ],
     bestFor: 'Organizations with a defined project that needs high-quality execution'

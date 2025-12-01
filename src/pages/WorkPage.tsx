@@ -8,22 +8,26 @@ const caseStudies = [
   {
     title: 'Hopebound',
     description: 'Complete brand positioning and launch campaign for emerging nonprofit',
-    services: 'Brand Strategy, Content Development, Campaign Management'
+    services: 'Brand Strategy, Content Development, Campaign Management',
+    image: '/image5 copy.png'
   },
   {
     title: 'Bottom Line',
     description: 'Multi-year strategic communications partnership driving program growth and visibility',
-    services: 'Fractional CCO, Team Leadership, Strategic Planning'
+    services: 'Fractional CCO, Team Leadership, Strategic Planning',
+    image: '/image1 copy.png'
   },
   {
     title: 'City Year Philadelphia',
     description: 'Executive communications counsel and major campaign development',
-    services: 'Executive Advisory, Campaign Strategy, Fundraising Support'
+    services: 'Executive Advisory, Campaign Strategy, Fundraising Support',
+    image: '/image2 copy.png'
   },
   {
     title: 'AC Media',
     description: 'Building a recognized brand in fractional communications leadership',
-    services: 'Brand Development, Thought Leadership, Content Strategy'
+    services: 'Brand Development, Thought Leadership, Content Strategy',
+    image: '/image4 copy.png'
   }
 ];
 
@@ -190,7 +194,7 @@ export function PartnerPage() {
                   delay: index * 0.2,
                   ease: [0.25, 0.4, 0.25, 1]
                 }}
-                className="bg-seashell p-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red text-center"
+                className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red text-center group"
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
                 }}
@@ -198,19 +202,32 @@ export function PartnerPage() {
                   e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
                 }}
               >
-                <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-3" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
-                  {study.title}
-                </h3>
-                <p className="font-roboto text-lg text-text-primary mb-4 leading-relaxed">
-                  {study.description}
-                </p>
-                <div className="border-t-2 border-white pt-4">
-                  <p className="font-roboto-condensed font-semibold text-sm text-neutral mb-2">
-                    SERVICES PROVIDED:
+                {/* Background Image with Overlay */}
+                <div className="absolute inset-0 z-0">
+                  <img
+                    src={study.image}
+                    alt={`${study.title} case study`}
+                    className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-seashell/95 via-seashell/90 to-seashell/95"></div>
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 p-8">
+                  <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-3" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
+                    {study.title}
+                  </h3>
+                  <p className="font-roboto text-lg text-text-primary mb-4 leading-relaxed">
+                    {study.description}
                   </p>
-                  <p className="font-roboto text-onyx">
-                    {study.services}
-                  </p>
+                  <div className="border-t-2 border-white pt-4">
+                    <p className="font-roboto-condensed font-semibold text-sm text-neutral mb-2">
+                      SERVICES PROVIDED:
+                    </p>
+                    <p className="font-roboto text-onyx">
+                      {study.services}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -219,6 +236,56 @@ export function PartnerPage() {
       </section>
 
       <LogoCarousel />
+
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-seashell">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4" style={{filter: 'drop-shadow(0 0 20px rgba(232, 93, 111, 0.3))'}}>
+              Work Samples
+            </h2>
+            <p className="font-roboto text-xl text-primary max-w-3xl mx-auto">
+              A glimpse into the strategic work and creative execution behind successful campaigns
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { image: '/image1 copy.png', alt: 'Bottom Line brand evolution and website redesign' },
+              { image: '/image2 copy.png', alt: 'City Year Philadelphia campaign materials' },
+              { image: '/image3 copy.png', alt: 'Strategic communications deliverables' },
+              { image: '/image4 copy.png', alt: 'Social media thought leadership content' },
+              { image: '/image5 copy.png', alt: 'Hopebound Impact Report design' }
+            ].map((sample, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.1,
+                  ease: [0.25, 0.4, 0.25, 1]
+                }}
+                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1.5 hover:scale-[1.01] border-2 border-transparent hover:border-brick-red"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+                }}
+              >
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={sample.image}
+                    alt={sample.alt}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
