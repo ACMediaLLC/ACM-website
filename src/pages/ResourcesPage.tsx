@@ -1,12 +1,32 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Download, FileText, Calendar, Mail, CheckCircle, Eye, X } from 'lucide-react';
-import { getResources, Resource } from '../lib/supabase';
 import { subscribeToKitOnly } from '../lib/kit';
 
+interface Resource {
+  id: string;
+  title: string;
+  description: string;
+  file_url: string;
+}
+
+const RESOURCES: Resource[] = [
+  {
+    id: '1',
+    title: '5 Power Moves to Make Your Brand Unforgettable',
+    description: 'A no-nonsense checklist for organizations who want to level-up their brand visibility today. Learn how to create buzzworthy moments, get the right people talking about you, and build relationships that matter.',
+    file_url: '/resources/brand-moves.pdf'
+  },
+  {
+    id: '2',
+    title: 'Diversity Is Not a Dirty Word',
+    description: 'A strategic to-do list for navigating DEI messaging and positioning in today\'s complex environment. Practical guidance on auditing foundations, crafting compelling messages, and leading with authenticity.',
+    file_url: '/resources/diversity-guide.pdf'
+  }
+];
+
 export function ResourcesPage() {
-  const [resources, setResources] = useState<Resource[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [resources] = useState<Resource[]>(RESOURCES);
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,19 +37,7 @@ export function ResourcesPage() {
 
   useEffect(() => {
     document.title = 'Resources | AC Media';
-    loadResources();
   }, []);
-
-  const loadResources = async () => {
-    try {
-      const data = await getResources();
-      setResources(data);
-    } catch (error) {
-      console.error('Error loading resources:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
 
   const handlePreviewClick = (resource: Resource) => {
@@ -86,7 +94,7 @@ export function ResourcesPage() {
             </p>
           </div>
 
-          {resources.length === 0 && !loading && (
+          {resources.length === 0 && (
             <div className="bg-seashell rounded-lg p-12 text-center">
               <FileText className="text-brick-red mx-auto mb-4" size={64} />
               <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
