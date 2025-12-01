@@ -77,28 +77,8 @@ export function PartnerPage() {
 
   return (
     <div>
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-seashell relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none z-0">
-          <img
-            src="/image1 copy.png"
-            alt=""
-            className="absolute top-20 left-12 w-64 h-64 object-cover rounded-lg opacity-[0.06] blur-[6px] transform -rotate-6"
-            aria-hidden="true"
-          />
-          <img
-            src="/image5 copy.png"
-            alt=""
-            className="absolute bottom-20 right-16 w-56 h-56 object-cover rounded-lg opacity-[0.07] blur-[5px] transform rotate-3"
-            aria-hidden="true"
-          />
-          <img
-            src="/image1.png"
-            alt=""
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 object-cover rounded-lg opacity-[0.05] blur-[8px] transform rotate-2"
-            aria-hidden="true"
-          />
-        </div>
-        <div className="max-w-7xl mx-auto relative z-10">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-seashell">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="text-center max-w-3xl mx-auto">
   

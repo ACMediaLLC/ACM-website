@@ -116,42 +116,20 @@ export function Work() {
           </div>
         </div>
 
-        <div className="mt-16 text-center relative overflow-hidden py-12">
-          <div className="absolute inset-0 pointer-events-none z-0">
-            <img
-              src="/image1 copy.png"
-              alt=""
-              className="absolute top-0 left-8 w-64 h-64 object-cover rounded-lg opacity-[0.06] blur-[6px] transform -rotate-6"
-              aria-hidden="true"
-            />
-            <img
-              src="/image5 copy.png"
-              alt=""
-              className="absolute bottom-0 right-12 w-56 h-56 object-cover rounded-lg opacity-[0.07] blur-[5px] transform rotate-3"
-              aria-hidden="true"
-            />
-            <img
-              src="/image1.png"
-              alt=""
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 object-cover rounded-lg opacity-[0.05] blur-[8px] transform rotate-2"
-              aria-hidden="true"
-            />
-          </div>
-          <div className="relative z-10">
-            <p className="font-roboto text-xl text-neutral italic mb-6">
-              Want to see how we could work together?
-            </p>
-            <button
-              onClick={() => {
-                const element = document.getElementById('contact');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="bg-brick-red text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:bg-onyx transition-all transform hover:scale-105 flex items-center gap-2 mx-auto shadow-lg"
-            >
-              Let's Talk
-              <ExternalLink size={20} />
-            </button>
-          </div>
+        <div className="mt-16 text-center">
+          <p className="font-roboto text-xl text-neutral italic mb-6">
+            Want to see how we could work together?
+          </p>
+          <button
+            onClick={() => {
+              const element = document.getElementById('contact');
+              if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="bg-brick-red text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:bg-onyx transition-all transform hover:scale-105 flex items-center gap-2 mx-auto shadow-lg"
+          >
+            Let's Talk
+            <ExternalLink size={20} />
+          </button>
         </div>
       </div>
     </section>
