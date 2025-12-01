@@ -8,6 +8,7 @@ interface Resource {
   title: string;
   description: string;
   file_url: string;
+  cover_image_url?: string;
 }
 
 const RESOURCES: Resource[] = [
@@ -15,13 +16,15 @@ const RESOURCES: Resource[] = [
     id: '1',
     title: '5 Power Moves to Make Your Brand Unforgettable',
     description: 'A no-nonsense checklist for organizations who want to level-up their brand visibility today. Learn how to create buzzworthy moments, get the right people talking about you, and build relationships that matter.',
-    file_url: '/resources/brand-moves.pdf'
+    file_url: '/resources/brand-moves.pdf',
+    cover_image_url: '/Screenshot 2025-12-01 at 1.57.50 PM.png'
   },
   {
     id: '2',
     title: 'Diversity Is Not a Dirty Word',
     description: 'A strategic to-do list for navigating DEI messaging and positioning in today\'s complex environment. Practical guidance on auditing foundations, crafting compelling messages, and leading with authenticity.',
-    file_url: '/resources/diversity-guide.pdf'
+    file_url: '/resources/diversity-guide.pdf',
+    cover_image_url: '/Screenshot 2025-12-01 at 2.02.12 PM.png'
   }
 ];
 
@@ -135,9 +138,18 @@ export function ResourcesPage() {
                         className="hidden md:block w-full h-full pointer-events-none"
                         title={`Preview of ${resource.title}`}
                       />
-                      <div className="md:hidden absolute inset-0 flex items-center justify-center">
-                        <FileText className="text-brick-red" size={80} strokeWidth={1.5} />
-                      </div>
+                      {resource.cover_image_url && (
+                        <img
+                          src={resource.cover_image_url}
+                          alt={resource.title}
+                          className="md:hidden w-full h-full object-cover"
+                        />
+                      )}
+                      {!resource.cover_image_url && (
+                        <div className="md:hidden absolute inset-0 flex items-center justify-center">
+                          <FileText className="text-brick-red" size={80} strokeWidth={1.5} />
+                        </div>
+                      )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     </div>
 
