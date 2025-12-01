@@ -114,8 +114,9 @@ export function ResourcesPage() {
 
           {resources.length > 0 && (
             <>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {resources.map((resource) => (
+              <div className="flex justify-center">
+                <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+                  {resources.map((resource) => (
                   <div
                     key={resource.id}
                     className="bg-seashell rounded-lg hover:shadow-xl transition-all border-2 border-transparent hover:border-brick-red overflow-hidden"
@@ -156,7 +157,8 @@ export function ResourcesPage() {
                       </div>
                     </div>
                   </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </>
           )}
