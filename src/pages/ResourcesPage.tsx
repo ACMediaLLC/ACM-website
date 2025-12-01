@@ -129,35 +129,38 @@ export function ResourcesPage() {
                     key={resource.id}
                     className="bg-seashell rounded-lg hover:shadow-xl transition-all border-2 border-transparent hover:border-brick-red overflow-hidden"
                   >
-                    <div className="aspect-[3/4] relative overflow-hidden bg-gradient-to-br from-brick-red/10 to-rose-500/10">
+                    <div className="aspect-[4/5] md:aspect-[3/4] relative overflow-hidden bg-gradient-to-br from-brick-red/10 to-rose-500/10">
                       <iframe
                         src={`${resource.file_url}#toolbar=0&navpanes=0`}
-                        className="w-full h-full pointer-events-none"
+                        className="hidden md:block w-full h-full pointer-events-none"
                         title={`Preview of ${resource.title}`}
                       />
+                      <div className="md:hidden absolute inset-0 flex items-center justify-center">
+                        <FileText className="text-brick-red" size={80} strokeWidth={1.5} />
+                      </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     </div>
 
-                    <div className="p-8">
+                    <div className="p-6 md:p-8">
                       <h3 className="font-roboto-condensed font-bold text-xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-3" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
                         {resource.title}
                       </h3>
 
-                      <p className="font-roboto text-neutral mb-6 leading-relaxed">
+                      <p className="font-roboto text-sm md:text-base text-neutral mb-6 leading-relaxed">
                         {resource.description}
                       </p>
 
-                      <div className="flex gap-3">
+                      <div className="flex flex-col sm:flex-row gap-3">
                         <button
                           onClick={() => handlePreviewClick(resource)}
-                          className="flex-1 bg-white border-2 border-brick-red text-brick-red px-6 py-3 rounded-lg font-roboto-condensed font-semibold hover:bg-brick-red hover:text-white transition-all flex items-center justify-center gap-2"
+                          className="flex-1 bg-white border-2 border-brick-red text-brick-red px-4 md:px-6 py-3 rounded-lg font-roboto-condensed font-semibold hover:bg-brick-red hover:text-white transition-all flex items-center justify-center gap-2 min-h-[48px]"
                         >
                           <Eye size={20} />
                           Preview
                         </button>
                         <button
                           onClick={() => handleDownloadClick(resource)}
-                          className="flex-1 bg-brick-red text-white px-6 py-3 rounded-lg font-roboto-condensed font-semibold hover:bg-onyx transition-all flex items-center justify-center gap-2"
+                          className="flex-1 bg-brick-red text-white px-4 md:px-6 py-3 rounded-lg font-roboto-condensed font-semibold hover:bg-onyx transition-all flex items-center justify-center gap-2 min-h-[48px]"
                         >
                           <Download size={20} />
                           Download
