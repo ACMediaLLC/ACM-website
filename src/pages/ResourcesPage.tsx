@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Download, FileText, Calendar, Mail, CheckCircle } from 'lucide-react';
+import { Download, FileText, Calendar, Mail, CheckCircle, Eye, X } from 'lucide-react';
 import { getResources, Resource } from '../lib/supabase';
 import { subscribeToKitOnly } from '../lib/kit';
 
 export function ResourcesPage() {
   const [resources, setResources] = useState<Resource[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showEmailModal, setShowEmailModal] = useState(false);
+  const [showPreviewModal, setShowPreviewModal] = useState(false);
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -31,14 +31,15 @@ export function ResourcesPage() {
     }
   };
 
-  const categories = ['All', ...Array.from(new Set(resources.map(r => r.category)))];
 
-  const filteredResources = selectedCategory === 'All'
-    ? resources
-    : resources.filter(r => r.category === selectedCategory);
+  const handlePreviewClick = (resource: Resource) => {
+    setSelectedResource(resource);
+    setShowPreviewModal(true);
+  };
 
   const handleDownloadClick = (resource: Resource) => {
     setSelectedResource(resource);
+    setShowPreviewModal(false);
     setShowEmailModal(true);
   };
 
@@ -113,54 +114,47 @@ export function ResourcesPage() {
 
           {resources.length > 0 && (
             <>
-              <div className="flex flex-wrap gap-4 justify-center mb-12">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`px-6 py-2 rounded-lg font-roboto-condensed font-semibold transition-all ${
-                      selectedCategory === category
-                        ? 'bg-brick-red text-white'
-                        : 'bg-seashell text-text-primary hover:bg-brick-red/10'
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredResources.map((resource) => (
+                {resources.map((resource) => (
                   <div
                     key={resource.id}
-                    className="bg-seashell p-8 rounded-lg hover:shadow-xl transition-all border-2 border-transparent hover:border-brick-red"
+                    className="bg-seashell rounded-lg hover:shadow-xl transition-all border-2 border-transparent hover:border-brick-red overflow-hidden"
                   >
-                    <div className="flex items-start justify-between mb-4">
-                      <FileText className="text-brick-red" size={32} />
-                      <span className="text-sm font-roboto-condensed font-semibold text-neutral bg-white px-3 py-1 rounded">
-                        {resource.category}
-                      </span>
+                    <div className="aspect-[3/4] relative overflow-hidden bg-gradient-to-br from-brick-red/10 to-rose-500/10">
+                      <iframe
+                        src={`${resource.file_url}#toolbar=0&navpanes=0`}
+                        className="w-full h-full pointer-events-none"
+                        title={`Preview of ${resource.title}`}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     </div>
 
-                    <h3 className="font-roboto-condensed font-bold text-xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-3" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
-                      {resource.title}
-                    </h3>
+                    <div className="p-8">
+                      <h3 className="font-roboto-condensed font-bold text-xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-3" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
+                        {resource.title}
+                      </h3>
 
-                    <p className="font-roboto text-neutral mb-6 leading-relaxed">
-                      {resource.description}
-                    </p>
+                      <p className="font-roboto text-neutral mb-6 leading-relaxed">
+                        {resource.description}
+                      </p>
 
-                    <button
-                      onClick={() => handleDownloadClick(resource)}
-                      className="w-full bg-brick-red text-white px-6 py-3 rounded-lg font-roboto-condensed font-semibold hover:bg-onyx transition-all flex items-center justify-center gap-2"
-                    >
-                      <Download size={20} />
-                      Download Free
-                    </button>
-
-                    <p className="text-sm font-roboto text-neutral mt-3 text-center">
-                      {resource.download_count} downloads
-                    </p>
+                      <div className="flex gap-3">
+                        <button
+                          onClick={() => handlePreviewClick(resource)}
+                          className="flex-1 bg-white border-2 border-brick-red text-brick-red px-6 py-3 rounded-lg font-roboto-condensed font-semibold hover:bg-brick-red hover:text-white transition-all flex items-center justify-center gap-2"
+                        >
+                          <Eye size={20} />
+                          Preview
+                        </button>
+                        <button
+                          onClick={() => handleDownloadClick(resource)}
+                          className="flex-1 bg-brick-red text-white px-6 py-3 rounded-lg font-roboto-condensed font-semibold hover:bg-onyx transition-all flex items-center justify-center gap-2"
+                        >
+                          <Download size={20} />
+                          Download
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -168,6 +162,43 @@ export function ResourcesPage() {
           )}
         </div>
       </section>
+
+      {showPreviewModal && selectedResource && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg w-full max-w-4xl h-[90vh] flex flex-col">
+            <div className="flex items-center justify-between p-4 border-b">
+              <h3 className="font-roboto-condensed font-bold text-xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
+                {selectedResource.title}
+              </h3>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => handleDownloadClick(selectedResource)}
+                  className="bg-brick-red text-white px-6 py-2 rounded-lg font-roboto-condensed font-semibold hover:bg-onyx transition-all flex items-center gap-2"
+                >
+                  <Download size={18} />
+                  Download
+                </button>
+                <button
+                  onClick={() => {
+                    setShowPreviewModal(false);
+                    setSelectedResource(null);
+                  }}
+                  className="text-neutral hover:text-brick-red transition-colors"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+            </div>
+            <div className="flex-1 overflow-hidden">
+              <iframe
+                src={selectedResource.file_url}
+                className="w-full h-full"
+                title={selectedResource.title}
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {showEmailModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
