@@ -4,26 +4,34 @@ import { ExternalLink, Calendar, ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion';
 import { LogoCarousel } from '../components/LogoCarousel';
 
-const caseStudies = [
+const recentWorkItems = [
   {
-    title: 'Hopebound',
-    description: 'Complete brand positioning and launch campaign for emerging nonprofit',
-    services: 'Brand Strategy, Content Development, Campaign Management'
+    id: 1,
+    client: 'Hopebound',
+    title: 'Complete brand positioning and launch campaign for emerging nonprofit',
+    services: 'Brand Strategy, Content Development, Campaign Management',
+    image: '/Hopebound.webp'
   },
   {
-    title: 'City Year Philadelphia',
-    description: 'Executive communications counsel and major campaign development',
-    services: 'Executive Advisory, Campaign Strategy, Fundraising Support'
+    id: 2,
+    client: 'City Year Philadelphia',
+    title: 'Executive communications counsel and major campaign development',
+    services: 'Executive Advisory, Campaign Strategy, Fundraising Support',
+    image: '/CityYear.webp'
   },
   {
-    title: 'Bottom Line',
-    description: 'Multi-year strategic communications partnership driving program growth and visibility',
-    services: 'Fractional CCO, Team Leadership, Strategic Planning'
+    id: 3,
+    client: 'Bottom Line',
+    title: 'Multi-year strategic communications partnership driving program growth and visibility',
+    services: 'Fractional CCO, Team Leadership, Strategic Planning',
+    image: '/BottomLine.webp'
   },
   {
-    title: 'AC Media',
-    description: 'Building a recognized brand in fractional communications leadership',
-    services: 'Brand Development, Thought Leadership, Content Strategy'
+    id: 4,
+    client: 'AC Media',
+    title: 'Building a recognized brand in fractional communications leadership',
+    services: 'Brand Development, Thought Leadership, Content Strategy',
+    image: '/Generocity June 2025.webp'
   }
 ];
 
@@ -178,39 +186,47 @@ export function PartnerPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-20">
-            {caseStudies.map((study, index) => (
+          <div className="flex flex-col gap-12 mb-20">
+            {recentWorkItems.map((item, index) => (
               <motion.div
-                key={index}
+                key={item.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{
                   duration: 0.6,
-                  delay: index * 0.2,
+                  delay: index * 0.15,
                   ease: [0.25, 0.4, 0.25, 1]
                 }}
-                className="bg-seashell p-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red text-center"
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-                }}
+                className={`flex flex-col md:flex md:items-center md:gap-10 ${
+                  index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
+                }`}
               >
-                <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-3" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
-                  {study.title}
-                </h3>
-                <p className="font-roboto text-lg text-text-primary mb-4 leading-relaxed">
-                  {study.description}
-                </p>
-                <div className="border-t-2 border-white pt-4">
-                  <p className="font-roboto-condensed font-semibold text-sm text-neutral mb-2">
-                    SERVICES PROVIDED:
-                  </p>
-                  <p className="font-roboto text-onyx">
-                    {study.services}
-                  </p>
+                <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-md">
+                  <img
+                    src={item.image}
+                    alt={item.client}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div className="w-full md:w-1/2 space-y-4 mt-6 md:mt-0">
+                  <div className="bg-[#FFF1E0] rounded-xl shadow-md p-6 md:p-8">
+                    <h3 className="text-xl md:text-2xl font-semibold text-[#E23C46] mb-3">
+                      {item.client}
+                    </h3>
+                    <p className="text-[#24120F] leading-relaxed mb-4">
+                      {item.title}
+                    </p>
+                    <div className="mt-4">
+                      <p className="text-xs font-semibold tracking-[0.15em] text-[#5C4A42] mb-2">
+                        SERVICES PROVIDED
+                      </p>
+                      <p className="text-sm md:text-base text-[#5C4A42]">
+                        {item.services}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
