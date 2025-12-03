@@ -1,26 +1,34 @@
 import { ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const caseStudies = [
+const recentWorkItems = [
   {
-    title: 'Hopebound',
-    description: 'Complete brand positioning and launch campaign for emerging nonprofit',
-    services: 'Brand Strategy, Content Development, Campaign Management'
+    id: 1,
+    client: 'Generocity',
+    title: 'Featured article showcasing thought leadership in authentic nonprofit branding and communications strategy',
+    services: 'Thought Leadership, Content Strategy, Brand Authenticity',
+    image: '/Generocity June 2025.webp'
   },
   {
-    title: 'Bottom Line',
-    description: 'Multi-year strategic communications partnership driving program growth and visibility',
-    services: 'Fractional CCO, Team Leadership, Strategic Planning'
+    id: 2,
+    client: 'Hopebound',
+    title: 'Strategic communications support for impact reporting and organizational storytelling',
+    services: 'Impact Reporting, Content Development, Strategic Communications',
+    image: '/Hopebound.webp'
   },
   {
-    title: 'City Year Philadelphia',
-    description: 'Executive communications counsel and major campaign development',
-    services: 'Executive Advisory, Campaign Strategy, Fundraising Support'
+    id: 3,
+    client: 'Bottom Line',
+    title: 'Multi-year partnership driving program visibility and strategic communications excellence',
+    services: 'Annual Reporting, Fractional CCO, Strategic Planning',
+    image: '/BottomLine.webp'
   },
   {
-    title: 'AC Media',
-    description: 'Building a recognized brand in fractional communications leadership',
-    services: 'Brand Development, Thought Leadership, Content Strategy'
+    id: 4,
+    client: 'City Year Philadelphia',
+    title: 'Executive communications counsel and team leadership supporting mission-critical initiatives',
+    services: 'Executive Advisory, Team Leadership, Strategic Communications',
+    image: '/CityYear.webp'
   }
 ];
 
@@ -48,45 +56,43 @@ export function Work() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          {caseStudies.map((study, index) => (
+        <div className="space-y-12 mb-20">
+          {recentWorkItems.map((item, index) => (
             <motion.div
-              key={index}
+              key={item.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{
                 duration: 0.6,
-                delay: index * 0.2,
+                delay: index * 0.15,
                 ease: [0.25, 0.4, 0.25, 1]
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
-              }}
-              className="group bg-seashell p-8 rounded-xl transition-all duration-300 ease-out transform hover:-translate-y-1.5 hover:scale-[1.01] text-center shadow-md hover:shadow-2xl"
-              style={{
-                backgroundImage: 'linear-gradient(#FFF5ED, #FFF5ED), linear-gradient(135deg, rgba(232, 93, 111, 0.3), rgba(244, 152, 165, 0.15))',
-                backgroundOrigin: 'padding-box, border-box',
-                backgroundClip: 'padding-box, border-box',
-                border: '2px solid transparent'
-              }}
+              className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-6 md:gap-8 items-center`}
             >
-              <h3 className="font-roboto-condensed font-bold text-2xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-3">
-                {study.title}
-              </h3>
-              <p className="font-roboto text-lg text-text-primary mb-4 leading-relaxed">
-                {study.description}
-              </p>
-              <div className="border-t-2 border-white/50 pt-4">
-                <p className="font-roboto-condensed font-semibold text-sm text-neutral mb-2">
-                  SERVICES PROVIDED:
+              <div className="w-full md:w-1/2 overflow-hidden rounded-xl shadow-lg">
+                <img
+                  src={item.image}
+                  alt={`${item.client} project`}
+                  className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+
+              <div className="w-full md:w-1/2 bg-[#FFF1E0] p-8 md:p-10 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl">
+                <h3 className="font-roboto-condensed font-bold text-3xl md:text-4xl text-[#E23C46] mb-4">
+                  {item.client}
+                </h3>
+                <p className="font-roboto text-lg text-[#24120F] mb-6 leading-relaxed">
+                  {item.title}
                 </p>
-                <p className="font-roboto text-onyx">
-                  {study.services}
-                </p>
+                <div className="border-t-2 border-[#E23C46]/20 pt-4">
+                  <p className="font-roboto-condensed font-semibold text-sm text-[#5C4A42] mb-2 uppercase tracking-wide">
+                    Services Provided:
+                  </p>
+                  <p className="font-roboto text-[#24120F]">
+                    {item.services}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
