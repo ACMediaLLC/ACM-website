@@ -120,7 +120,7 @@ export function Header() {
                 isActive('/partner') ? 'text-white underline' : 'text-white/90 hover:text-white'
               }`}
             >
-              Partner With Us
+              Work
             </Link>
             <Link
               to="/about"
