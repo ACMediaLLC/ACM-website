@@ -211,7 +211,15 @@ export function PartnerPage() {
                 </div>
 
                 <div className="w-full md:w-1/2 space-y-4 mt-6 md:mt-0">
-                  <div className="bg-[#FFF1E0] rounded-xl shadow-md p-6 md:p-8">
+                  <div
+                    className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red"
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                    }}
+                  >
                     <h3 className="text-xl md:text-2xl font-semibold text-[#E23C46] mb-3">
                       {item.client}
                     </h3>
