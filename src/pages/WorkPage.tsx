@@ -84,7 +84,7 @@ export function PartnerPage() {
   
  <h1 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500
              bg-clip-text text-transparent mb-6" style={{filter: 'drop-shadow(0 0 20px rgba(232, 93, 111, 0.3))'}}>
-  How we Can Work Together
+  How We Can Work Together
 </h1>
 
 <div className="text-center max-w-3xl mx-auto">
