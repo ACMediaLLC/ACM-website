@@ -181,7 +181,7 @@ export function PartnerPage() {
             <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-4" style={{filter: 'drop-shadow(0 0 20px rgba(232, 93, 111, 0.3))'}}>
               Recent Work
             </h2>
-            <p className="font-roboto text-xl text-primary max-w-3xl mx-auto">
+            <p className="font-roboto-condensed font-semibold text-center text-2xl text-primary mb-4">
               Real results from real partnerships
             </p>
           </div>
