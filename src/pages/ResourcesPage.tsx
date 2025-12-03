@@ -37,19 +37,9 @@ export function ResourcesPage() {
   const [showPreviewModal, setShowPreviewModal] = useState(false);
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     document.title = 'Resources | AC Media';
-
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-
-    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
 
@@ -199,16 +189,16 @@ export function ResourcesPage() {
       </section>
 
       {showPreviewModal && selectedResource && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg w-full max-w-4xl max-h-[90vh] flex flex-col">
-            <div className="flex items-center justify-between p-4 border-b">
-              <h3 className="font-roboto-condensed font-bold text-lg md:text-xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-2 sm:p-4">
+          <div className="bg-white rounded-lg w-full max-w-4xl h-[95vh] sm:h-[90vh] flex flex-col">
+            <div className="flex items-center justify-between p-3 sm:p-4 border-b flex-shrink-0">
+              <h3 className="font-roboto-condensed font-bold text-base sm:text-lg md:text-xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent truncate pr-2" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
                 {selectedResource.title}
               </h3>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-shrink-0">
                 <button
                   onClick={() => handleDownloadClick(selectedResource)}
-                  className="bg-brick-red text-white px-4 md:px-6 py-2 rounded-lg font-roboto-condensed font-semibold hover:bg-onyx transition-all flex items-center gap-2"
+                  className="bg-brick-red text-white px-3 sm:px-4 md:px-6 py-2 rounded-lg font-roboto-condensed font-semibold hover:bg-onyx transition-all flex items-center gap-2"
                 >
                   <Download size={18} />
                   <span className="hidden sm:inline">Download</span>
@@ -224,36 +214,13 @@ export function ResourcesPage() {
                 </button>
               </div>
             </div>
-            <div className="flex-1 overflow-auto">
-              {isMobile ? (
-                <div className="flex flex-col items-center justify-center p-6 space-y-6">
-                  {selectedResource.cover_image_url && (
-                    <img
-                      src={selectedResource.cover_image_url}
-                      alt={selectedResource.title}
-                      className="w-full max-w-sm rounded-lg shadow-lg"
-                    />
-                  )}
-                  <div className="text-center space-y-4 max-w-md">
-                    <p className="font-roboto text-neutral text-lg">
-                      For the best viewing experience, download the PDF to view on your device.
-                    </p>
-                    <button
-                      onClick={() => handleDownloadClick(selectedResource)}
-                      className="w-full bg-brick-red text-white px-8 py-4 rounded-lg font-roboto-condensed font-semibold hover:bg-onyx transition-all flex items-center justify-center gap-2"
-                    >
-                      <Download size={20} />
-                      Download PDF
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <iframe
-                  src={selectedResource.file_url}
-                  className="w-full h-[calc(90vh-80px)]"
-                  title={selectedResource.title}
-                />
-              )}
+            <div className="flex-1 overflow-hidden">
+              <iframe
+                src={`${selectedResource.file_url}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
+                className="w-full h-full"
+                title={selectedResource.title}
+                style={{ border: 'none' }}
+              />
             </div>
           </div>
         </div>
