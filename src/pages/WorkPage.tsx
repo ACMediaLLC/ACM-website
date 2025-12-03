@@ -11,14 +11,14 @@ const caseStudies = [
     services: 'Brand Strategy, Content Development, Campaign Management'
   },
   {
-    title: 'Bottom Line',
-    description: 'Multi-year strategic communications partnership driving program growth and visibility',
-    services: 'Fractional CCO, Team Leadership, Strategic Planning'
-  },
-  {
     title: 'City Year Philadelphia',
     description: 'Executive communications counsel and major campaign development',
     services: 'Executive Advisory, Campaign Strategy, Fundraising Support'
+  },
+  {
+    title: 'Bottom Line',
+    description: 'Multi-year strategic communications partnership driving program growth and visibility',
+    services: 'Fractional CCO, Team Leadership, Strategic Planning'
   },
   {
     title: 'AC Media',
