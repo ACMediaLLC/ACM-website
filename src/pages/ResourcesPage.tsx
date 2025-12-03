@@ -17,14 +17,14 @@ const RESOURCES: Resource[] = [
     title: '5 Power Moves to Make Your Brand Unforgettable',
     description: 'A no-nonsense checklist for organizations who want to level-up their brand visibility today. Learn how to create buzzworthy moments, get the right people talking about you, and build relationships that matter.',
     file_url: '/resources/brand-moves.pdf',
-    cover_image_url: '/Screenshot 2025-12-01 at 1.57.50 PM.png'
+    cover_image_url: '/5PowerMoves copy.webp'
   },
   {
     id: '2',
     title: 'Diversity Is Not a Dirty Word',
     description: 'A strategic to-do list for navigating DEI messaging and positioning in today\'s complex environment. Practical guidance on auditing foundations, crafting compelling messages, and leading with authenticity.',
     file_url: '/resources/diversity-guide.pdf',
-    cover_image_url: '/Screenshot 2025-12-01 at 2.02.12 PM.png'
+    cover_image_url: '/DiversityIsNotaDirtyWord.webp'
   }
 ];
 
