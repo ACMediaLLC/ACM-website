@@ -24,7 +24,7 @@ const RESOURCES: Resource[] = [
     title: 'Diversity Is Not a Dirty Word',
     description: 'A strategic to-do list for navigating DEI messaging and positioning in today\'s complex environment. Practical guidance on auditing foundations, crafting compelling messages, and leading with authenticity.',
     file_url: '/resources/diversity-guide.pdf',
-    cover_image_url: '/DiversityIsNotaDirtyWord.webp'
+    cover_image_url: '/DiversityIsNotaDirtyWord copy.webp'
   }
 ];
 
