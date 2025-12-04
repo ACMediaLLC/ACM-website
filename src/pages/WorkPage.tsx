@@ -251,7 +251,7 @@ export function PartnerPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-12 mb-20">
+          <div className="flex flex-col gap-12 mb-20 items-center md:items-stretch">
             {recentWorkItems.map((item, index) => {
               const isVerticalLayout = item.id === 2 || item.id === 4;
 
@@ -275,7 +275,7 @@ export function PartnerPage() {
                       delay: index * 0.15,
                       ease: [0.25, 0.4, 0.25, 1]
                     }}
-                    className="flex flex-col gap-6 md:gap-8"
+                    className="flex flex-col gap-6 md:gap-8 w-full max-w-2xl md:max-w-none"
                   >
                     {/* Mobile: Show single image first */}
                     {isMobile && item.mobileImage && (
@@ -359,7 +359,7 @@ export function PartnerPage() {
                     delay: index * 0.15,
                     ease: [0.25, 0.4, 0.25, 1]
                   }}
-                  className={`flex flex-col md:flex md:items-center md:gap-10 ${
+                  className={`flex flex-col md:flex md:items-center md:gap-10 w-full max-w-2xl md:max-w-none ${
                     index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
                   }`}
                 >
