@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -10,7 +10,8 @@ const recentWorkItems = [
     client: 'Hopebound',
     title: 'Complete brand positioning and launch campaign for emerging nonprofit',
     services: 'Brand Strategy, Content Development, Campaign Management',
-    image: '/Hopebound.webp'
+    image: '/Hopebound.webp',
+    mobileImage: '/hopebound2.webp'
   },
   {
     id: 2,
@@ -24,14 +25,16 @@ const recentWorkItems = [
     client: 'Bottom Line',
     title: 'Multi-year strategic communications partnership driving program growth and visibility',
     services: 'Fractional CCO, Team Leadership, Strategic Planning',
-    image: '/BottomLine.webp'
+    image: '/BottomLine.webp',
+    mobileImage: '/bottomline2.webp'
   },
   {
     id: 4,
     client: 'AC Media',
     title: 'Building a recognized brand in fractional communications leadership',
     services: 'Brand Development, Thought Leadership, Content Strategy',
-    image: '/Generocity June 2025.webp'
+    image: '/Generocity June 2025.webp',
+    mobileImage: '/acmedia2.webp'
   }
 ];
 
@@ -62,8 +65,21 @@ const partnershipBenefits = [
 
 
 export function PartnerPage() {
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     document.title = 'Partner With Us | AC Media';
+  }, []);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const carouselRef = useRef<HTMLDivElement | null>(null);
@@ -204,7 +220,7 @@ export function PartnerPage() {
               >
                 <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-md">
                   <img
-                    src={item.image}
+                    src={isMobile && item.mobileImage ? item.mobileImage : item.image}
                     alt={item.client}
                     className="w-full h-full object-cover"
                   />
