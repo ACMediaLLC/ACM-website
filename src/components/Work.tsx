@@ -28,7 +28,8 @@ const recentWorkItems = [
     client: 'City Year Philadelphia',
     title: 'Executive communications counsel and team leadership supporting mission-critical initiatives',
     services: 'Executive Advisory, Team Leadership, Strategic Communications',
-    image: '/CityYear.webp'
+    image: '/CityYear.webp',
+    images: ['/CityYear.webp', '/cityyear2.jpg', '/cityyear3.jpg']
   }
 ];
 
@@ -70,12 +71,28 @@ export function Work() {
               }}
               className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-6 md:gap-8 items-center`}
             >
-              <div className="w-full md:w-1/2 overflow-hidden rounded-xl shadow-lg">
-                <img
-                  src={item.image}
-                  alt={`${item.client} project`}
-                  className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
-                />
+              <div className="w-full md:w-1/2">
+                {item.images ? (
+                  <div className="grid grid-cols-1 gap-4">
+                    {item.images.map((img, imgIndex) => (
+                      <div key={imgIndex} className="overflow-hidden rounded-xl shadow-lg">
+                        <img
+                          src={img}
+                          alt={`${item.client} project ${imgIndex + 1}`}
+                          className="w-full h-auto object-contain transition-transform duration-500 hover:scale-105"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="overflow-hidden rounded-xl shadow-lg">
+                    <img
+                      src={item.image}
+                      alt={`${item.client} project`}
+                      className="w-full h-auto object-contain transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                )}
               </div>
 
               <div className="w-full md:w-1/2 bg-[#FFF1E0] p-8 md:p-10 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl">
