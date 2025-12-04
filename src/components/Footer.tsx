@@ -79,7 +79,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to="/about"
+                  to="/testimonials"
                   className="font-roboto text-seashell/80 hover:bg-gradient-to-r hover:from-brick-red hover:to-rose-500 hover:bg-clip-text hover:text-transparent transition-all"
                 >
 
