@@ -308,9 +308,9 @@ export function PartnerPage() {
                         <p className="text-[#24120F] leading-relaxed">
                           <span className="font-semibold">The Work:</span> {item.work}
                         </p>
-                        <div>
+                        <div className="flex flex-col items-center">
                           <p className="text-[#24120F] font-semibold mb-2">The Win:</p>
-                          <ul className="space-y-1 list-disc text-[#24120F] marker:text-brick-red inline-block text-left">
+                          <ul className="space-y-1 list-disc text-[#24120F] marker:text-brick-red text-left">
                             {item.wins.map((win, winIndex) => (
                               <li key={winIndex} className="ml-4">{win}</li>
                             ))}
@@ -398,7 +398,7 @@ export function PartnerPage() {
 
                   <div className="w-full md:w-1/2 space-y-4 mt-6 md:mt-0">
                     <div
-                      className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red"
+                      className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red text-center md:text-left"
                       onMouseEnter={(e) => {
                         e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
                       }}
@@ -416,9 +416,9 @@ export function PartnerPage() {
                         <p className="text-[#24120F] leading-relaxed">
                           <span className="font-semibold">The Work:</span> {item.work}
                         </p>
-                        <div>
+                        <div className="flex flex-col items-center md:items-start">
                           <p className="text-[#24120F] font-semibold mb-2">The Win:</p>
-                          <ul className="space-y-1 list-disc text-[#24120F] list-inside marker:text-brick-red ml-4">
+                          <ul className="space-y-1 list-disc text-[#24120F] marker:text-brick-red text-left ml-4 md:ml-4">
                             {item.wins.map((win, winIndex) => (
                               <li key={winIndex}>{win}</li>
                             ))}
