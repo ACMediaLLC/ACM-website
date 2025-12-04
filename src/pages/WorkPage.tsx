@@ -7,8 +7,10 @@ import { LogoCarousel } from '../components/LogoCarousel';
 interface WorkItem {
   id: number;
   client: string;
-  title: string;
-  services: string;
+  subtitle: string;
+  need: string;
+  work: string;
+  wins: string[];
   image: string;
   mobileImage?: string;
   desktopSecondaryImage?: string;
@@ -19,8 +21,14 @@ const recentWorkItems: WorkItem[] = [
   {
     id: 1,
     client: 'Hopebound',
-    title: 'Complete brand positioning and launch campaign for emerging nonprofit',
-    services: 'Brand Strategy, Content Development, Campaign Management',
+    subtitle: 'From Data to Donor-Ready in 10 Weeks',
+    need: 'A high-impact Annual Report and fundraising materials on a compressed timeline',
+    work: 'Project leadership, storytelling, full design, social media promotion, and fundraising collateral',
+    wins: [
+      '10-week end-to-end Annual Report delivery',
+      'Complete donor + sales material suite',
+      'Elevated brand clarity and fundraising readiness'
+    ],
     image: '/Hopebound.webp',
     mobileImage: '/hopebound2.webp',
     desktopSecondaryImage: '/hopebound2.webp'
@@ -28,16 +36,31 @@ const recentWorkItems: WorkItem[] = [
   {
     id: 2,
     client: 'City Year Philadelphia',
-    title: 'Executive communications counsel and major campaign development',
-    services: 'Executive Advisory, Campaign Strategy, Fundraising Support',
+    subtitle: 'Turning Visibility Into Funding',
+    need: 'Reignite brand visibility, revenue, and community engagement',
+    work: 'Media relations, executive thought leadership, publicity stunt, GivingTuesday strategy, messaging training',
+    wins: [
+      '40+ media placements',
+      '$1M in city & state funding secured in a single fiscal year',
+      '3 years of GivingTuesday goals met',
+      '500+ new followers and 50% engagement growth',
+      'First-ever citywide publicity stunt'
+    ],
     image: '/CityYear.webp',
     images: ['/CityYear.webp', '/cityyear2.jpg', '/cityyear3.jpg']
   },
   {
     id: 3,
     client: 'Bottom Line',
-    title: 'Multi-year strategic communications partnership driving program growth and visibility',
-    services: 'Fractional CCO, Team Leadership, Strategic Planning',
+    subtitle: 'National Brand Refresh, End to End',
+    need: 'Modernize the brand and scale external affairs nationally',
+    work: 'Brand refresh leadership, website overhaul, earned media, team scaling',
+    wins: [
+      'External Affairs team grew 2 → 5',
+      'First-ever organization-wide rebrand',
+      'New website launch',
+      'Expanded national thought leadership footprint'
+    ],
     image: '/BottomLine.webp',
     mobileImage: '/bottomline2.webp',
     desktopSecondaryImage: '/bottomline2 copy.webp'
@@ -45,8 +68,18 @@ const recentWorkItems: WorkItem[] = [
   {
     id: 4,
     client: 'AC Media',
-    title: 'Building a recognized brand in fractional communications leadership',
-    services: 'Brand Development, Thought Leadership, Content Strategy',
+    subtitle: 'Built to Revenue in 6 Months',
+    need: 'Launch a credible, revenue-generating fractional MarCom business from scratch',
+    work: 'Brand identity, website, messaging, newsletter, LinkedIn thought leadership, workshops, live networking',
+    wins: [
+      '5 proposal requests',
+      '2 multi-month clients secured',
+      '1 small business grant awarded',
+      '2 viral LinkedIn posts',
+      '200+ new followers',
+      '2 thought leadership articles published',
+      '40 newsletter subscribers'
+    ],
     image: '/acmedia2 copy.webp',
     images: ['/acmedia2 copy.webp', '/newclientannouncement.webp', '/acmedia3.webp']
   }
@@ -243,7 +276,7 @@ export function PartnerPage() {
                     className="flex flex-col gap-6 md:gap-8"
                   >
                     <div
-                      className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red md:text-center"
+                      className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red md:text-left"
                       onMouseEnter={(e) => {
                         e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
                       }}
@@ -251,19 +284,24 @@ export function PartnerPage() {
                         e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
                       }}
                     >
-                      <h3 className="text-xl md:text-2xl font-semibold text-[#E23C46] mb-3">
-                        {item.client}
+                      <h3 className="text-2xl md:text-3xl font-bold text-[#24120F] mb-2">
+                        {item.client} — {item.subtitle}
                       </h3>
-                      <p className="text-[#24120F] leading-relaxed mb-4">
-                        {item.title}
-                      </p>
-                      <div className="mt-4">
-                        <p className="text-xs font-semibold tracking-[0.15em] text-[#5C4A42] mb-2">
-                          SERVICES PROVIDED
+                      <div className="space-y-3 mt-4">
+                        <p className="text-[#24120F] leading-relaxed">
+                          <span className="font-semibold">The Need:</span> {item.need}
                         </p>
-                        <p className="text-sm md:text-base text-[#5C4A42]">
-                          {item.services}
+                        <p className="text-[#24120F] leading-relaxed">
+                          <span className="font-semibold">The Work:</span> {item.work}
                         </p>
+                        <div>
+                          <p className="text-[#24120F] font-semibold mb-2">The Win:</p>
+                          <ul className="space-y-1 list-disc text-[#24120F] list-inside marker:text-brick-red ml-4">
+                            {item.wins.map((win, winIndex) => (
+                              <li key={winIndex}>{win}</li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
 
@@ -359,19 +397,24 @@ export function PartnerPage() {
                         e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
                       }}
                     >
-                      <h3 className="text-xl md:text-2xl font-semibold text-[#E23C46] mb-3">
-                        {item.client}
+                      <h3 className="text-2xl md:text-3xl font-bold text-[#24120F] mb-2">
+                        {item.client} — {item.subtitle}
                       </h3>
-                      <p className="text-[#24120F] leading-relaxed mb-4">
-                        {item.title}
-                      </p>
-                      <div className="mt-4">
-                        <p className="text-xs font-semibold tracking-[0.15em] text-[#5C4A42] mb-2">
-                          SERVICES PROVIDED
+                      <div className="space-y-3 mt-4">
+                        <p className="text-[#24120F] leading-relaxed">
+                          <span className="font-semibold">The Need:</span> {item.need}
                         </p>
-                        <p className="text-sm md:text-base text-[#5C4A42]">
-                          {item.services}
+                        <p className="text-[#24120F] leading-relaxed">
+                          <span className="font-semibold">The Work:</span> {item.work}
                         </p>
+                        <div>
+                          <p className="text-[#24120F] font-semibold mb-2">The Win:</p>
+                          <ul className="space-y-1 list-disc text-[#24120F] list-inside marker:text-brick-red ml-4">
+                            {item.wins.map((win, winIndex) => (
+                              <li key={winIndex}>{win}</li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
