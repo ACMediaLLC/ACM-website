@@ -276,7 +276,7 @@ export function PartnerPage() {
                     className="flex flex-col gap-6 md:gap-8"
                   >
                     <div
-                      className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red md:text-left"
+                      className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red text-center"
                       onMouseEnter={(e) => {
                         e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
                       }}
@@ -296,9 +296,9 @@ export function PartnerPage() {
                         </p>
                         <div>
                           <p className="text-[#24120F] font-semibold mb-2">The Win:</p>
-                          <ul className="space-y-1 list-disc text-[#24120F] list-inside marker:text-brick-red ml-4">
+                          <ul className="space-y-1 list-disc text-[#24120F] marker:text-brick-red inline-block text-left">
                             {item.wins.map((win, winIndex) => (
-                              <li key={winIndex}>{win}</li>
+                              <li key={winIndex} className="ml-4">{win}</li>
                             ))}
                           </ul>
                         </div>
