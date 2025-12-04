@@ -12,7 +12,6 @@ interface WorkItem {
   image: string;
   mobileImage?: string;
   desktopSecondaryImage?: string;
-  desktopTertiaryImage?: string;
 }
 
 const recentWorkItems: WorkItem[] = [
@@ -30,9 +29,7 @@ const recentWorkItems: WorkItem[] = [
     client: 'City Year Philadelphia',
     title: 'Executive communications counsel and major campaign development',
     services: 'Executive Advisory, Campaign Strategy, Fundraising Support',
-    image: '/CityYear.webp',
-    desktopSecondaryImage: '/cityyear2.webp',
-    desktopTertiaryImage: '/cityyear3.webp'
+    image: '/CityYear.webp'
   },
   {
     id: 3,
@@ -233,35 +230,7 @@ export function PartnerPage() {
                 }`}
               >
                 <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-md">
-                  {!isMobile && item.desktopTertiaryImage ? (
-                    <div className="flex flex-col gap-4">
-                      <div className="flex gap-4">
-                        <div className="flex-1 rounded-xl overflow-hidden shadow-md">
-                          <img
-                            src={item.image}
-                            alt={item.client}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div className="flex-1 rounded-xl overflow-hidden shadow-md">
-                          <img
-                            src={item.desktopSecondaryImage}
-                            alt={`${item.client} - Secondary`}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex justify-center">
-                        <div className="w-1/2 rounded-xl overflow-hidden shadow-md">
-                          <img
-                            src={item.desktopTertiaryImage}
-                            alt={`${item.client} - Tertiary`}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  ) : !isMobile && item.desktopSecondaryImage ? (
+                  {!isMobile && item.desktopSecondaryImage ? (
                     <div className="flex gap-4">
                       <div className="flex-1 rounded-xl overflow-hidden shadow-md">
                         <img
