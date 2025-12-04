@@ -12,6 +12,7 @@ interface WorkItem {
   image: string;
   mobileImage?: string;
   desktopSecondaryImage?: string;
+  images?: string[];
 }
 
 const recentWorkItems: WorkItem[] = [
@@ -29,7 +30,8 @@ const recentWorkItems: WorkItem[] = [
     client: 'City Year Philadelphia',
     title: 'Executive communications counsel and major campaign development',
     services: 'Executive Advisory, Campaign Strategy, Fundraising Support',
-    image: '/CityYear.webp'
+    image: '/CityYear.webp',
+    images: ['/CityYear.webp', '/cityyear2.jpg', '/cityyear3.jpg']
   },
   {
     id: 3,
@@ -230,7 +232,19 @@ export function PartnerPage() {
                 }`}
               >
                 <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-md">
-                  {!isMobile && item.desktopSecondaryImage ? (
+                  {item.images ? (
+                    <div className="flex flex-col gap-4">
+                      {item.images.map((img, imgIndex) => (
+                        <div key={imgIndex} className="rounded-xl overflow-hidden shadow-md">
+                          <img
+                            src={img}
+                            alt={`${item.client} - Image ${imgIndex + 1}`}
+                            className="w-full h-auto object-contain"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  ) : !isMobile && item.desktopSecondaryImage ? (
                     <div className="flex gap-4">
                       <div className="flex-1 rounded-xl overflow-hidden shadow-md">
                         <img
