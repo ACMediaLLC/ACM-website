@@ -39,15 +39,16 @@ const recentWorkItems: WorkItem[] = [
     title: 'Multi-year strategic communications partnership driving program growth and visibility',
     services: 'Fractional CCO, Team Leadership, Strategic Planning',
     image: '/BottomLine.webp',
-    mobileImage: '/bottomline2.webp'
+    mobileImage: '/bottomline2.webp',
+    desktopSecondaryImage: '/bottomline2 copy.webp'
   },
   {
     id: 4,
     client: 'AC Media',
     title: 'Building a recognized brand in fractional communications leadership',
     services: 'Brand Development, Thought Leadership, Content Strategy',
-    image: '/Generocity June 2025.webp',
-    mobileImage: '/acmedia2.webp'
+    image: '/acmedia2 copy.webp',
+    images: ['/acmedia2 copy.webp', '/newclientannouncement.webp', '/acmedia3.webp']
   }
 ];
 
