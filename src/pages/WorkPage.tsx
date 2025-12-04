@@ -4,14 +4,25 @@ import { ExternalLink, Calendar, ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion';
 import { LogoCarousel } from '../components/LogoCarousel';
 
-const recentWorkItems = [
+interface WorkItem {
+  id: number;
+  client: string;
+  title: string;
+  services: string;
+  image: string;
+  mobileImage?: string;
+  desktopSecondaryImage?: string;
+}
+
+const recentWorkItems: WorkItem[] = [
   {
     id: 1,
     client: 'Hopebound',
     title: 'Complete brand positioning and launch campaign for emerging nonprofit',
     services: 'Brand Strategy, Content Development, Campaign Management',
     image: '/Hopebound.webp',
-    mobileImage: '/hopebound2.webp'
+    mobileImage: '/hopebound2.webp',
+    desktopSecondaryImage: '/hopebound2.webp'
   },
   {
     id: 2,
@@ -219,11 +230,30 @@ export function PartnerPage() {
                 }`}
               >
                 <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-md">
-                  <img
-                    src={isMobile && item.mobileImage ? item.mobileImage : item.image}
-                    alt={item.client}
-                    className="w-full h-full object-cover"
-                  />
+                  {!isMobile && item.desktopSecondaryImage ? (
+                    <div className="flex gap-4">
+                      <div className="flex-[0.75] rounded-xl overflow-hidden shadow-md">
+                        <img
+                          src={item.image}
+                          alt={item.client}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex-[0.25] rounded-xl overflow-hidden shadow-md">
+                        <img
+                          src={item.desktopSecondaryImage}
+                          alt={`${item.client} - Secondary`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    <img
+                      src={isMobile && item.mobileImage ? item.mobileImage : item.image}
+                      alt={item.client}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
                 </div>
 
                 <div className="w-full md:w-1/2 space-y-4 mt-6 md:mt-0">
