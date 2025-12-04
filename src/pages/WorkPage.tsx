@@ -47,6 +47,7 @@ const recentWorkItems: WorkItem[] = [
       'First-ever citywide publicity stunt'
     ],
     image: '/CityYear.webp',
+    mobileImage: '/CityYear.webp',
     images: ['/CityYear.webp', '/cityyear2.jpg', '/cityyear3.jpg']
   },
   {
@@ -81,6 +82,7 @@ const recentWorkItems: WorkItem[] = [
       '40 newsletter subscribers'
     ],
     image: '/acmedia2 copy.webp',
+    mobileImage: '/acmedia2 copy.webp',
     images: ['/acmedia2 copy.webp', '/newclientannouncement.webp', '/acmedia3.webp']
   }
 ];
@@ -275,6 +277,18 @@ export function PartnerPage() {
                     }}
                     className="flex flex-col gap-6 md:gap-8"
                   >
+                    {/* Mobile: Show single image first */}
+                    {isMobile && item.mobileImage && (
+                      <div className="rounded-xl overflow-hidden shadow-md md:hidden">
+                        <img
+                          src={item.mobileImage}
+                          alt={item.client}
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                    )}
+
+                    {/* Desktop: Show text card first, mobile: show text card second */}
                     <div
                       className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red text-center"
                       onMouseEnter={(e) => {
@@ -305,8 +319,9 @@ export function PartnerPage() {
                       </div>
                     </div>
 
-                    {reorderedImages.length > 0 && (
-                      <div className="flex flex-col md:flex-row gap-4 md:gap-6 md:items-center md:justify-center">
+                    {/* Desktop: Show image gallery (hidden on mobile) */}
+                    {!isMobile && reorderedImages.length > 0 && (
+                      <div className="hidden md:flex flex-row gap-4 md:gap-6 items-center justify-center">
                         {reorderedImages.map((img, imgIndex) => {
                           const isCenterImage = imgIndex === 1;
 
@@ -315,8 +330,8 @@ export function PartnerPage() {
                               key={imgIndex}
                               className={`rounded-xl overflow-hidden shadow-md transition-all hover:shadow-xl ${
                                 isCenterImage
-                                  ? 'md:flex-[1.4] md:max-w-[500px]'
-                                  : 'md:flex-[0.8] md:max-w-[320px]'
+                                  ? 'flex-[1.4] max-w-[500px]'
+                                  : 'flex-[0.8] max-w-[320px]'
                               }`}
                             >
                               <img
@@ -349,19 +364,13 @@ export function PartnerPage() {
                   }`}
                 >
                   <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-md">
-                    {item.images ? (
-                      <div className="flex flex-col gap-4">
-                        {item.images.map((img, imgIndex) => (
-                          <div key={imgIndex} className="rounded-xl overflow-hidden shadow-md">
-                            <img
-                              src={img}
-                              alt={`${item.client} - Image ${imgIndex + 1}`}
-                              className="w-full h-auto object-contain"
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    ) : !isMobile && item.desktopSecondaryImage ? (
+                    {isMobile ? (
+                      <img
+                        src={item.mobileImage || item.image}
+                        alt={item.client}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : item.desktopSecondaryImage ? (
                       <div className="flex gap-4">
                         <div className="flex-1 rounded-xl overflow-hidden shadow-md">
                           <img
@@ -380,7 +389,7 @@ export function PartnerPage() {
                       </div>
                     ) : (
                       <img
-                        src={isMobile && item.mobileImage ? item.mobileImage : item.image}
+                        src={item.image}
                         alt={item.client}
                         className="w-full h-full object-cover"
                       />
