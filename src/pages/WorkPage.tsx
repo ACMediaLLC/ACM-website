@@ -232,14 +232,14 @@ export function PartnerPage() {
                 <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-md">
                   {!isMobile && item.desktopSecondaryImage ? (
                     <div className="flex gap-4">
-                      <div className="flex-[0.75] rounded-xl overflow-hidden shadow-md">
+                      <div className="flex-1 rounded-xl overflow-hidden shadow-md">
                         <img
                           src={item.image}
                           alt={item.client}
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      <div className="flex-[0.25] rounded-xl overflow-hidden shadow-md">
+                      <div className="flex-1 rounded-xl overflow-hidden shadow-md">
                         <img
                           src={item.desktopSecondaryImage}
                           alt={`${item.client} - Secondary`}
