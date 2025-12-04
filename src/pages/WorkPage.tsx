@@ -298,7 +298,7 @@ export function PartnerPage() {
                         e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
                       }}
                     >
-                      <h3 className="text-2xl md:text-3xl font-bold text-[#24120F] mb-2">
+                      <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-2" style={{filter: 'drop-shadow(0 0 20px rgba(232, 93, 111, 0.3))'}}>
                         {item.client} — {item.subtitle}
                       </h3>
                       <div className="space-y-3 mt-4">
@@ -406,7 +406,7 @@ export function PartnerPage() {
                         e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
                       }}
                     >
-                      <h3 className="text-2xl md:text-3xl font-bold text-[#24120F] mb-2">
+                      <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-2" style={{filter: 'drop-shadow(0 0 20px rgba(232, 93, 111, 0.3))'}}>
                         {item.client} — {item.subtitle}
                       </h3>
                       <div className="space-y-3 mt-4">
