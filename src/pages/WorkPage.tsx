@@ -217,88 +217,151 @@ export function PartnerPage() {
           </div>
 
           <div className="flex flex-col gap-12 mb-20">
-            {recentWorkItems.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.15,
-                  ease: [0.25, 0.4, 0.25, 1]
-                }}
-                className={`flex flex-col md:flex md:items-center md:gap-10 ${
-                  index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
-                }`}
-              >
-                <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-md">
-                  {item.images ? (
-                    <div className="flex flex-col gap-4">
-                      {item.images.map((img, imgIndex) => (
-                        <div key={imgIndex} className="rounded-xl overflow-hidden shadow-md">
+            {recentWorkItems.map((item, index) => {
+              const isVerticalLayout = item.id === 2 || item.id === 4;
+
+              if (isVerticalLayout) {
+                return (
+                  <motion.div
+                    key={item.id}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.15,
+                      ease: [0.25, 0.4, 0.25, 1]
+                    }}
+                    className="flex flex-col gap-6 md:gap-8"
+                  >
+                    <div
+                      className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red"
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                      }}
+                    >
+                      <h3 className="text-xl md:text-2xl font-semibold text-[#E23C46] mb-3">
+                        {item.client}
+                      </h3>
+                      <p className="text-[#24120F] leading-relaxed mb-4">
+                        {item.title}
+                      </p>
+                      <div className="mt-4">
+                        <p className="text-xs font-semibold tracking-[0.15em] text-[#5C4A42] mb-2">
+                          SERVICES PROVIDED
+                        </p>
+                        <p className="text-sm md:text-base text-[#5C4A42]">
+                          {item.services}
+                        </p>
+                      </div>
+                    </div>
+
+                    {item.images && (
+                      <div className="flex flex-row flex-wrap gap-4 md:gap-6">
+                        {item.images.map((img, imgIndex) => (
+                          <div
+                            key={imgIndex}
+                            className="flex-1 min-w-[280px] md:min-w-[320px] rounded-xl overflow-hidden shadow-md transition-all hover:shadow-xl"
+                          >
+                            <img
+                              src={img}
+                              alt={`${item.client} - Image ${imgIndex + 1}`}
+                              className="w-full h-auto object-contain"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </motion.div>
+                );
+              }
+
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.15,
+                    ease: [0.25, 0.4, 0.25, 1]
+                  }}
+                  className={`flex flex-col md:flex md:items-center md:gap-10 ${
+                    index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
+                  }`}
+                >
+                  <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-md">
+                    {item.images ? (
+                      <div className="flex flex-col gap-4">
+                        {item.images.map((img, imgIndex) => (
+                          <div key={imgIndex} className="rounded-xl overflow-hidden shadow-md">
+                            <img
+                              src={img}
+                              alt={`${item.client} - Image ${imgIndex + 1}`}
+                              className="w-full h-auto object-contain"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ) : !isMobile && item.desktopSecondaryImage ? (
+                      <div className="flex gap-4">
+                        <div className="flex-1 rounded-xl overflow-hidden shadow-md">
                           <img
-                            src={img}
-                            alt={`${item.client} - Image ${imgIndex + 1}`}
-                            className="w-full h-auto object-contain"
+                            src={item.image}
+                            alt={item.client}
+                            className="w-full h-full object-cover"
                           />
                         </div>
-                      ))}
-                    </div>
-                  ) : !isMobile && item.desktopSecondaryImage ? (
-                    <div className="flex gap-4">
-                      <div className="flex-1 rounded-xl overflow-hidden shadow-md">
-                        <img
-                          src={item.image}
-                          alt={item.client}
-                          className="w-full h-full object-cover"
-                        />
+                        <div className="flex-1 rounded-xl overflow-hidden shadow-md">
+                          <img
+                            src={item.desktopSecondaryImage}
+                            alt={`${item.client} - Secondary`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       </div>
-                      <div className="flex-1 rounded-xl overflow-hidden shadow-md">
-                        <img
-                          src={item.desktopSecondaryImage}
-                          alt={`${item.client} - Secondary`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  ) : (
-                    <img
-                      src={isMobile && item.mobileImage ? item.mobileImage : item.image}
-                      alt={item.client}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                </div>
+                    ) : (
+                      <img
+                        src={isMobile && item.mobileImage ? item.mobileImage : item.image}
+                        alt={item.client}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
+                  </div>
 
-                <div className="w-full md:w-1/2 space-y-4 mt-6 md:mt-0">
-                  <div
-                    className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red"
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-                    }}
-                  >
-                    <h3 className="text-xl md:text-2xl font-semibold text-[#E23C46] mb-3">
-                      {item.client}
-                    </h3>
-                    <p className="text-[#24120F] leading-relaxed mb-4">
-                      {item.title}
-                    </p>
-                    <div className="mt-4">
-                      <p className="text-xs font-semibold tracking-[0.15em] text-[#5C4A42] mb-2">
-                        SERVICES PROVIDED
+                  <div className="w-full md:w-1/2 space-y-4 mt-6 md:mt-0">
+                    <div
+                      className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red"
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                      }}
+                    >
+                      <h3 className="text-xl md:text-2xl font-semibold text-[#E23C46] mb-3">
+                        {item.client}
+                      </h3>
+                      <p className="text-[#24120F] leading-relaxed mb-4">
+                        {item.title}
                       </p>
-                      <p className="text-sm md:text-base text-[#5C4A42]">
-                        {item.services}
-                      </p>
+                      <div className="mt-4">
+                        <p className="text-xs font-semibold tracking-[0.15em] text-[#5C4A42] mb-2">
+                          SERVICES PROVIDED
+                        </p>
+                        <p className="text-sm md:text-base text-[#5C4A42]">
+                          {item.services}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
