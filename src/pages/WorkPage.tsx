@@ -221,6 +221,14 @@ export function PartnerPage() {
               const isVerticalLayout = item.id === 2 || item.id === 4;
 
               if (isVerticalLayout) {
+                const reorderedImages = item.images ? [...item.images] : [];
+
+                if (item.id === 2 && reorderedImages.length === 3) {
+                  [reorderedImages[0], reorderedImages[1]] = [reorderedImages[1], reorderedImages[0]];
+                } else if (item.id === 4 && reorderedImages.length === 3) {
+                  [reorderedImages[0], reorderedImages[1]] = [reorderedImages[1], reorderedImages[0]];
+                }
+
                 return (
                   <motion.div
                     key={item.id}
@@ -235,7 +243,7 @@ export function PartnerPage() {
                     className="flex flex-col gap-6 md:gap-8"
                   >
                     <div
-                      className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red"
+                      className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red md:text-center"
                       onMouseEnter={(e) => {
                         e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
                       }}
@@ -259,20 +267,28 @@ export function PartnerPage() {
                       </div>
                     </div>
 
-                    {item.images && (
-                      <div className="flex flex-row flex-wrap gap-4 md:gap-6">
-                        {item.images.map((img, imgIndex) => (
-                          <div
-                            key={imgIndex}
-                            className="flex-1 min-w-[280px] md:min-w-[320px] rounded-xl overflow-hidden shadow-md transition-all hover:shadow-xl"
-                          >
-                            <img
-                              src={img}
-                              alt={`${item.client} - Image ${imgIndex + 1}`}
-                              className="w-full h-auto object-contain"
-                            />
-                          </div>
-                        ))}
+                    {reorderedImages.length > 0 && (
+                      <div className="flex flex-col md:flex-row gap-4 md:gap-6 md:items-center md:justify-center">
+                        {reorderedImages.map((img, imgIndex) => {
+                          const isCenterImage = imgIndex === 1;
+
+                          return (
+                            <div
+                              key={imgIndex}
+                              className={`rounded-xl overflow-hidden shadow-md transition-all hover:shadow-xl ${
+                                isCenterImage
+                                  ? 'md:flex-[1.4] md:max-w-[500px]'
+                                  : 'md:flex-[0.8] md:max-w-[320px]'
+                              }`}
+                            >
+                              <img
+                                src={img}
+                                alt={`${item.client} - Image ${imgIndex + 1}`}
+                                className="w-full h-auto object-contain"
+                              />
+                            </div>
+                          );
+                        })}
                       </div>
                     )}
                   </motion.div>
