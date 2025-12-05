@@ -47,8 +47,7 @@ const recentWorkItems: WorkItem[] = [
       'First-ever citywide publicity stunt'
     ],
     image: '/CityYear.webp',
-    mobileImage: '/CityYear.webp',
-    images: ['/CityYear.webp', '/cityyear2.jpg', '/cityyear3.jpg']
+    mobileImage: '/CityYear.webp'
   },
   {
     id: 3,
@@ -82,8 +81,7 @@ const recentWorkItems: WorkItem[] = [
       '40 newsletter subscribers'
     ],
     image: '/acmedia2 copy.webp',
-    mobileImage: '/acmedia2 copy.webp',
-    images: ['/acmedia2 copy.webp', '/newclientannouncement.webp', '/acmedia3.webp']
+    mobileImage: '/acmedia2 copy.webp'
   }
 ];
 
@@ -252,103 +250,7 @@ export function PartnerPage() {
           </div>
 
           <div className="flex flex-col gap-12 mb-20 items-center md:items-stretch">
-            {recentWorkItems.map((item, index) => {
-              const isVerticalLayout = item.id === 2 || item.id === 4;
-
-              if (isVerticalLayout) {
-                const reorderedImages = item.images ? [...item.images] : [];
-
-                if (item.id === 2 && reorderedImages.length === 3) {
-                  [reorderedImages[0], reorderedImages[1]] = [reorderedImages[1], reorderedImages[0]];
-                } else if (item.id === 4 && reorderedImages.length === 3) {
-                  [reorderedImages[0], reorderedImages[1]] = [reorderedImages[1], reorderedImages[0]];
-                }
-
-                return (
-                  <motion.div
-                    key={item.id}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{
-                      duration: 0.6,
-                      delay: index * 0.15,
-                      ease: [0.25, 0.4, 0.25, 1]
-                    }}
-                    className="flex flex-col gap-6 md:gap-8 w-full max-w-2xl md:max-w-none"
-                  >
-                    {/* Mobile: Show single image first */}
-                    {isMobile && item.mobileImage && (
-                      <div className="rounded-xl overflow-hidden shadow-md md:hidden">
-                        <img
-                          src={item.mobileImage}
-                          alt={item.client}
-                          className="w-full h-auto object-contain"
-                        />
-                      </div>
-                    )}
-
-                    {/* Desktop: Show text card first, mobile: show text card second */}
-                    <div
-                      className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red text-center"
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-                      }}
-                    >
-                      <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent mb-2" style={{filter: 'drop-shadow(0 0 20px rgba(232, 93, 111, 0.3))'}}>
-                        {item.client} — {item.subtitle}
-                      </h3>
-                      <div className="space-y-3 mt-4">
-                        <p className="text-[#24120F] leading-relaxed">
-                          <span className="font-semibold">The Need:</span> {item.need}
-                        </p>
-                        <p className="text-[#24120F] leading-relaxed">
-                          <span className="font-semibold">The Work:</span> {item.work}
-                        </p>
-                        <div className="flex flex-col items-center">
-                          <p className="text-[#24120F] font-semibold mb-2">The Win:</p>
-                          <ul className="space-y-1 list-disc text-[#24120F] marker:text-brick-red text-left">
-                            {item.wins.map((win, winIndex) => (
-                              <li key={winIndex} className="ml-4">{win}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Desktop: Show image gallery (hidden on mobile) */}
-                    {!isMobile && reorderedImages.length > 0 && (
-                      <div className="hidden md:flex flex-row gap-4 md:gap-6 items-center justify-center">
-                        {reorderedImages.map((img, imgIndex) => {
-                          const isCenterImage = imgIndex === 1;
-
-                          return (
-                            <div
-                              key={imgIndex}
-                              className={`rounded-xl overflow-hidden shadow-md transition-all hover:shadow-xl ${
-                                isCenterImage
-                                  ? 'flex-[1.4] max-w-[500px]'
-                                  : 'flex-[0.8] max-w-[320px]'
-                              }`}
-                            >
-                              <img
-                                src={img}
-                                alt={`${item.client} - Image ${imgIndex + 1}`}
-                                className="w-full h-auto object-contain"
-                              />
-                            </div>
-                          );
-                        })}
-                      </div>
-                    )}
-                  </motion.div>
-                );
-              }
-
-              return (
+            {recentWorkItems.map((item, index) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, y: 50 }}
@@ -398,7 +300,7 @@ export function PartnerPage() {
 
                   <div className="w-full md:w-1/2 space-y-4 mt-6 md:mt-0">
                     <div
-                      className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red text-center md:text-left"
+                      className="bg-seashell rounded-xl shadow-lg p-6 md:p-8 transition-all transform hover:-translate-y-1 border-2 border-transparent hover:border-brick-red text-left"
                       onMouseEnter={(e) => {
                         e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(232, 93, 111, 0.15), 0 10px 10px -5px rgba(232, 93, 111, 0.1), 0 0 30px rgba(232, 93, 111, 0.2)';
                       }}
@@ -416,9 +318,9 @@ export function PartnerPage() {
                         <p className="text-[#24120F] leading-relaxed">
                           <span className="font-semibold">The Work:</span> {item.work}
                         </p>
-                        <div className="flex flex-col items-center md:items-start">
+                        <div className="flex flex-col items-start">
                           <p className="text-[#24120F] font-semibold mb-2">The Win:</p>
-                          <ul className="space-y-1 list-disc text-[#24120F] marker:text-brick-red text-left ml-4 md:ml-4">
+                          <ul className="space-y-1 list-disc text-[#24120F] marker:text-brick-red text-left ml-4">
                             {item.wins.map((win, winIndex) => (
                               <li key={winIndex}>{win}</li>
                             ))}
@@ -428,8 +330,7 @@ export function PartnerPage() {
                     </div>
                   </div>
                 </motion.div>
-              );
-            })}
+            ))}
           </div>
         </div>
       </section>
