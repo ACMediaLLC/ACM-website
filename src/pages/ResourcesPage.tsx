@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Download, FileText, Calendar, Mail, CheckCircle, Eye, X } from 'lucide-react';
+import { Download, FileText, Calendar, Mail, CheckCircle } from 'lucide-react';
 import { subscribeToKitOnly } from '../lib/kit';
 
 interface Resource {
@@ -34,7 +34,6 @@ export function ResourcesPage() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showEmailModal, setShowEmailModal] = useState(false);
-  const [showPreviewModal, setShowPreviewModal] = useState(false);
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -42,15 +41,8 @@ export function ResourcesPage() {
     document.title = 'Resources | AC Media';
   }, []);
 
-
-  const handlePreviewClick = (resource: Resource) => {
-    setSelectedResource(resource);
-    setShowPreviewModal(true);
-  };
-
   const handleDownloadClick = (resource: Resource) => {
     setSelectedResource(resource);
-    setShowPreviewModal(false);
     setShowEmailModal(true);
   };
 
@@ -133,20 +125,15 @@ export function ResourcesPage() {
                     className="bg-seashell rounded-lg hover:shadow-xl transition-all border-2 border-transparent hover:border-brick-red overflow-hidden"
                   >
                     <div className="aspect-[4/5] md:aspect-[3/4] relative overflow-hidden bg-gradient-to-br from-brick-red/10 to-rose-500/10">
-                      <iframe
-                        src={`${resource.file_url}#toolbar=0&navpanes=0`}
-                        className="hidden md:block w-full h-full pointer-events-none"
-                        title={`Preview of ${resource.title}`}
-                      />
                       {resource.cover_image_url && (
                         <img
                           src={resource.cover_image_url}
                           alt={resource.title}
-                          className="md:hidden w-full h-full object-cover"
+                          className="w-full h-full object-cover"
                         />
                       )}
                       {!resource.cover_image_url && (
-                        <div className="md:hidden absolute inset-0 flex items-center justify-center">
+                        <div className="absolute inset-0 flex items-center justify-center">
                           <FileText className="text-brick-red" size={80} strokeWidth={1.5} />
                         </div>
                       )}
@@ -162,22 +149,13 @@ export function ResourcesPage() {
                         {resource.description}
                       </p>
 
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        <button
-                          onClick={() => handlePreviewClick(resource)}
-                          className="flex-1 bg-white border-2 border-brick-red text-brick-red px-4 md:px-6 py-3 rounded-lg font-roboto-condensed font-semibold hover:bg-brick-red hover:text-white transition-all flex items-center justify-center gap-2 min-h-[48px]"
-                        >
-                          <Eye size={20} />
-                          Preview
-                        </button>
-                        <button
-                          onClick={() => handleDownloadClick(resource)}
-                          className="flex-1 bg-brick-red text-white px-4 md:px-6 py-3 rounded-lg font-roboto-condensed font-semibold hover:bg-onyx transition-all flex items-center justify-center gap-2 min-h-[48px]"
-                        >
-                          <Download size={20} />
-                          Download
-                        </button>
-                      </div>
+                      <button
+                        onClick={() => handleDownloadClick(resource)}
+                        className="w-full bg-brick-red text-white px-4 md:px-6 py-3 rounded-lg font-roboto-condensed font-semibold hover:bg-onyx transition-all flex items-center justify-center gap-2 min-h-[48px]"
+                      >
+                        <Download size={20} />
+                        Download
+                      </button>
                     </div>
                   </div>
                   ))}
@@ -187,44 +165,6 @@ export function ResourcesPage() {
           )}
         </div>
       </section>
-
-      {showPreviewModal && selectedResource && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-2 sm:p-4">
-          <div className="bg-white rounded-lg w-full max-w-4xl h-[95vh] sm:h-[90vh] flex flex-col">
-            <div className="flex items-center justify-between p-3 sm:p-4 border-b flex-shrink-0">
-              <h3 className="font-roboto-condensed font-bold text-base sm:text-lg md:text-xl bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent truncate pr-2" style={{filter: 'drop-shadow(0 0 15px rgba(232, 93, 111, 0.25))'}}>
-                {selectedResource.title}
-              </h3>
-              <div className="flex gap-2 flex-shrink-0">
-                <button
-                  onClick={() => handleDownloadClick(selectedResource)}
-                  className="bg-brick-red text-white px-3 sm:px-4 md:px-6 py-2 rounded-lg font-roboto-condensed font-semibold hover:bg-onyx transition-all flex items-center gap-2"
-                >
-                  <Download size={18} />
-                  <span className="hidden sm:inline">Download</span>
-                </button>
-                <button
-                  onClick={() => {
-                    setShowPreviewModal(false);
-                    setSelectedResource(null);
-                  }}
-                  className="text-neutral hover:text-brick-red transition-colors"
-                >
-                  <X size={24} />
-                </button>
-              </div>
-            </div>
-            <div className="flex-1 overflow-hidden">
-              <iframe
-                src={`${selectedResource.file_url}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
-                className="w-full h-full"
-                title={selectedResource.title}
-                style={{ border: 'none' }}
-              />
-            </div>
-          </div>
-        </div>
-      )}
 
       {showEmailModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
