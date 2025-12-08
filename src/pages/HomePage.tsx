@@ -176,7 +176,7 @@ export function HomePage() {
               </h1>
 
               <p className="font-roboto text-base md:text-2xl text-white/90 mb-8 leading-normal">
-                AC Media helps organizations communicate with clarity, confidence, and consistency without the full-time overhead of an in-house communications executive
+                AC Media helps organizations communicate with clarity, confidence, and consistency without the full-time overhead of an in-house communications executive.
               </p>
 
               <div className="bg-white border-2 border-brick-red rounded-lg p-6 mb-10 max-w-2xl mx-auto relative overflow-hidden shadow-[0_0_80px_rgba(220,38,38,0.3)]">
