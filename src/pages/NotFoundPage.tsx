@@ -61,10 +61,10 @@ export function NotFoundPage() {
               Contact
             </Link>
             <Link
-              to="/partner"
+              to="/work"
               className="bg-gradient-to-r from-brick-red to-rose-500 bg-clip-text text-transparent font-roboto-condensed font-semibold hover:from-onyx hover:to-black transition-all"
             >
-              Partner With Us
+              Work
             </Link>
             <Link
               to="/testimonials"

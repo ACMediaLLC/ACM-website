@@ -36,9 +36,9 @@ export function Header() {
               Services
             </Link>
             <Link
-              to="/partner"
+              to="/work"
               className={`font-roboto-condensed font-semibold transition-colors ${
-                isActive('/partner') ? 'text-white underline' : 'text-white/90 hover:text-white'
+                isActive('/work') ? 'text-white underline' : 'text-white/90 hover:text-white'
               }`}
             >
               Work
@@ -114,10 +114,10 @@ export function Header() {
               Services
             </Link>
             <Link
-              to="/partner"
+              to="/work"
               onClick={closeMenu}
               className={`font-roboto-condensed font-semibold transition-colors text-left ${
-                isActive('/partner') ? 'text-white underline' : 'text-white/90 hover:text-white'
+                isActive('/work') ? 'text-white underline' : 'text-white/90 hover:text-white'
               }`}
             >
               Work
