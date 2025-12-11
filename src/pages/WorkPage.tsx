@@ -111,11 +111,11 @@ const partnershipBenefits = [
 ];
 
 
-export function PartnerPage() {
+export function WorkPage() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    document.title = 'Partner With Us | AC Media';
+    document.title = 'Our Work | AC Media';
   }, []);
 
   useEffect(() => {
