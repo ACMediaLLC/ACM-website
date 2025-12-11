@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Download, FileText, Calendar, Mail, CheckCircle } from 'lucide-react';
 import { subscribeToKitOnly } from '../lib/kit';
+import { getUserData, saveUserData, clearUserData, type UserData } from '../lib/localStorage';
+import { recordResourceDownload } from '../lib/supabase';
 
 interface Resource {
   id: string;
@@ -36,14 +38,29 @@ export function ResourcesPage() {
   const [showEmailModal, setShowEmailModal] = useState(false);
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [recognizedUser, setRecognizedUser] = useState<UserData | null>(null);
 
   useEffect(() => {
     document.title = 'Resources | AC Media';
+    const userData = getUserData();
+    if (userData) {
+      setRecognizedUser(userData);
+    }
   }, []);
 
-  const handleDownloadClick = (resource: Resource) => {
-    setSelectedResource(resource);
-    setShowEmailModal(true);
+  const handleDownloadClick = async (resource: Resource) => {
+    if (recognizedUser) {
+      await recordResourceDownload({
+        email: recognizedUser.email,
+        first_name: recognizedUser.first_name,
+        resource_id: resource.id,
+        resource_title: resource.title,
+      });
+      window.open(resource.file_url, '_blank');
+    } else {
+      setSelectedResource(resource);
+      setShowEmailModal(true);
+    }
   };
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
@@ -54,13 +71,22 @@ export function ResourcesPage() {
       const result = await subscribeToKitOnly({ first_name: firstName, email });
 
       if (result.success) {
+        saveUserData(email, firstName);
+        setRecognizedUser({ email, first_name: firstName });
+
+        if (selectedResource) {
+          await recordResourceDownload({
+            email,
+            first_name: firstName,
+            resource_id: selectedResource.id,
+            resource_title: selectedResource.title,
+          });
+          window.open(selectedResource.file_url, '_blank');
+        }
+
         setIsSuccess(true);
         setFirstName('');
         setEmail('');
-
-        if (selectedResource) {
-          window.open(selectedResource.file_url, '_blank');
-        }
 
         setTimeout(() => {
           setShowEmailModal(false);
@@ -75,6 +101,11 @@ export function ResourcesPage() {
     }
   };
 
+  const handleNotYouClick = () => {
+    clearUserData();
+    setRecognizedUser(null);
+  };
+
   return (
     <div>
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
@@ -87,6 +118,20 @@ export function ResourcesPage() {
             <p className="font-roboto-condensed font-semibold text-center text-2xl text-primary mb-4">
               Steal my frameworks, templates, and toolkits to level up your communications strategies
             </p>
+
+            {recognizedUser && (
+              <div className="bg-seashell border-2 border-brick-red rounded-lg p-6 max-w-2xl mx-auto mt-8">
+                <p className="font-roboto text-lg text-center text-primary mb-2">
+                  Welcome back, <span className="font-bold text-brick-red">{recognizedUser.first_name}</span> — your download is ready.
+                </p>
+                <button
+                  onClick={handleNotYouClick}
+                  className="font-roboto text-sm text-neutral hover:text-brick-red transition-colors underline mx-auto block"
+                >
+                  Not you? Use a different email
+                </button>
+              </div>
+            )}
           </div>
 
           {resources.length === 0 && (
@@ -154,7 +199,7 @@ export function ResourcesPage() {
                         className="w-full bg-brick-red text-white px-4 md:px-6 py-3 rounded-lg font-roboto-condensed font-semibold hover:bg-onyx transition-all flex items-center justify-center gap-2 min-h-[48px]"
                       >
                         <Download size={20} />
-                        Download
+                        {recognizedUser ? 'Download Now' : 'Download'}
                       </button>
                     </div>
                   </div>

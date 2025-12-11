@@ -27,6 +27,13 @@ export interface Resource {
   updated_at: string;
 }
 
+export interface ResourceDownload {
+  email: string;
+  first_name: string;
+  resource_id: string;
+  resource_title: string;
+}
+
 export async function submitContactForm(data: ContactSubmission) {
   const { error } = await supabase
     .from('contact_submissions')
@@ -63,5 +70,22 @@ export async function incrementDownloadCount(resourceId: string) {
         .update({ download_count: resource.download_count + 1 })
         .eq('id', resourceId);
     }
+  }
+}
+
+export async function recordResourceDownload(data: ResourceDownload): Promise<boolean> {
+  try {
+    const { error } = await supabase
+      .from('resource_downloads')
+      .insert([data]);
+
+    if (error) {
+      console.error('Failed to record resource download:', error);
+      return false;
+    }
+    return true;
+  } catch (error) {
+    console.error('Exception while recording resource download:', error);
+    return false;
   }
 }
