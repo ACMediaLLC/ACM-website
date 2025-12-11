@@ -7,7 +7,7 @@ export function Breadcrumb() {
 
   const breadcrumbNameMap: { [key: string]: string } = {
     services: 'Services',
-    partner: 'Partner With Us',
+    work: 'Our Work',
     about: 'About',
     testimonials: 'Testimonials',
     resources: 'Resources',
