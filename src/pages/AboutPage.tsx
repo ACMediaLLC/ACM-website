@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Award, TrendingUp, Users, Heart, Calendar, ArrowRight } from 'lucide-react';
+import { Award, Send, TrendingUp, Users, Heart, Calendar, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const highlights = [
@@ -216,8 +216,8 @@ export function AboutPage() {
               className="inline-flex bg-gradient-to-r from-brick-red to-rose-500 text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:from-onyx hover:to-black transition-all transform hover:scale-105"
               style={{boxShadow: '0 10px 15px -3px rgba(232, 93, 111, 0.4), 0 4px 6px -2px rgba(232, 93, 111, 0.3), 0 0 30px rgba(232, 93, 111, 0.3)'}}
             >
-              <Calendar size={20} />
-              Schedule Your Free Consultation
+              <Send size={20} />
+              Request Your Free Consultation
             </Link>
             <Link
               to="/services"
