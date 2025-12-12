@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Calendar, BookOpen } from 'lucide-react';
+import { ExternalLink, Send, Calendar, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { subscribeToKitOnly } from '../lib/kit';
 
@@ -140,8 +140,8 @@ export function NewsPage() {
                 to="/contact"
                 className="bg-onyx text-white px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:bg-black transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg"
               >
-                <Calendar size={20} />
-                Book a No-Cost Intro Call
+                <Send size={20} />
+                Request a No-Cost Intro Call
               </Link>
 
               <Link
