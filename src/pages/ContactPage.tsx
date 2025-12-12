@@ -222,7 +222,7 @@ export function ContactPage() {
                   <li className="flex items-start gap-3">
                     <span className="text-brick-red mt-1">•</span>
                     <p className="font-roboto text-neutral leading-relaxed">
-                      <span className="font-semibold text-text-primary">Quick Response:</span>  I’ll reply to you within 48 hours
+                      <span className="font-semibold text-text-primary">Quick Response:</span>  Check your inbox for a link to claim your spot on my calendar
                     </p>
                   </li>
                   <li className="flex items-start gap-3">
