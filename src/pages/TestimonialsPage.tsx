@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Quote, Calendar } from 'lucide-react';
+import { Quote, Send, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { LogoCarousel } from '../components/LogoCarousel';
 
