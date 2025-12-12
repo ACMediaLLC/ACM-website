@@ -220,7 +220,7 @@ export function HomePage() {
               to="/contact"
               className="bg-onyx text-white border-2 border-onyx px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:bg-black transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg"
             >
-              <Calendar size={20} />
+              <Send size={20} />
               Request a No-Cost Intro Call
             </Link>
           </div>
