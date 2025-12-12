@@ -221,7 +221,7 @@ export function HomePage() {
               className="bg-onyx text-white border-2 border-onyx px-8 py-4 rounded-lg font-roboto-condensed font-bold text-lg hover:bg-black transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg"
             >
               <Calendar size={20} />
-              Book a No-Cost Intro Call
+              Request a No-Cost Intro Call
             </Link>
           </div>
 
