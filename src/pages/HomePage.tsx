@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, BookOpen, Handshake, Lightbulb, CheckSquare, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Send, Calendar, BookOpen, Handshake, Lightbulb, CheckSquare, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { LogoCarousel } from '../components/LogoCarousel';
 
