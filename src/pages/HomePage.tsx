@@ -32,7 +32,7 @@ const featuredTestimonials = [
   },
   {
     quote: "Andrea developed a thoughtful suite of marketing and communications resources that have strengthened our brand and built internal confidence in how we share our work.",
-    role: "Non profit CEO"
+    role: "Nonprofit CEO"
   },
   {
     quote: "I knew we would be in great hands—and she exceeded even those high expectations.",
