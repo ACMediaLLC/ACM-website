@@ -25,9 +25,9 @@ const recentWorkItems: WorkItem[] = [
     need: 'A high-impact Annual Report and fundraising materials on a compressed timeline',
     work: 'Project leadership, storytelling, full design, social media promotion, and fundraising collateral',
     wins: [
-      '10-week end-to-end Annual Report delivery',
-      'Complete donor + sales material suite',
-      'Elevated brand clarity and fundraising readiness'
+      '10-week end-to-end Annual Report delivery, including a suite of social media and email marketing assets',
+      'Fundraising enablement materials',
+      'Elevated brand and messaging clarity'
     ],
     image: '/Hopebound.webp',
     mobileImage: '/hopebound2.webp',
