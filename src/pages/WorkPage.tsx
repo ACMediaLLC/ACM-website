@@ -67,15 +67,15 @@ const recentWorkItems: WorkItem[] = [
   {
     id: 4,
     client: 'AC Media',
-    subtitle: 'Built to Revenue in 6 Months',
+    subtitle: 'Launch-to-Revenue in Six Months',
     need: 'Launch a credible, revenue-generating fractional MarCom business from scratch',
-    work: 'Brand identity, website, messaging, newsletter, LinkedIn thought leadership, workshops, live networking',
+    work: 'Brand identity, messaging, newsletter, LinkedIn thought leadership, workshops, live networking',
     wins: [
       '5 proposal requests',
       '2 multi-month clients secured',
       '1 small business grant awarded',
       '2 viral LinkedIn posts',
-      '200+ new followers',
+      '200+ new social media followers',
       '2 thought leadership articles published',
       '40 newsletter subscribers'
     ],
