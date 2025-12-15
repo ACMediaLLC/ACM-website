@@ -36,13 +36,12 @@ const recentWorkItems: WorkItem[] = [
   {
     id: 2,
     client: 'City Year Philadelphia',
-    subtitle: 'Turning Visibility Into Funding',
-    need: 'Reignite brand visibility, revenue, and community engagement',
-    work: 'Media relations, executive thought leadership, publicity stunt, GivingTuesday strategy, messaging training',
+    subtitle: 'Igniting the Brand',
+    need: 'Ignite brand visibility, revenue, and community engagement',
+    work: 'Development marketing & communications, publicity stunt execution, government relations, media relations',
     wins: [
       '40+ media placements',
       '$1M in city & state funding secured in a single fiscal year',
-      '3 years of GivingTuesday goals met',
       '500+ new followers and 50% engagement growth',
       'First-ever citywide publicity stunt'
     ],
@@ -52,14 +51,14 @@ const recentWorkItems: WorkItem[] = [
   {
     id: 3,
     client: 'Bottom Line',
-    subtitle: 'National Brand Refresh, End to End',
-    need: 'Modernize the brand and scale external affairs nationally',
+    subtitle: 'National Brand Refresh',
+    need: 'Modernize the brand and scale external affairs department',
     work: 'Brand refresh leadership, website overhaul, earned media, team scaling',
     wins: [
-      'External Affairs team grew 2 → 5',
       'First-ever organization-wide rebrand',
       'New website launch',
-      'Expanded national thought leadership footprint'
+      'Expanded national thought leadership footprint',
+      'External Affairs team grew 2 → 5'
     ],
     image: '/BottomLine.webp',
     mobileImage: '/bottomline2.webp',
