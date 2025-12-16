@@ -325,7 +325,7 @@ export function HomePage() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="font-roboto-condensed font-bold text-4xl md:text-5xl bg-gradient-to-r from-brick-red to-rose-500
              bg-clip-text text-transparent mb-6" style={{filter: 'drop-shadow(0 0 25px rgba(232, 93, 111, 0.4))'}}>
-            Elevate Your Communications Today
+            Ready to Elevate Your Communications?
           </h2>
           <p className="font-roboto text-xl text-primary mb-10 leading-relaxed">
             Let's talk about how fractional communications leadership can transform your organization
