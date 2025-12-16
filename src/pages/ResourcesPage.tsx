@@ -27,13 +27,6 @@ const RESOURCES: Resource[] = [
     description: 'A strategic to-do list for navigating DEI messaging and positioning in today\'s complex environment. Practical guidance on auditing foundations, crafting compelling messages, and leading with authenticity.',
     file_url: '/resources/diversity-guide.pdf',
     cover_image_url: '/DiversityIsNotaDirtyWord copy.webp'
-  },
-  {
-    id: '3',
-    title: '2025 Section 8 Payment Standards',
-    description: 'Official payment standard schedule for Philadelphia\'s Housing Choice Voucher Program. Includes neighborhood zip code breakdowns, affordability calculations, and Small Area Fair Market Rents effective November 1, 2025.',
-    file_url: '/resources/2025_section_8_payment_standards.pdf',
-    cover_image_url: '/Screenshot 2025-12-01 at 2.02.12 PM.png'
   }
 ];
 
@@ -170,7 +163,7 @@ export function ResourcesPage() {
           {resources.length > 0 && (
             <>
               <div className="flex justify-center">
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl">
+                <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
                   {resources.map((resource) => (
                   <div
                     key={resource.id}
