@@ -13,6 +13,7 @@ export function LogoCarousel() {
     { name: 'City Year', url: '/image6.png' },
     { name: 'Poets & Quants', url: '/image7.png' },
     { name: 'Villanova Business', url: '/image8.png' },
+    { name: 'Center for Supportive Schools', url: '/css_logo.png' },
   ];
 
   const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
