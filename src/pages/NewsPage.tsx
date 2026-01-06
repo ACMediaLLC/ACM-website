@@ -15,6 +15,12 @@ const newsArticles: NewsArticle[] = [
   {
     logo: '/nonprofitpro.png',
     outlet: 'NonProfit PRO',
+    title: 'Top 20 Nonprofit PRO Articles of 2025',
+    link: 'https://www.nonprofitpro.com/article/top-20-nonprofit-pro-articles-of-2025/'
+  },
+  {
+    logo: '/nonprofitpro.png',
+    outlet: 'NonProfit PRO',
     title: 'Diversity Is Not a Dirty Word: A 5-Point Checklist to Survive DEI Messaging',
     link: 'https://www.nonprofitpro.com/post/diversity-is-not-a-dirty-word-a-5-point-checklist-to-survive-dei-messaging/'
   },
